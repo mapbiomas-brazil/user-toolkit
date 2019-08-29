@@ -11,6 +11,7 @@
  *
  * @version
  *    1.0.0 - Acess and download data using user's vector
+ *    1.1.0 - Updated to collection 4.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -22,11 +23,11 @@ var logos = require('users/mapbiomas/modules:Logos.js');
 var App = {
 
     options: {
-        version: '1.0.0',
+        version: '1.1.0',
         logo: logos.mapbiomas,
         assets: {
-            integration: 'projects/mapbiomas-workspace/public/collection3_1/mapbiomas_collection31_integration_v1',
-            transitions: 'projects/mapbiomas-workspace/public/collection3_1/mapbiomas_collection31_transitions_v1',
+            integration: 'projects/mapbiomas-workspace/public/collection4/mapbiomas_collection40_integration_v1',
+            transitions: 'projects/mapbiomas-workspace/public/collection4/mapbiomas_collection40_transitions_v1',
             vectors: [
                 'projects/mapbiomas-workspace/AUXILIAR/areas-protegidas',
                 'projects/mapbiomas-workspace/AUXILIAR/municipios-2016',
@@ -77,21 +78,22 @@ var App = {
                 '2005', '2006', '2007', '2008',
                 '2009', '2010', '2011', '2012',
                 '2013', '2014', '2015', '2016',
-                '2017'
+                '2017', '2018'
             ],
             'Transitions': [
-                "1985_1986", "1986_1987", "1987_1988", "1988_1989",
-                "1989_1990", "1990_1991", "1991_1992", "1992_1993",
-                "1993_1994", "1994_1995", "1995_1996", "1996_1997",
-                "1997_1998", "1998_1999", "1999_2000", "2000_2001",
-                "2001_2002", "2002_2003", "2003_2004", "2004_2005",
-                "2005_2006", "2006_2007", "2007_2008", "2008_2009",
-                "2009_2010", "2010_2011", "2011_2012", "2012_2013",
-                "2013_2014", "2014_2015", "2015_2016", "2016_2017",
-                "1990_1995", "1995_2000", "2000_2005", "2005_2010",
-                "2010_2015", "2015_2017", "2000_2010", "2010_2017",
-                "1985_2017", "2008_2017", "2012_2017", "1994_2002",
-                "2002_2010", "2010_2016",
+                "1988_1989", "1989_1990", "1990_1991", "1985_2018",
+                "1991_1992", "1992_1993", "1993_1994", "2010_2018",
+                "2017_2018", "1994_1995", "1995_1996", "1996_1997",
+                "2000_2010", "1987_1988", "1997_1998", "1998_1999",
+                "1999_2000", "1990_2000", "1986_1987", "2000_2001",
+                "2001_2002", "2002_2003", "2015_2018", "1985_1986",
+                "2003_2004", "2004_2005", "2005_2006", "2010_2015",
+                "2010_2016", "2006_2007", "2007_2008", "2008_2009",
+                "2005_2010", "2002_2010", "2009_2010", "2010_2011",
+                "2011_2012", "2000_2005", "1994_2002", "2012_2013",
+                "2013_2014", "2014_2015", "1995_2000", "2012_2018",
+                "2015_2016", "2016_2017", "1985_1990", "1990_1995",
+                "2008_2018",
             ]
         },
         bandsNames: {
@@ -236,13 +238,13 @@ var App = {
         var imageLayer = ui.Map.Layer({
             'eeObject': App.options.data.Coverage,
             'visParams': {
-                'bands': ['classification_2017'],
+                'bands': ['classification_2018'],
                 'palette': App.options.palette.Coverage,
                 'min': 0,
                 'max': 34,
                 'format': 'png'
             },
-            'name': 'Mapbiomas 2017',
+            'name': 'Mapbiomas 2018',
             'shown': true,
             'opacity': 1.0
         });
@@ -267,6 +269,9 @@ var App = {
             .replace(/ó/g, 'o')
             .replace(/ô/g, 'o')
             .replace(/õ/g, 'o')
+            .replace(/ú/g, 'u')
+            .replace(/û/g, 'u')
+            .replace(/ũ/g, 'u')
             .replace(/ç/g, 'c')
             .replace(/ñ/g, 'n')
             .replace(/&/g, '')
@@ -637,7 +642,8 @@ var App = {
                     var fileName = 'mapbiomas-' + featureName + '-' + period;
 
                     fileName = fileName.replace(/--/g, '-').replace(/--/g, '-');
-
+                    fileName = App.formatName(fileName);
+                    print(fileName)
                     var taskId = ee.data.newTaskId(1);
 
                     var data = App.options.data[App.options.dataType]
@@ -784,7 +790,7 @@ var App = {
                 },
             }),
 
-            labelCollection: ui.Label('Collection 3.1', {
+            labelCollection: ui.Label('Collection 4.0', {
                 'fontWeight': 'bold',
                 'padding': '1px',
                 'fontSize': '16px'
