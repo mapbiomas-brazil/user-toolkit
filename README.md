@@ -53,35 +53,37 @@ You can acess the [repository](https://code.earthengine.google.com/?accept_repo=
      style="float: left; margin-right: 10px;" />
 
 <ul>
-  <li>working here...</li>
+  <li>Select a table or choose one of the default tables.</li>
 </ul>
 <img src="pictures/accessing-data-2.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
 <ul>
-  <li>working here...</li>
+  <li>The table will be loaded on the map.</li>
+  <li>In the properties menu, select the attribute that will identify each of the vector polygons.</li>
 </ul>
 <img src="pictures/accessing-data-3.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
 <ul>
-  <li>working here...</li>
+  <li>In the Features menu, select the polygon name you want to work with.</li>
 </ul>
 <img src="pictures/accessing-data-4.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
 <ul>
-  <li>working here...</li>
+  <li>The toolkit will zoom in to the selected polygon.</li>
+  <li>It is possible to apply a buffer between 1 and 5 km. This buffer will only have effect on data export.</li>
 </ul>
 <img src="pictures/accessing-data-5.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 
 <ul>
-  <li>working here...</li>
+  <li>Select from the Layers menu the maps you want to view and export. Layers are active in the menu and appear in the default list of layers in the code editor.</li>
 </ul>
 <img src="pictures/accessing-data-6.png"
      alt="Markdown Monster icon"
@@ -89,8 +91,11 @@ You can acess the [repository](https://code.earthengine.google.com/?accept_repo=
 
 <h4>5. Exporting data</h4>
 <ul>
-  <li>working here...</li>
+  <li>To export the data to your Google Drive, click the Export images to Google Drive button. Wait for the task to be confirmed and click the OK button. Now just wait for the images to be saved to your Drive.</li>
+  <li>A MAPBIOMAS folder will be created in your Google Driver root and all the mapbiomas data you exported will be there.</li>
 </ul>
 <img src="pictures/accessing-data-7.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
+
+<h4>Enjoy!</h4>
