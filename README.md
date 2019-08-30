@@ -96,7 +96,7 @@ Acess the **[repository](https://code.earthengine.google.com/?accept_repo=users/
 <h4>5. Exporting data</h4>
 <ul>
   <li>To export the data to your Google Drive, click the Export images to Google Drive button. Wait for the task to be confirmed and click the OK button. Now just wait for the images to be saved to your Drive.</li>
-  <li>A MAPBIOMAS folder will be created in your Google Driver root and all the mapbiomas data you exported will be there.</li>
+  <li>A MAPBIOMAS-EXPORT folder will be created in your Google Driver root and all the mapbiomas data you exported will be there.</li>
 </ul>
 <img src="pictures/accessing-data-7.png"
      alt="Markdown Monster icon"
