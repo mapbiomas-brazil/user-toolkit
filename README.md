@@ -103,3 +103,4 @@ You can acess the [repository](https://code.earthengine.google.com/?accept_repo=
      style="float: left; margin-right: 10px;" />
 
 <h4>Enjoy!</h4>
+:smile:
