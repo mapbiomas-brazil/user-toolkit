@@ -1,6 +1,6 @@
 # MapBiomas User Toolkit
 
-**_João Siqueira_**
+**_João Siqueira_** :br:
 
 # About
 
