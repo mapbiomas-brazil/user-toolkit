@@ -1,4 +1,4 @@
-# user-toolkit
+# MapBiomas User Toolkit
 
 **_João Siqueira_**
 
