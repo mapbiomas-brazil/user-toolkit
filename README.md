@@ -9,7 +9,7 @@ User Toolkit for MapBiomas data access in Google Earth Engine.
 # How to use
 <h4>1. Getting the code</h4>
 
-You can acess the [repository](https://code.earthengine.google.com/?accept_repo=users/mapbiomas/user-toolkit) directly in Google Earth Engine. The scripts will appears at **Reader Session** of your scripts tab.
+Acess the **[repository](https://code.earthengine.google.com/?accept_repo=users/mapbiomas/user-toolkit)** directly in Google Earth Engine. The scripts will appears at **Reader Session** of your scripts tab.
 
 <img src="pictures/getting-code.png"
      alt="Markdown Monster icon"
