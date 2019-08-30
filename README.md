@@ -4,7 +4,7 @@
 
 # About
 
-user-toolkit is a repository for MapBiomas data access in Google Earth Engine
+User Toolkit for MapBiomas data access in Google Earth Engine.
 
 # How to use
 <h4>1. Getting the code</h4>
