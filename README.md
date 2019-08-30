@@ -22,6 +22,7 @@ You can acess the [repository](https://code.earthengine.google.com/?accept_repo=
      style="float: left; margin-right: 10px;" />
 
 <h4>3. Upload a new table asset</h4>
+
 <ul>
   <li>In GEE vectors are called tables.</li>
   <li>Access the menu New > Table upload to add a table.</li>
@@ -33,6 +34,7 @@ You can acess the [repository](https://code.earthengine.google.com/?accept_repo=
 <img src="pictures/upload-table.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
+
 <ul>
   <li>The table will appear inside the MAPBIOMAS folder. Press the refresh button to view all your new files.</li>
   <li>You can also move/copy a table asset from elsewhere in your structure into the MAPBIOMAS folder.</li>
@@ -42,6 +44,53 @@ You can acess the [repository](https://code.earthengine.google.com/?accept_repo=
      style="float: left; margin-right: 10px;" />
 
 <h4>4. Accessing the data</h4>
+
 <ul>
   <li>Now you run the script. Open the script in code editor and click on Run button.</li>
 </ul>
+<img src="pictures/accessing-data-1.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<ul>
+  <li>working here...</li>
+</ul>
+<img src="pictures/accessing-data-2.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<ul>
+  <li>working here...</li>
+</ul>
+<img src="pictures/accessing-data-3.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<ul>
+  <li>working here...</li>
+</ul>
+<img src="pictures/accessing-data-4.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<ul>
+  <li>working here...</li>
+</ul>
+<img src="pictures/accessing-data-5.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<ul>
+  <li>working here...</li>
+</ul>
+<img src="pictures/accessing-data-6.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<h4>5. Exporting data</h4>
+<ul>
+  <li>working here...</li>
+</ul>
+<img src="pictures/accessing-data-7.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
