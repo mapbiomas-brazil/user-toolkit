@@ -11,6 +11,10 @@ user-toolkit is a repository for MapBiomas data access in Google Earth Engine
 
 You can acess the [repository](https://code.earthengine.google.com/?accept_repo=users/mapbiomas/user-toolkit) directly in Google Earth Engine. The scripts will appears at **Reader Session** of your scripts tab.
 
+<img src="pictures/getting-code.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
 <h4>2. Create a MAPBIOMAS folder</h4>
 <ul>
   <li>Go to the Assets tab and click on the New menu. Then choose a Folder option.</li>
