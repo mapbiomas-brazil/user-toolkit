@@ -14,6 +14,8 @@ User Toolkit to download MapBiomas data with Google Earth Engine.
     * Access and download data using user's vector
 * 1.1.0
     * Updated to collection 4.0
+* 1.1.1
+    * Updated asstes
 
 # How to use
 <h4>1. Getting the code</h4>
