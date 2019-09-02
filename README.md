@@ -6,19 +6,19 @@
 
 # About
 
-User Toolkit for MapBiomas data access in Google Earth Engine.
+User Toolkit to download MapBiomas data with in Google Earth Engine.
 
 # Release History
 
 * 1.0.0
-    * Acess and download data using user's vector
+    * Access and download data using user's vector
 * 1.1.0
     * Updated to collection 4.0
 
 # How to use
 <h4>1. Getting the code</h4>
 
-Acess the **[repository](https://code.earthengine.google.com/?accept_repo=users/mapbiomas/user-toolkit)** directly in Google Earth Engine. The scripts will appears at **Reader Session** of your scripts tab.
+Access the **[repository](https://code.earthengine.google.com/?accept_repo=users/mapbiomas/user-toolkit)** directly in Google Earth Engine. The repository will appear at **Reader Session** of your scripts tab.
 
 <img src="misc/getting-code.png"
      alt="Markdown Monster icon"
@@ -27,7 +27,7 @@ Acess the **[repository](https://code.earthengine.google.com/?accept_repo=users/
 <h4>2. Create a MAPBIOMAS folder</h4>
 <ul>
   <li>Go to the Assets tab and click on the New menu. Then choose a Folder option.</li>
-  <li>Selects your primary account if you have others linked to your structure.</li>
+  <li>Select your primary account if you have others linked to your structure.</li>
   <li>Create a MAPBIOMAS folder (all capital letters) in your assets structure.</li>
 </ul>
 <img src="misc/create-folder.png"
@@ -40,7 +40,7 @@ Acess the **[repository](https://code.earthengine.google.com/?accept_repo=users/
   <li>In GEE vectors are called tables.</li>
   <li>Access the menu New > Table upload to add a table.</li>
   <li>Press the SELECT button to choose your shapefile. Browse to the file on your computer.
-  <li>Remember to use files with the extension .shp, .shx, .prj, and .bdf. Alternatively, you can compress them into a zip file to upload.
+  <li>Remember to use files with the extension .shp, .shx, .prj, and .dbf. Alternatively, you can compress them into a zip file to upload.
   <li>Note that you must enter the MAPBIOMAS folder name to add the file directly within this folder.</li>
   <li>Click on OK to start the upload task.</li>
 </ul>
@@ -59,7 +59,7 @@ Acess the **[repository](https://code.earthengine.google.com/?accept_repo=users/
 <h4>4. Accessing the data</h4>
 
 <ul>
-  <li>Now you run the script. Open the script in code editor and click on Run button.</li>
+  <li>Run the script now. Open it in Code Editor and click the Run button.</li>
 </ul>
 <img src="misc/accessing-data-1.png"
      alt="Markdown Monster icon"
@@ -73,8 +73,8 @@ Acess the **[repository](https://code.earthengine.google.com/?accept_repo=users/
      style="float: left; margin-right: 10px;" />
 
 <ul>
-  <li>The table will be loaded on the map.</li>
-  <li>In the properties menu, select the attribute that will identify each of the vector polygons.</li>
+  <li>The table (vector) will be loaded on the map.</li>
+  <li>In the Properties menu, select the attribute (column name) that will identify each of the vector polygons.</li>
 </ul>
 <img src="misc/accessing-data-3.png"
      alt="Markdown Monster icon"
@@ -88,7 +88,7 @@ Acess the **[repository](https://code.earthengine.google.com/?accept_repo=users/
      style="float: left; margin-right: 10px;" />
 
 <ul>
-  <li>The toolkit will zoom in to the selected polygon.</li>
+  <li>The toolkit will zoom into the selected polygon.</li>
   <li>It is possible to apply a buffer between 1 and 5 km. This buffer will only have effect on data export.</li>
 </ul>
 <img src="misc/accessing-data-5.png"
@@ -96,7 +96,7 @@ Acess the **[repository](https://code.earthengine.google.com/?accept_repo=users/
      style="float: left; margin-right: 10px;" />
 
 <ul>
-  <li>Select from the Layers menu the maps you want to view and export. Layers are active in the menu and appear in the default list of layers in the code editor.</li>
+  <li>Select from the Layers menu the years you want to view and export. Layers are active in the menu and appear in the default list of layers in the Code Editor.</li>
 </ul>
 <img src="misc/accessing-data-6.png"
      alt="Markdown Monster icon"
@@ -104,12 +104,14 @@ Acess the **[repository](https://code.earthengine.google.com/?accept_repo=users/
 
 <h4>5. Exporting data</h4>
 <ul>
-  <li>To export the data to your Google Drive, click the Export images to Google Drive button. Wait for the task to be confirmed and click the OK button. Now just wait for the images to be saved to your Drive.</li>
-  <li>A MAPBIOMAS-EXPORT folder will be created in your Google Driver root and all the mapbiomas data you exported will be there.</li>
+  <li>To export the data to your Google Drive, click the Export images to Google Drive button. Wait for the task to be confirmed and click the OK button. Now just wait for the images to be saved to your Google Drive.</li>
+  <li>A MAPBIOMAS-EXPORT folder will be created in your Google Drive root and all the mapbiomas data that you exported will be there.</li>
 </ul>
 <img src="misc/accessing-data-7.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
+
+<h4>6. Apply the MapBiomas color palette available in the website</h4>
 
 <h4>Enjoy!</h4>
 :smile:
