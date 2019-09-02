@@ -6,7 +6,7 @@
 
 # About
 
-User Toolkit to download MapBiomas data with in Google Earth Engine.
+User Toolkit to download MapBiomas data with Google Earth Engine.
 
 # Release History
 
