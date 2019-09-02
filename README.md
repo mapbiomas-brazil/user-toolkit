@@ -18,8 +18,9 @@ User Toolkit to download MapBiomas data with Google Earth Engine.
     * Updated asstes
 
 # How to use
+
 <h4>1. Getting the code</h4>
-<p>Access the <a href="https://code.earthengine.google.com/?accept_repo=users/mapbiomas/user-toolkit" target="blank" rel="noopener noreferrer">repository</a> directly in Google Earth Engine. The repository will appear at <b>Reader Session</b> of your scripts tab.</p>
+<p>Access the <a href="https://code.earthengine.google.com/?accept_repo=users/mapbiomas/user-toolkit" target="_blank" rel="noopener noreferrer">repository</a> directly in Google Earth Engine. The repository will appear at <b>Reader Session</b> of your scripts tab.</p>
 
 <img src="misc/getting-code.png"
      alt="Markdown Monster icon"
