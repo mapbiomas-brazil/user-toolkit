@@ -26,7 +26,7 @@ Access the **[repository](https://code.earthengine.google.com/?accept_repo=users
 
 <h4>2. Create a MAPBIOMAS folder</h4>
 <ul>
-  <li>Go to the Assets tab and click on the New menu. Then choose a Folder option.</li>
+  <li>Go to the Assets tab and click on the New menu. Then choose the Folder option.</li>
   <li>Select your primary account if you have others linked to your structure.</li>
   <li>Create a MAPBIOMAS folder (all capital letters) in your assets structure.</li>
 </ul>
