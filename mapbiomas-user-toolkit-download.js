@@ -355,15 +355,26 @@ var App = {
                         return obj.id;
                     });
 
-            var tablesNames = ee.data.getList({
-                'id': roots[0] + '/MAPBIOMAS'
-            }).map(
-                function (obj) {
-                    return obj.id;
-                });
+            var allTablesNames;
+            
+            /**
+             * Skip the error msg if MAPBIOMAS folder is not found
+             */
+            try {
+                var tablesNames = ee.data.getList({
+                    'id': roots[0] + '/MAPBIOMAS'
+                }).map(
+                    function (obj) {
+                        return obj.id;
+                    });
+                var allTablesNames = App.options.assets.vectors.concat(tablesNames);
+            }
+            catch (e) {
+                var allTablesNames = App.options.assets.vectors;
+            }
 
             App.ui.form.selectFeatureCollections = ui.Select({
-                'items': ['None'].concat(App.options.assets.vectors).concat(tablesNames),
+                'items': ['None'].concat(allTablesNames),
                 'placeholder': 'select table',
                 'onChange': function (tableName) {
                     if (tableName != 'None') {
