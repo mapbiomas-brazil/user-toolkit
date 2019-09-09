@@ -112,7 +112,7 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
 <ul>
-  <li>A confirmation box will pop up. Choose the Drive option and click the <img src="misc/run-button.png" alt="Markdown Monster icon" style="width:50px;height:25px;"/> button.</li>
+  <li>A confirmation box will pop up. Choose the Drive option and click the <img src="misc/run-button.png" alt="Markdown Monster icon"/> button.</li>
 </ul>
 <img src="misc/accessing-data-8.png"
      alt="Markdown Monster icon"
