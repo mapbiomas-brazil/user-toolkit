@@ -106,7 +106,7 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
 
 <h4>5. Exporting data</h4>
 <ul>
-  <li>To export the data to your Google Drive, click the Export images to Google Drive button. Go to Tasks tab and click the RUN button. Now just wait for the images to be saved to your Google Drive.</li>
+  <li>To export the data to your Google Drive, click the Export images to Google Drive button. Go to Tasks tab and click the RUN button.</li>
 </ul>
 <img src="misc/accessing-data-7.png"
      alt="Markdown Monster icon"
@@ -119,6 +119,7 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
      style="float: left; margin-right: 10px;" />
 
 <ul>
+  <li>Now just wait for the images to be saved to your Google Drive.</li>
   <li>A MAPBIOMAS-EXPORT folder will be created in your Google Drive root and all the mapbiomas data that you exported will be there.</li>
 </ul>
 
