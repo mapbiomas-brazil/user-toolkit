@@ -106,12 +106,22 @@ User Toolkit to download MapBiomas data with Google Earth Engine.
 
 <h4>5. Exporting data</h4>
 <ul>
-  <li>To export the data to your Google Drive, click the Export images to Google Drive button. Wait for the task to be confirmed and click the OK button. Now just wait for the images to be saved to your Google Drive.</li>
-  <li>A MAPBIOMAS-EXPORT folder will be created in your Google Drive root and all the mapbiomas data that you exported will be there.</li>
+  <li>To export the data to your Google Drive, click the Export images to Google Drive button. Go to Tasks tab and click the RUN button. Now just wait for the images to be saved to your Google Drive.</li>
 </ul>
 <img src="misc/accessing-data-7.png"
      alt="Markdown Monster icon"
      style="float: left; margin-right: 10px;" />
+<ul>
+  <li>A confirmation box will pop up. Choose the Drive option and click the <img src="misc/run-button.png" alt="Markdown Monster icon" style="width:50px;height:25px;"/> button.</li>
+</ul>
+<img src="misc/accessing-data-8.png"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+
+<ul>
+  <li>A MAPBIOMAS-EXPORT folder will be created in your Google Drive root and all the mapbiomas data that you exported will be there.</li>
+</ul>
+
 
 <h4>6. Apply the MapBiomas color palette available in the website</h4>
 
