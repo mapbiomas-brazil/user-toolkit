@@ -14,6 +14,7 @@
  *    1.0.1 - Fix minor exporting bugs
  *    1.1.0 - Acess and download watersheds
  *    1.1.1 - Updated to collection 4.0
+ *    1.1.2 - Fix minor issues
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -24,7 +25,7 @@ var logos = require('users/mapbiomas/modules:Logos.js');
 var App = {
 
     options: {
-        version: '1.1.1',
+        version: '1.1.2',
         logo: logos.mapbiomas,
         assets: {
             protectedAreas: "projects/mapbiomas-workspace/AUXILIAR/areas-protegidas",

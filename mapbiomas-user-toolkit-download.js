@@ -13,6 +13,7 @@
  *    1.0.0 - Acess and download data using user's vector
  *    1.1.0 - Updated to collection 4.0
  *    1.1.1 - Updated assets
+ *    1.1.2 - Fix minor issues
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -24,7 +25,7 @@ var logos = require('users/mapbiomas/modules:Logos.js');
 var App = {
 
     options: {
-        version: '1.1.1',
+        version: '1.1.2',
         logo: logos.mapbiomas,
         assets: {
             integration: 'projects/mapbiomas-workspace/public/collection4/mapbiomas_collection40_integration_v1',
