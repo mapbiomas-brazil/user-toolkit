@@ -17,6 +17,13 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
 * 1.1.1
     * Updated asstes
 
+<div class="fluid-row" id="header">
+  <h1 class="title toc-ignore">Video tutorial (pt-br)</h1>
+  <a href="https://www.youtube.com/watch?v=z3Yx1kwxWN0">
+    <img src='misc/video-tutorial.png' height='auto' width='auto' >
+  </a>
+</div>
+
 # How to use
 
 <h4>1. Getting the code</h4>
@@ -132,3 +139,5 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
 </ul>
 <h4>Enjoy!</h4>
 :smile:
+
+
