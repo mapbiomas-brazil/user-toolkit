@@ -124,7 +124,11 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
 </ul>
 
 
-<h4>6. Apply the MapBiomas color palette available in the website</h4>
-
+<h4>6. Apply the MapBiomas color palette.</h4>
+<ul>
+  <li><a href="legend-colors/mapbiomas-legend-arcmap.lyr" target="_blank" rel="noopener noreferrer">Color file for ArcMap</a></li>
+  <li><a href="legend-colors/mapbiomas-legend-qgis.qml" target="_blank" rel="noopener noreferrer">Color file for QGIS</a></li>
+  <li><a href="legend-colors/mapbiomas-legend-excel.xlsx" target="_blank" rel="noopener noreferrer">Color file in Excel table</a></li>
+</ul>
 <h4>Enjoy!</h4>
 :smile:

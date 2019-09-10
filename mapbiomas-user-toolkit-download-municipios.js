@@ -151,75 +151,75 @@ var App = {
         taskid: 1,
 
         transitionsCodes: [{
-                name: "1. Floresta",
-                noChange: [1, 2, 3, 4, 5, 6, 7, 8],
-                upVeg: [],
-                downVeg: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
-                downWater: [],
-                upWater: [26, 33, 31],
-                upPlantacao: [9],
-                ignored: [27]
-            },
-            {
-                name: "2. Formações Naturais não Florestais",
-                noChange: [10, 11, 12, 13],
-                upVeg: [],
-                downVeg: [14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
-                downWater: [],
-                upWater: [26, 33, 31],
-                upPlantacao: [9],
-                ignored: [27, 1, 2, 3, 4, 5, 6, 7, 8]
-            },
-            {
-                name: "3. Uso Agropecuário",
-                noChange: [14, 15, 16, 17, 18, 19, 20, 21, 28],
-                upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
-                downVeg: [],
-                downWater: [],
-                upWater: [26, 31, 33],
-                upPlantacao: [9],
-                ignored: [27, 22, 23, 24, 25, 29, 30]
-            },
-            {
-                name: "4.Áreas não vegetadas",
-                noChange: [22, 23, 24, 25, 29, 30],
-                upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
-                downVeg: [],
-                downWater: [],
-                upWater: [26, 31, 33],
-                upPlantacao: [9],
-                ignored: [27, 14, 15, 18, 19, 20, 21, 28],
-            },
-            {
-                name: "5. Corpos Dágua",
-                noChange: [26, 31, 33],
-                upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
-                downVeg: [],
-                downWater: [14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
-                upWater: [],
-                upPlantacao: [9],
-                ignored: [27]
-            },
-            {
-                name: "Plantacao Florestal",
-                noChange: [9],
-                upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
-                downVeg: [],
-                downWater: [14, 15, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
-                upWater: [26, 31, 33],
-                upPlantacao: [],
-                ignored: [27]
-            },
-            {
-                name: "6. Não observado",
-                noChange: [27],
-                upVeg: [],
-                downVeg: [],
-                downWater: [],
-                upWater: [],
-                upPlantacao: [],
-                ignored: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33]
-            }
+            name: "1. Floresta",
+            noChange: [1, 2, 3, 4, 5, 6, 7, 8],
+            upVeg: [],
+            downVeg: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
+            downWater: [],
+            upWater: [26, 33, 31],
+            upPlantacao: [9],
+            ignored: [27]
+        },
+        {
+            name: "2. Formações Naturais não Florestais",
+            noChange: [10, 11, 12, 13],
+            upVeg: [],
+            downVeg: [14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
+            downWater: [],
+            upWater: [26, 33, 31],
+            upPlantacao: [9],
+            ignored: [27, 1, 2, 3, 4, 5, 6, 7, 8]
+        },
+        {
+            name: "3. Uso Agropecuário",
+            noChange: [14, 15, 16, 17, 18, 19, 20, 21, 28],
+            upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
+            downVeg: [],
+            downWater: [],
+            upWater: [26, 31, 33],
+            upPlantacao: [9],
+            ignored: [27, 22, 23, 24, 25, 29, 30]
+        },
+        {
+            name: "4.Áreas não vegetadas",
+            noChange: [22, 23, 24, 25, 29, 30],
+            upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
+            downVeg: [],
+            downWater: [],
+            upWater: [26, 31, 33],
+            upPlantacao: [9],
+            ignored: [27, 14, 15, 18, 19, 20, 21, 28],
+        },
+        {
+            name: "5. Corpos Dágua",
+            noChange: [26, 31, 33],
+            upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
+            downVeg: [],
+            downWater: [14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
+            upWater: [],
+            upPlantacao: [9],
+            ignored: [27]
+        },
+        {
+            name: "Plantacao Florestal",
+            noChange: [9],
+            upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
+            downVeg: [],
+            downWater: [14, 15, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
+            upWater: [26, 31, 33],
+            upPlantacao: [],
+            ignored: [27]
+        },
+        {
+            name: "6. Não observado",
+            noChange: [27],
+            upVeg: [],
+            downVeg: [],
+            downWater: [],
+            upWater: [],
+            upPlantacao: [],
+            ignored: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33]
+        }
         ],
 
     },
@@ -376,9 +376,9 @@ var App = {
             App.ui.form.selectState.setPlaceholder('loading names...');
 
             ee.List(App.options.states.filterBounds(
-                        App.options.biomes.filterMetadata('name', 'equals', String(App.options.biomesNames[biome])))
-                    .reduceColumns(ee.Reducer.toList(), ['CD_GEOCUF'])
-                    .get('list'))
+                App.options.biomes.filterMetadata('name', 'equals', String(App.options.biomesNames[biome])))
+                .reduceColumns(ee.Reducer.toList(), ['CD_GEOCUF'])
+                .get('list'))
                 .sort()
                 .evaluate(
                     function (statesList, errorMsg) {
@@ -422,9 +422,9 @@ var App = {
             App.ui.form.selectMunicipalitie.setPlaceholder('loading names...');
 
             ee.List(App.options.municipalities
-                    .filterMetadata('UF', 'equals', parseInt(state, 10))
-                    .reduceColumns(ee.Reducer.toList(), ['NM_MUNICIP'])
-                    .get('list'))
+                .filterMetadata('UF', 'equals', parseInt(state, 10))
+                .reduceColumns(ee.Reducer.toList(), ['NM_MUNICIP'])
+                .get('list'))
                 .sort()
                 .evaluate(
                     function (municipalities, errorMsg) {
@@ -467,10 +467,10 @@ var App = {
             Map.clear();
 
             Map.addLayer(ee.Image().byte().paint(App.options.activeFeature, 1, 3), {
-                    'palette': 'ffffff,ff0000',
-                    'min': 0,
-                    'max': 1
-                },
+                'palette': 'ffffff,ff0000',
+                'min': 0,
+                'max': 1
+            },
                 biome + ' boundary',
                 true);
 
@@ -486,10 +486,10 @@ var App = {
             Map.clear();
 
             Map.addLayer(ee.Image().byte().paint(App.options.activeFeature, 1, 3), {
-                    'palette': 'ffffff,ff0000',
-                    'min': 0,
-                    'max': 1
-                },
+                'palette': 'ffffff,ff0000',
+                'min': 0,
+                'max': 1
+            },
                 state + ' boundary',
                 true);
 
@@ -506,10 +506,10 @@ var App = {
             Map.clear();
 
             Map.addLayer(ee.Image().byte().paint(App.options.activeFeature, 1, 3), {
-                    'palette': 'ffffff,ff0000',
-                    'min': 0,
-                    'max': 1
-                },
+                'palette': 'ffffff,ff0000',
+                'min': 0,
+                'max': 1
+            },
                 municipalitie + ' boundary',
                 true);
 
@@ -621,32 +621,46 @@ var App = {
 
                     fileName = fileName.replace(/--/g, '-').replace(/--/g, '-');
 
-                    var taskId = ee.data.newTaskId(1);
+                    // var taskId = ee.data.newTaskId(1);
 
-                    var params = {
-                        type: 'EXPORT_IMAGE',
-                        json: ee.Serializer.toJSON(App.options.data[App.options.dataType]
+                    // var params = {
+                    //     type: 'EXPORT_IMAGE',
+                    //     json: ee.Serializer.toJSON(App.options.data[App.options.dataType]
+                    //         .select([App.options.bandsNames[App.options.dataType] + period])
+                    //         .clip(App.options.activeFeature)),
+                    //     description: fileName,
+                    //     driveFolder: 'MAPBIOMAS-EXPORT',
+                    //     driveFileNamePrefix: fileName,
+                    //     region: JSON.stringify(App.options.activeFeature.geometry().bounds().getInfo()),
+                    //     scale: 30,
+                    //     maxPixels: 1e13,
+                    //     skipEmptyTiles: true,
+                    //     fileDimensions: App.options.fileDimensions[App.options.dataType],
+                    // };
+
+                    // var status = ee.data.startProcessing(taskId, params);
+
+                    // if (status) {
+                    //     if (status.started == 'OK') {
+                    //         print("Exporting data...")
+                    //     } else {
+                    //         print("Exporting error!")
+                    //     }
+                    // }
+
+                    Export.image.toDrive({
+                        image: App.options.data[App.options.dataType]
                             .select([App.options.bandsNames[App.options.dataType] + period])
-                            .clip(App.options.activeFeature)),
+                            .clip(App.options.activeFeature),
                         description: fileName,
-                        driveFolder: 'MAPBIOMAS-EXPORT',
-                        driveFileNamePrefix: fileName,
-                        region: JSON.stringify(App.options.activeFeature.geometry().bounds().getInfo()),
+                        folder: 'MAPBIOMAS-EXPORT',
+                        fileNamePrefix: fileName,
+                        region: App.options.activeFeature.geometry().bounds().getInfo(),
                         scale: 30,
                         maxPixels: 1e13,
-                        skipEmptyTiles: true,
+                        fileFormat: 'GeoTIFF',
                         fileDimensions: App.options.fileDimensions[App.options.dataType],
-                    };
-
-                    var status = ee.data.startProcessing(taskId, params);
-
-                    if (status) {
-                        if (status.started == 'OK') {
-                            print("Exporting data...")
-                        } else {
-                            print("Exporting error!")
-                        }
-                    }
+                    });
                 }
             }
         },
@@ -744,7 +758,7 @@ var App = {
                 'padding': '1px',
                 'fontSize': '16px'
             }),
-            
+
             labelTitle: ui.Label('MapBiomas User Toolkit', {
                 'fontWeight': 'bold',
                 'padding': '1px',

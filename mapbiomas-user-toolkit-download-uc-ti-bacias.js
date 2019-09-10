@@ -623,37 +623,52 @@ var App = {
 
                     fileName = fileName.replace(/--/g, '-').replace(/--/g, '-');
 
-                    var taskId = ee.data.newTaskId(1);
+                    // var taskId = ee.data.newTaskId(1);
 
-                    var data = App.options.data[App.options.dataType]
-                        .select([App.options.bandsNames[App.options.dataType] + period]);
-
+                    var region = App.options.activeFeature.geometry();
+                    
                     if (App.options.bufferDistance !== 0) {
-                        data = data.clip(App.options.activeFeature.geometry().buffer(App.options.bufferDistance))
+                        region = region.buffer(App.options.bufferDistance);
                     }
+                    
+                    var data = App.options.data[App.options.dataType]
+                        .select([App.options.bandsNames[App.options.dataType] + period])
+                        .clip(region);
 
-                    var params = {
-                        type: 'EXPORT_IMAGE',
-                        json: ee.Serializer.toJSON(data),
+                    // var params = {
+                    //     type: 'EXPORT_IMAGE',
+                    //     json: ee.Serializer.toJSON(data),
+                    //     description: fileName,
+                    //     driveFolder: 'MAPBIOMAS-EXPORT',
+                    //     driveFileNamePrefix: fileName,
+                    //     region: JSON.stringify(App.options.activeFeature.geometry().bounds().getInfo()),
+                    //     scale: 30,
+                    //     maxPixels: 1e13,
+                    //     skipEmptyTiles: true,
+                    //     fileDimensions: App.options.fileDimensions[App.options.dataType],
+                    // };
+
+                    // var status = ee.data.startProcessing(taskId, params);
+
+                    // if (status) {
+                    //     if (status.started == 'OK') {
+                    //         print("Exporting data...")
+                    //     } else {
+                    //         print("Exporting error!")
+                    //     }
+                    // }
+
+                    Export.image.toDrive({
+                        image: data,
                         description: fileName,
-                        driveFolder: 'MAPBIOMAS-EXPORT',
-                        driveFileNamePrefix: fileName,
-                        region: JSON.stringify(App.options.activeFeature.geometry().bounds().getInfo()),
+                        folder: 'MAPBIOMAS-EXPORT',
+                        fileNamePrefix: fileName,
+                        region: region.bounds().getInfo(),
                         scale: 30,
                         maxPixels: 1e13,
-                        skipEmptyTiles: true,
+                        fileFormat: 'GeoTIFF',
                         fileDimensions: App.options.fileDimensions[App.options.dataType],
-                    };
-
-                    var status = ee.data.startProcessing(taskId, params);
-
-                    if (status) {
-                        if (status.started == 'OK') {
-                            print("Exporting data...")
-                        } else {
-                            print("Exporting error!")
-                        }
-                    }
+                    });
                 }
             }
         },
