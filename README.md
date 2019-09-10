@@ -24,6 +24,8 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
   </a>
 </div>
 
+<img src="https://user-images.githubusercontent.com/8548846/29327284-a45eca10-81bc-11e7-8b0d-286568873dfb.png" height='32px' align='bottom'> <a href="https://www.youtube.com/channel/UCYXyUt65II43fvpeEJTmXZQ" target="_blank" rel="noopener noreferrer" >MapBiomas Brasil</a> | <a href="https://www.youtube.com/channel/UC3ezvJ-vmkUdcJ779-rR61Q" target="_blank" rel="noopener noreferrer">Solved Scholar</a> | <a href="https://www.youtube.com/user/luissadeck"  target="_blank" rel="noopener noreferrer">Luis Sadeck</a>
+
 # How to use
 
 <h4>1. Getting the code</h4>
