@@ -141,6 +141,12 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
   <li><a href="legend-colors/mapbiomas-legend-qgis.qml" target="_blank" rel="noopener noreferrer">Color file for QGIS</a></li>
   <li><a href="legend-colors/mapbiomas-legend-excel.xlsx" target="_blank" rel="noopener noreferrer">Color file in Excel table</a></li>
 </ul>
+
+<h4>7. Transitions dates.</h4>
+<ul>
+  <li><a href="misc/transitions.md" target="_blank" rel="noopener noreferrer">Transitions table description</a></li>
+</ul>
+
 <h4>Enjoy!</h4>
 :smile:
 
