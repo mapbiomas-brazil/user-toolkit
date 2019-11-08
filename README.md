@@ -15,7 +15,9 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
 * 1.1.0
     * Updated to collection 4.0
 * 1.1.1
-    * Updated asstes
+    * Updated assets
+* 1.1.2
+    * New transitions periods
 
 <div class="fluid-row" id="header">
   <h1 class="title toc-ignore">Video tutorial (pt-br)</h1>
