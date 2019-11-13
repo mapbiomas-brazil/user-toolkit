@@ -21,7 +21,7 @@
  *    1.3.1 - Fix minor issues
  *    1.3.2 - Updated to collection 4.0
  *    1.3.3 - Fix minor issues
- *    1.3.4 - Fix minor issues
+ *    1.3.4 - Update transitions data
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder

@@ -673,7 +673,7 @@ var App = {
                         data = data.clip(App.options.activeFeature.geometry());
                     }
 
-                    regions = regions.bounds();
+                    region = region.bounds();
                     // var params = {
                     //     type: 'EXPORT_IMAGE',
                     //     json: ee.Serializer.toJSON(data),
