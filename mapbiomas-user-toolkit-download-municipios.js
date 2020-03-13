@@ -22,6 +22,7 @@
  *    1.3.2 - Updated to collection 4.0
  *    1.3.3 - Fix minor issues
  *    1.3.4 - Update transitions data
+ *    1.3.5 - Update transitions data to collection 4.1
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -32,14 +33,14 @@ var logos = require('users/mapbiomas/modules:Logos.js');
 var App = {
 
     options: {
-        version: '1.3.4',
+        version: '1.3.5',
         logo: logos.mapbiomas,
         assets: {
             municipalities: "projects/mapbiomas-workspace/AUXILIAR/municipios-2016",
             states: "projects/mapbiomas-workspace/AUXILIAR/estados-2017",
             biomes: "projects/mapbiomas-workspace/AUXILIAR/biomas",
-            integration: 'projects/mapbiomas-workspace/public/collection4/mapbiomas_collection40_integration_v1',
-            transitions: 'projects/mapbiomas-workspace/public/collection4/mapbiomas_collection40_transitions_v2',
+            integration: 'projects/mapbiomas-workspace/public/collection4_1/mapbiomas_collection41_integration_v1',
+            transitions: 'projects/mapbiomas-workspace/public/collection4_1/mapbiomas_collection41_transitions_v1',
         },
 
         periods: {

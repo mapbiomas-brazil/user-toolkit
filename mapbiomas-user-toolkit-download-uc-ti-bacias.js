@@ -16,6 +16,7 @@
  *    1.1.1 - Updated to collection 4.0
  *    1.1.2 - Fix minor issues
  *    1.1.3 - Update transitions data
+ *    1.1.4 - Update transitions data to collection 4.1
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -26,13 +27,13 @@ var logos = require('users/mapbiomas/modules:Logos.js');
 var App = {
 
     options: {
-        version: '1.1.3',
+        version: '1.1.4',
         logo: logos.mapbiomas,
         assets: {
             protectedAreas: "projects/mapbiomas-workspace/AUXILIAR/areas-protegidas",
             watersheds: "projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-2",
-            integration: 'projects/mapbiomas-workspace/public/collection4/mapbiomas_collection40_integration_v1',
-            transitions: 'projects/mapbiomas-workspace/public/collection4/mapbiomas_collection40_transitions_v2',
+            integration: 'projects/mapbiomas-workspace/public/collection4_1/mapbiomas_collection41_integration_v1',
+            transitions: 'projects/mapbiomas-workspace/public/collection4_1/mapbiomas_collection41_transitions_v1',
         },
 
         periods: {
