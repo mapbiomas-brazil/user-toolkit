@@ -17,12 +17,12 @@
  *    1.2.2 - Update states vector
  *    1.2.3 - Add nice mapbiomas logo :)
  *    1.2.4 - Acess and download biomes data
- *    1.3.0 - Updated to collection 3.1
+ *    1.3.0 - Updated for collection 3.1
  *    1.3.1 - Fix minor issues
- *    1.3.2 - Updated to collection 4.0
+ *    1.3.2 - Update for collection 4.0
  *    1.3.3 - Fix minor issues
  *    1.3.4 - Update transitions data
- *    1.3.5 - Update transitions data to collection 4.1
+ *    1.3.5 - Update for collection 4.1
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -756,7 +756,7 @@ var App = {
                 },
             }),
 
-            labelCollection: ui.Label('Brazil collection 4.0', {
+            labelCollection: ui.Label('Brazil collection 4.1', {
                 'fontWeight': 'bold',
                 'padding': '1px',
                 'fontSize': '16px'

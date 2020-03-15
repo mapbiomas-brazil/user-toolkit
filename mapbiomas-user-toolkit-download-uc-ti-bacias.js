@@ -13,10 +13,10 @@
  *    1.0.0 - Acess and download national protected areas
  *    1.0.1 - Fix minor exporting bugs
  *    1.1.0 - Acess and download watersheds
- *    1.1.1 - Updated to collection 4.0
+ *    1.1.1 - Update data for collection 4.0
  *    1.1.2 - Fix minor issues
  *    1.1.3 - Update transitions data
- *    1.1.4 - Update transitions data to collection 4.1
+ *    1.1.4 - Update data for collection 4.1
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -764,7 +764,7 @@ var App = {
                 },
             }),
 
-            labelCollection: ui.Label('National Protected Areas and Watersheds - Collection 4.0', {
+            labelCollection: ui.Label('National Protected Areas and Watersheds - Collection 4.1', {
                 'fontWeight': 'bold',
                 'padding': '1px',
                 'fontSize': '16px'

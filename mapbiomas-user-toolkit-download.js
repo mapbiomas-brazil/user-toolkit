@@ -11,11 +11,11 @@
  *
  * @version
  *    1.0.0 - Acess and download data using user's vector
- *    1.1.0 - Updated to collection 4.0
+ *    1.1.0 - Update data for collection 4.0
  *    1.1.1 - Updated assets
  *    1.1.2 - Fix minor issues
  *    1.1.3 - Update transitions data
- *    1.1.4 - Update transitions data to collection 4.1
+ *    1.1.4 - Update data for collection 4.1
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -824,7 +824,7 @@ var App = {
                 },
             }),
 
-            labelCollection: ui.Label('Collection 4.0', {
+            labelCollection: ui.Label('Collection 4.1', {
                 'fontWeight': 'bold',
                 'padding': '1px',
                 'fontSize': '16px'
