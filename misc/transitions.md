@@ -160,6 +160,11 @@
         <td>2018</td>
         <td>consecutive years</td>
     </tr>
+        <tr>
+        <td>2018</td>
+        <td>2019</td>
+        <td>consecutive years</td>
+    </tr>
     <tr>
         <td>1985</td>
         <td>1990</td>
@@ -202,22 +207,22 @@
     </tr>
     <tr>
         <td>2010</td>
-        <td>2018</td>
+        <td>2019</td>
         <td>10 years*</td>
     </tr>
     <tr>
         <td>1985</td>
-        <td>2018</td>
+        <td>2019</td>
         <td>All collection</td>
     </tr>
     <tr>
         <td>2008</td>
-        <td>2018</td>
+        <td>2019</td>
         <td>Forest Code cutting date</td>
     </tr>
     <tr>
         <td>2012</td>
-        <td>2018</td>
+        <td>2019</td>
         <td>Forest Code year of aproval</td>
     </tr>
     <tr>
