@@ -20,6 +20,8 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
     * New transitions periods
 * 1.1.3
     * Updated for collection 4.1
+* 1.3.0
+    * Updated for collection 5.0
 
 <div class="fluid-row" id="header">
   <h1 class="title toc-ignore">Video tutorial (pt-br)</h1>
