@@ -28,6 +28,7 @@
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
  *      Code and Tutorial - https://github.com/mapbiomas-brazil/user-toolkit
  */
+
 var palettes = require('users/mapbiomas/modules:Palettes.js');
 var logos = require('users/mapbiomas/modules:Logos.js');
 
@@ -49,8 +50,6 @@ var Area = {
 
         obj = ee.Dictionary(obj);
 
-        var territory = obj.get('territory');
-
         var classesAndAreas = ee.List(obj.get('groups'));
 
         var tableRows = classesAndAreas.map(
@@ -61,7 +60,6 @@ var Area = {
                 var area = classAndArea.get('sum');
 
                 var tableColumns = ee.Feature(null)
-                    .set('territory', territory)
                     .set('class', classId)
                     .set('area', area);
 
@@ -95,7 +93,7 @@ var Area = {
             });
 
         territotiesData = ee.List(territotiesData.get('groups'));
-
+        print(territotiesData);
         var areas = territotiesData.map(Area.convert2table);
 
         areas = ee.FeatureCollection(areas).flatten();
@@ -105,6 +103,9 @@ var Area = {
 
 };
 
+/**
+ * 
+ */
 var App = {
 
     options: {
@@ -525,45 +526,44 @@ var App = {
         ],
 
         className: {
-            1:	"Forest",
-            2:	"Natural Forest",
-            3:	"Forest Formation",
-            4:	"Savanna Formation",
-            5:	"Magrove",
-            9:	"Forest Plantation",
-            10:	"Non Forest Natural Formation",
-            11:	"Wetland",
-            12:	"Grassland",
-            32:	"Salt flat",
-            29:	"Rocky outcrop",
-            13:	"Other Non Forest Natural Formation",
-            14:	"Farming",
-            15:	"Pasture",
-            18:	"Agriculture",
-            19:	"Temporary Crops",
-            39:	"Soy Beans",
-            20:	"Sugar Cane",
-            40:	"Rice",
-            41:	"Mosaic of Crops",
-            42:	"Coffe",
-            43:	"Citrus",
-            44:	"Cashew",
-            45:	"Other",
-            36:	"Perennial Crops",
-            21:	"Mosaic of Agriculture and Pasture",
-            22:	"Non vegetated area",
-            24:	"Urban Infrastructure",
-            30:	"Mining",
-            23:	"Beach and Dune",
-            25:	"Other Non Vegetated Area",
-            26:	"Water",
-            33:	"River, Lake and Ocean",
-            37:	"Artificial Water Body",
-            38:	"Water Reservoirs",
-            31:	"Aquaculture",
-            27:	"Non Observed",
-            0:	"Non Observed",
-
+            1: "Forest",
+            2: "Natural Forest",
+            3: "Forest Formation",
+            4: "Savanna Formation",
+            5: "Magrove",
+            9: "Forest Plantation",
+            10: "Non Forest Natural Formation",
+            11: "Wetland",
+            12: "Grassland",
+            32: "Salt flat",
+            29: "Rocky outcrop",
+            13: "Other Non Forest Natural Formation",
+            14: "Farming",
+            15: "Pasture",
+            18: "Agriculture",
+            19: "Temporary Crops",
+            39: "Soy Beans",
+            20: "Sugar Cane",
+            40: "Rice",
+            41: "Mosaic of Crops",
+            42: "Coffe",
+            43: "Citrus",
+            44: "Cashew",
+            45: "Other",
+            36: "Perennial Crops",
+            21: "Mosaic of Agriculture and Pasture",
+            22: "Non vegetated area",
+            24: "Urban Infrastructure",
+            30: "Mining",
+            23: "Beach and Dune",
+            25: "Other Non Vegetated Area",
+            26: "Water",
+            33: "River, Lake and Ocean",
+            37: "Artificial Water Body",
+            38: "Water Reservoirs",
+            31: "Aquaculture",
+            27: "Non Observed",
+            0: "Non Observed",
         },
     },
 
@@ -1105,7 +1105,7 @@ var App = {
             });
 
             var geometry = App.options.activeFeature.geometry().bounds();
-            
+
             var areas = bandIds.map(
                 function (band) {
 
@@ -1122,7 +1122,7 @@ var App = {
                     area = ee.FeatureCollection(area).map(
                         function (feature) {
                             var className = ee.Dictionary(App.options.className)
-                                .get(feature.get('class'))
+                                .get(feature.get('class'));
 
                             return feature.set('class_name', className).set('band', band);
                         }
@@ -1133,17 +1133,18 @@ var App = {
             );
 
             areas = ee.FeatureCollection(areas).flatten();
+            print(areas);
 
-            var fileName = [regionName, collectionName, featureName, 'area'].join('-');
+            var tableName = [regionName, collectionName, featureName, 'area'].join('-');
 
-            fileName = fileName.replace(/--/g, '-').replace(/--/g, '-').replace('.', '');
-            fileName = App.formatName(fileName);
+            tableName = tableName.replace(/--/g, '-').replace(/--/g, '-').replace('.', '');
+            tableName = App.formatName(tableName);
 
             Export.table.toDrive({
                 'collection': areas,
-                'description': fileName,
+                'description': tableName,
                 'folder': 'MAPBIOMAS-EXPORT',
-                'fileNamePrefix': fileName,
+                'fileNamePrefix': tableName,
                 'fileFormat': 'CSV'
             });
 
