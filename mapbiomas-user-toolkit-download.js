@@ -23,6 +23,7 @@
  *          - Updated mapbiomas-amazon collection 2.0
  *    1.3.0 - Loads mapbiomas-brazil collection 5.0
  *          - Export a csv file with areas per classe and year
+ *    1.3.1 - Loads mapbiomas-brazil collection 5.0 - Deforestation and Regenerartion
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -110,7 +111,7 @@ var App = {
 
     options: {
 
-        version: '1.3.0',
+        version: '1.3.1',
 
         logo: logos.mapbiomas,
 
@@ -148,8 +149,9 @@ var App = {
         tables: {
             'mapbiomas-brazil': [
                 'projects/mapbiomas-workspace/AUXILIAR/estados-2017',
-                'projects/mapbiomas-workspace/AUXILIAR/municipios-2016',
+                // 'projects/mapbiomas-workspace/AUXILIAR/municipios-2016',
                 'projects/mapbiomas-workspace/AUXILIAR/biomas-2019',
+                'projects/mapbiomas-workspace/AUXILIAR/biomas-antigo',
                 'projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-1',
                 'projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-2',
                 'projects/mapbiomas-workspace/AUXILIAR/areas-protegidas',
@@ -210,6 +212,7 @@ var App = {
                             "2012_2017", "1994_2002", "2002_2010", "2010_2016"
                         ]
                     },
+                    'dataType': ['Coverage', 'Transitions']
                 },
                 'collection-4.0': {
                     'assets': {
@@ -244,6 +247,7 @@ var App = {
                             "2010_2016", "2008_2018", "1986_2015", "2001_2016"
                         ]
                     },
+                    'dataType': ['Coverage', 'Transitions']
                 },
                 'collection-4.1': {
                     'assets': {
@@ -278,11 +282,13 @@ var App = {
                             "2010_2016", "2008_2018", "1986_2015", "2001_2016"
                         ]
                     },
+                    'dataType': ['Coverage', 'Transitions']
                 },
                 'collection-5.0': {
                     'assets': {
                         'integration': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_integration_v1',
                         'transitions': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_transitions_v1',
+                        'deforestation_regeneration': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_deforestation_regeneration_v1',
                     },
 
                     'periods': {
@@ -313,8 +319,20 @@ var App = {
                             "2002_2010", "2010_2016", "1990_2008", "1990_2019",
                             "2000_2019", "2008_2018", "1986_2015", "2001_2016",
                             "1996_2015"
-                        ]
+                        ],
+                        'Deforestation_Regeneration': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017'
+                        ],
                     },
+
+                    'dataType': ['Coverage', 'Transitions', 'Deforestation_Regeneration']
                 },
             },
             'mapbiomas-amazon': {
@@ -340,6 +358,7 @@ var App = {
                             "2015_2017", "2000_2010", "2010_2017", "2000_2017"
                         ]
                     },
+                    'dataType': ['Coverage', 'Transitions']
                 },
                 'collection-2.0': {
                     'assets': {
@@ -374,6 +393,7 @@ var App = {
                             "2010_2016", "2008_2018", "1986_2015", "2000_2018"
                         ]
                     },
+                    'dataType': ['Coverage', 'Transitions']
                 },
             },
             'mapbiomas-chaco': {
@@ -393,6 +413,7 @@ var App = {
                             "2013_2017"
                         ]
                     },
+                    'dataType': ['Coverage', 'Transitions']
                 },
             },
 
@@ -414,7 +435,8 @@ var App = {
 
         bandsNames: {
             'Coverage': 'classification_',
-            'Transitions': 'transition_'
+            'Transitions': 'transition_',
+            'Deforestation_Regeneration': 'classification_'
         },
 
         dataType: 'Coverage',
@@ -422,11 +444,13 @@ var App = {
         data: {
             'Coverage': null,
             'Transitions': null,
+            'Deforestation_Regeneration': null,
         },
 
         fileDimensions: {
             'Coverage': 256 * 512,
             'Transitions': 256 * 124,
+            'Deforestation_Regeneration': 256 * 512,
         },
 
         ranges: {
@@ -437,6 +461,10 @@ var App = {
             'Transitions': {
                 'min': -2,
                 'max': 3
+            },
+            'Deforestation_Regeneration': {
+                'min': 0,
+                'max': 6
             },
         },
 
@@ -704,23 +732,60 @@ var App = {
 
             App.ui.form.selectCollection.setPlaceholder('loading collections...');
 
+
             App.ui.form.selectCollection = ui.Select({
                 'items': Object.keys(App.options.collections[regionName]).reverse(),
                 'placeholder': 'select collection',
-                'onChange': function (collectioName) {
+                'onChange': function (collectionName) {
+
+                    var assetInteg = App.options.collections[regionName][collectionName].assets.integration;
+                    var assetTrans = App.options.collections[regionName][collectionName].assets.transitions;
+                    var assetDefor = App.options.collections[regionName][collectionName].assets.deforestation_regeneration;
+
                     ee.Number(1).evaluate(
                         function (a) {
-                            App.options.data.Coverage = ee.Image(
-                                App.options.collections[regionName][collectioName].assets.integration);
+                            App.options.data.Coverage = ee.Image(assetInteg);
 
-                            App.options.data.Transitions = ee.Image(
-                                App.options.collections[regionName][collectioName].assets.transitions);
+                            App.options.data.Transitions = ee.Image(assetTrans);
 
-                            var year = App.options.collections[regionName][collectioName].periods.Coverage.slice(-1)[0];
+                            if (assetDefor !== undefined) {
+                                App.options.data.Deforestation_Regenerartion = ee.Image(assetDefor);
+                            }
+
+                            var year = App.options.collections[regionName][collectionName].periods.Coverage.slice(-1)[0];
 
                             App.startMap(year);
+
+
                         }
                     );
+
+                    print(App.options.collections[regionName][collectionName].dataType);
+
+                    App.ui.form.selectDataType = ui.Select({
+                        'items': App.options.collections[regionName][collectionName].dataType,
+                        'placeholder': 'Coverage',
+                        'style': {
+                            'stretch': 'horizontal'
+                        },
+                        'disabled': true,
+                        'onChange': function (dataType) {
+
+                            var regionName = App.ui.form.selectRegion.getValue();
+                            var collectionName = App.ui.form.selectCollection.getValue();
+
+                            App.ui.setDataType(dataType);
+
+                            App.ui.makeLayersList(
+                                App.options.activeName.split('/').slice(-1)[0],
+                                App.options.activeFeature,
+                                App.options.collections[regionName][collectionName].periods[dataType]);
+
+                        },
+                    });
+
+                    App.ui.form.panelDataType.widgets()
+                        .set(1, App.ui.form.selectDataType);
 
                     App.ui.loadingBox();
                 },
@@ -728,6 +793,7 @@ var App = {
                     'stretch': 'horizontal'
                 }
             });
+
 
             App.ui.form.panelCollection.widgets()
                 .set(1, App.ui.form.selectCollection);
@@ -772,14 +838,14 @@ var App = {
                         App.ui.form.panelStates.remove(App.ui.form.selectStates);
                         ee.Number(1).evaluate(
                             function (a) {
-                                var collectioName = App.ui.form.selectCollection.getValue();
+                                var collectionName = App.ui.form.selectCollection.getValue();
 
                                 App.ui.loadTable(tableName);
 
                                 App.ui.makeLayersList(
                                     tableName.split('/').slice(-1)[0],
                                     App.options.activeFeature,
-                                    App.options.collections[regionName][collectioName]
+                                    App.options.collections[regionName][collectionName]
                                         .periods[App.options.dataType]
                                 );
 
@@ -1409,25 +1475,12 @@ var App = {
             }),
 
             selectDataType: ui.Select({
-                'items': ['Coverage', 'Transitions'],
-                'placeholder': 'Coverage',
+                'items': ['None'],
+                'placeholder': 'None',
                 'style': {
                     'stretch': 'horizontal'
                 },
                 'disabled': true,
-                'onChange': function (dataType) {
-
-                    var regionName = App.ui.form.selectRegion.getValue();
-                    var collectionName = App.ui.form.selectCollection.getValue();
-
-                    App.ui.setDataType(dataType);
-
-                    App.ui.makeLayersList(
-                        App.options.activeName.split('/').slice(-1)[0],
-                        App.options.activeFeature,
-                        App.options.collections[regionName][collectionName].periods[dataType]);
-
-                },
             }),
 
             selectBuffer: ui.Select({
