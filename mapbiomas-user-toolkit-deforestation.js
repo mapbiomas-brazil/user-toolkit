@@ -10,20 +10,7 @@
  *      contato@mapbiomas.org
  *
  * @version
- *    1.0.0 - Acess and download data using user's vector
- *    1.1.0 - Updated to collection 4.0
- *    1.1.1 - Updated assets
- *    1.1.2 - Fix minor issues
- *    1.1.3 - Update transitions data
- *    1.1.4 - Update transitions data to collection 4.1
- *    1.2.0 - Loads mapbiomas-brazil collection 3.1
- *          - Loads mapbiomas-brazil collection 4.0
- *          - Laods mapbiomas-chaco collection 1.0
- *          - Loads mapbiomas-amazon collection 1.0
- *          - Updated mapbiomas-amazon collection 2.0
- *    1.3.0 - Loads mapbiomas-brazil collection 5.0
- *          - Export a csv file with areas per classe and year
- *    1.3.1 - Loads mapbiomas-brazil collection 5.0 - Deforestation and Regenerartion
+ *    1.0.0 - 
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -32,6 +19,7 @@
 
 var palettes = require('users/mapbiomas/modules:Palettes.js');
 var logos = require('users/mapbiomas/modules:Logos.js');
+var mapp = require('users/joaovsiqueira1/packages:Mapp.js');
 
 /**
  * @description
@@ -94,10 +82,15 @@ var Area = {
             });
 
         territotiesData = ee.List(territotiesData.get('groups'));
-        print(territotiesData);
+
         var areas = territotiesData.map(Area.convert2table);
 
-        areas = ee.FeatureCollection(areas).flatten();
+        areas = ee.FeatureCollection(areas).flatten()
+            .map(
+                function (feature) {
+                    return feature.set("unit", object.unit)
+                }
+            );
 
         return areas;
     }
@@ -111,7 +104,7 @@ var App = {
 
     options: {
 
-        version: '1.3.1',
+        version: '1.0.0',
 
         logo: logos.mapbiomas,
 
@@ -151,28 +144,28 @@ var App = {
                 'projects/mapbiomas-workspace/AUXILIAR/estados-2017',
                 // 'projects/mapbiomas-workspace/AUXILIAR/municipios-2016',
                 'projects/mapbiomas-workspace/AUXILIAR/biomas-2019',
-                'projects/mapbiomas-workspace/AUXILIAR/biomas-antigo',
                 'projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-1',
                 'projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-2',
                 'projects/mapbiomas-workspace/AUXILIAR/areas-protegidas',
             ],
-            'mapbiomas-amazon': [
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/limite-raisg-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/biomas-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/cuencas-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/departamentos-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/paises-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-tis-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-nacionales-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-departamentales-2',
-            ],
-            'mapbiomas-chaco': [
-                'projects/mapbiomas-chaco/DATOS_AUXILIARES/VECTORES/biomas-paises',
-                'projects/mapbiomas-chaco/DATOS_AUXILIARES/VECTORES/departamentos-estados',
-                'projects/mapbiomas-chaco/DATOS_AUXILIARES/VECTORES/limite-operativo-chaco',
-                'projects/mapbiomas-chaco/DATOS_AUXILIARES/VECTORES/provincias-municipios',
+            // 'mapbiomas-amazon': [
+            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/limite-raisg-2',
+            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/biomas-2',
+            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/cuencas-2',
+            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/departamentos-2',
+            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/paises-2',
+            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-tis-2',
+            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-nacionales-2',
+            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-departamentales-2',
+            // ],
+            // 'mapbiomas-chaco': [
+            //     'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/paises',
+            //     'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/limite-chaco',
+            //     'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/departamentos',
+            //     'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/provincias',
+            //     'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/biomas',
 
-            ],
+            // ],
             // 'mapbiomas-indonesia': [
 
             // ],
@@ -180,147 +173,17 @@ var App = {
 
         collections: {
             'mapbiomas-brazil': {
-                'collection-3.1': {
-                    'assets': {
-                        'integration': 'projects/mapbiomas-workspace/public/collection3_1/mapbiomas_collection31_integration_v1',
-                        'transitions': 'projects/mapbiomas-workspace/public/collection3_1/mapbiomas_collection31_transitions_v1',
-                    },
-                    'periods': {
-                        'Coverage': [
-                            '1985', '1986', '1987', '1988',
-                            '1989', '1990', '1991', '1992',
-                            '1993', '1994', '1995', '1996',
-                            '1997', '1998', '1999', '2000',
-                            '2001', '2002', '2003', '2004',
-                            '2005', '2006', '2007', '2008',
-                            '2009', '2010', '2011', '2012',
-                            '2013', '2014', '2015', '2016',
-                            '2017'
-                        ],
-                        'Transitions': [
-                            "1985_1986", "1986_1987", "1987_1988", "1988_1989",
-                            "1989_1990", "1990_1991", "1991_1992", "1992_1993",
-                            "1993_1994", "1994_1995", "1995_1996", "1996_1997",
-                            "1997_1998", "1998_1999", "1999_2000", "2000_2001",
-                            "2001_2002", "2002_2003", "2003_2004", "2004_2005",
-                            "2005_2006", "2006_2007", "2007_2008", "2008_2009",
-                            "2009_2010", "2010_2011", "2011_2012", "2012_2013",
-                            "2013_2014", "2014_2015", "2015_2016", "2016_2017",
-                            "1985_1990", "1990_1995", "1995_2000", "2000_2005",
-                            "2005_2010", "2010_2015", "2015_2017", "1990_2000",
-                            "2000_2010", "2010_2017", "1985_2017", "2008_2017",
-                            "2012_2017", "1994_2002", "2002_2010", "2010_2016"
-                        ]
-                    },
-                    'dataType': ['Coverage', 'Transitions']
-                },
-                'collection-4.0': {
-                    'assets': {
-                        'integration': 'projects/mapbiomas-workspace/public/collection4/mapbiomas_collection40_integration_v1',
-                        'transitions': 'projects/mapbiomas-workspace/public/collection4/mapbiomas_collection40_transitions_v3',
-                    },
-                    'periods': {
-                        'Coverage': [
-                            '1985', '1986', '1987', '1988',
-                            '1989', '1990', '1991', '1992',
-                            '1993', '1994', '1995', '1996',
-                            '1997', '1998', '1999', '2000',
-                            '2001', '2002', '2003', '2004',
-                            '2005', '2006', '2007', '2008',
-                            '2009', '2010', '2011', '2012',
-                            '2013', '2014', '2015', '2016',
-                            '2017', '2018'
-                        ],
-                        'Transitions': [
-                            "1985_1986", "1986_1987", "1987_1988", "1988_1989",
-                            "1989_1990", "1990_1991", "1991_1992", "1992_1993",
-                            "1993_1994", "1994_1995", "1995_1996", "1996_1997",
-                            "1997_1998", "1998_1999", "1999_2000", "2000_2001",
-                            "2001_2002", "2002_2003", "2003_2004", "2004_2005",
-                            "2005_2006", "2006_2007", "2007_2008", "2008_2009",
-                            "2009_2010", "2010_2011", "2011_2012", "2012_2013",
-                            "2013_2014", "2014_2015", "2015_2016", "2016_2017",
-                            "2017_2018", "1985_1990", "1990_1995", "1995_2000",
-                            "2000_2005", "2005_2010", "2010_2015", "2015_2018",
-                            "1990_2000", "2000_2010", "2010_2018", "1985_2018",
-                            "2008_2017", "2012_2018", "1994_2002", "2002_2010",
-                            "2010_2016", "2008_2018", "1986_2015", "2001_2016"
-                        ]
-                    },
-                    'dataType': ['Coverage', 'Transitions']
-                },
-                'collection-4.1': {
-                    'assets': {
-                        'integration': 'projects/mapbiomas-workspace/public/collection4_1/mapbiomas_collection41_integration_v1',
-                        'transitions': 'projects/mapbiomas-workspace/public/collection4_1/mapbiomas_collection41_transitions_v1',
-                    },
-                    'periods': {
-                        'Coverage': [
-                            '1985', '1986', '1987', '1988',
-                            '1989', '1990', '1991', '1992',
-                            '1993', '1994', '1995', '1996',
-                            '1997', '1998', '1999', '2000',
-                            '2001', '2002', '2003', '2004',
-                            '2005', '2006', '2007', '2008',
-                            '2009', '2010', '2011', '2012',
-                            '2013', '2014', '2015', '2016',
-                            '2017', '2018'
-                        ],
-                        'Transitions': [
-                            "1985_1986", "1986_1987", "1987_1988", "1988_1989",
-                            "1989_1990", "1990_1991", "1991_1992", "1992_1993",
-                            "1993_1994", "1994_1995", "1995_1996", "1996_1997",
-                            "1997_1998", "1998_1999", "1999_2000", "2000_2001",
-                            "2001_2002", "2002_2003", "2003_2004", "2004_2005",
-                            "2005_2006", "2006_2007", "2007_2008", "2008_2009",
-                            "2009_2010", "2010_2011", "2011_2012", "2012_2013",
-                            "2013_2014", "2014_2015", "2015_2016", "2016_2017",
-                            "2017_2018", "1985_1990", "1990_1995", "1995_2000",
-                            "2000_2005", "2005_2010", "2010_2015", "2015_2018",
-                            "1990_2000", "2000_2010", "2010_2018", "1985_2018",
-                            "2008_2017", "2012_2018", "1994_2002", "2002_2010",
-                            "2010_2016", "2008_2018", "1986_2015", "2001_2016"
-                        ]
-                    },
-                    'dataType': ['Coverage', 'Transitions']
-                },
                 'collection-5.0': {
-                    'assets': {
-                        'integration': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_integration_v1',
-                        'transitions': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_transitions_v1',
+                    'assets': { //TODO: Inserir os assets públicos
                         'deforestation_regeneration': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_deforestation_regeneration_v1',
+                        // 'deforestation_pv': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_deforestation_primary_vegetation_v1',
+                        // 'deforestation_sv': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_deforestation_secondary_vegetation_v1',
+                        // 'secondary_vegetation': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_secondary_vegetation_v1',
+                        // 'secondary_vegetation_age': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_secondary_vegetation_age_v1',
                     },
 
                     'periods': {
-                        'Coverage': [
-                            '1985', '1986', '1987', '1988',
-                            '1989', '1990', '1991', '1992',
-                            '1993', '1994', '1995', '1996',
-                            '1997', '1998', '1999', '2000',
-                            '2001', '2002', '2003', '2004',
-                            '2005', '2006', '2007', '2008',
-                            '2009', '2010', '2011', '2012',
-                            '2013', '2014', '2015', '2016',
-                            '2017', '2018', '2019'
-                        ],
-                        'Transitions': [
-                            "1985_1986", "1986_1987", "1987_1988", "1988_1989",
-                            "1989_1990", "1990_1991", "1991_1992", "1992_1993",
-                            "1993_1994", "1994_1995", "1995_1996", "1996_1997",
-                            "1997_1998", "1998_1999", "1999_2000", "2000_2001",
-                            "2001_2002", "2002_2003", "2003_2004", "2004_2005",
-                            "2005_2006", "2006_2007", "2007_2008", "2008_2009",
-                            "2009_2010", "2010_2011", "2011_2012", "2012_2013",
-                            "2013_2014", "2014_2015", "2015_2016", "2016_2017",
-                            "2017_2018", "2018_2019", "1985_1990", "1990_1995",
-                            "1995_2000", "2000_2005", "2005_2010", "2010_2015",
-                            "2015_2019", "1990_2000", "2000_2010", "2010_2019",
-                            "1985_2019", "2008_2019", "2012_2019", "1994_2002",
-                            "2002_2010", "2010_2016", "1990_2008", "1990_2019",
-                            "2000_2019", "2008_2018", "1986_2015", "2001_2016",
-                            "1996_2015"
-                        ],
-                        'Deforestation_Regeneration': [
+                        'deforestation_regeneration': [
                             '1988', '1989', '1990', '1991',
                             '1992', '1993', '1994', '1995',
                             '1996', '1997', '1998', '1999',
@@ -328,270 +191,231 @@ var App = {
                             '2004', '2005', '2006', '2007',
                             '2008', '2009', '2010', '2011',
                             '2012', '2013', '2014', '2015',
-                            '2016', '2017'
+                            '2016', '2017',
                         ],
-                    },
-
-                    'dataType': ['Coverage', 'Transitions', 'Deforestation_Regeneration']
-                },
-            },
-            'mapbiomas-amazon': {
-                'collection-1.0': {
-                    'assets': {
-                        'integration': 'projects/mapbiomas-raisg/public/collection1/mapbiomas_raisg_panamazonia_collection1_integration_v1',
-                        'transitions': 'projects/mapbiomas-raisg/public/collection1/mapbiomas_raisg_panamazonia_collection1_transitions_v1',
-                    },
-                    'periods': {
-                        'Coverage': [
+                        'secondary_vegetation': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
                             '2000', '2001', '2002', '2003',
                             '2004', '2005', '2006', '2007',
                             '2008', '2009', '2010', '2011',
                             '2012', '2013', '2014', '2015',
-                            '2016', '2017'
+                            '2016', '2017',
                         ],
-                        'Transitions': [
-                            "2000_2001", "2001_2002", "2002_2003", "2003_2004",
-                            "2004_2005", "2005_2006", "2006_2007", "2007_2008",
-                            "2008_2009", "2009_2010", "2010_2011", "2011_2012",
-                            "2012_2013", "2013_2014", "2014_2015", "2015_2016",
-                            "2016_2017", "2000_2005", "2005_2010", "2010_2015",
-                            "2015_2017", "2000_2010", "2010_2017", "2000_2017"
-                        ]
-                    },
-                    'dataType': ['Coverage', 'Transitions']
-                },
-                'collection-2.0': {
-                    'assets': {
-                        'integration': 'projects/mapbiomas-raisg/public/collection2/mapbiomas_raisg_panamazonia_collection2_integration_v2',
-                        'transitions': 'projects/mapbiomas-raisg/public/collection2/mapbiomas_raisg_panamazonia_collection2_transitions_v2',
-                    },
-                    'periods': {
-                        'Coverage': [
-                            '1985', '1986', '1987', '1988',
-                            '1989', '1990', '1991', '1992',
-                            '1993', '1994', '1995', '1996',
-                            '1997', '1998', '1999', '2000',
-                            '2001', '2002', '2003', '2004',
-                            '2005', '2006', '2007', '2008',
-                            '2009', '2010', '2011', '2012',
-                            '2013', '2014', '2015', '2016',
-                            '2017', '2018'
+                        'secondary_vegetation_age': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017',
                         ],
-                        'Transitions': [
-                            "1985_1986", "1986_1987", "1987_1988", "1988_1989",
-                            "1989_1990", "1990_1991", "1991_1992", "1992_1993",
-                            "1993_1994", "1994_1995", "1995_1996", "1996_1997",
-                            "1997_1998", "1998_1999", "1999_2000", "2000_2001",
-                            "2001_2002", "2002_2003", "2003_2004", "2004_2005",
-                            "2005_2006", "2006_2007", "2007_2008", "2008_2009",
-                            "2009_2010", "2010_2011", "2011_2012", "2012_2013",
-                            "2013_2014", "2014_2015", "2015_2016", "2016_2017",
-                            "2017_2018", "1985_1990", "1990_1995", "1995_2000",
-                            "2000_2005", "2005_2010", "2010_2015", "2015_2018",
-                            "1990_2000", "2000_2010", "2010_2018", "1985_2018",
-                            "2008_2017", "2012_2018", "1994_2002", "2002_2010",
-                            "2010_2016", "2008_2018", "1986_2015", "2000_2018"
-                        ]
-                    },
-                    'dataType': ['Coverage', 'Transitions']
-                },
-            },
-            'mapbiomas-chaco': {
-                'collection-1.0': {
-                    'assets': {
-                        'integration': 'projects/mapbiomas-chaco/public/collection1/mapbiomas_chaco_collection1_integration_v1',
-                        'transitions': 'projects/mapbiomas-chaco/public/collection1/mapbiomas_chaco_collection1_transitions_v1',
-                    },
-                    'periods': {
-                        'Coverage': [
-                            '2010', '2011', '2012', '2013',
-                            '2014', '2015', '2016', '2017',
+                        'deforestation_sv': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017',
                         ],
-                        'Transitions': [
-                            "2010_2011", "2011_2012", "2012_2013", "2013_2014",
-                            "2014_2015", "2015_2016", "2016_2017", "2010_2017",
-                            "2013_2017"
-                        ]
+                        'deforestation_pv': [
+                            'deforestation_pv_year'
+                        ],
+
+
                     },
-                    'dataType': ['Coverage', 'Transitions']
                 },
             },
 
-            'mapbiomas-indonesia': {
-                'collection-1.0': {
-                },
-            },
+            // 'mapbiomas-amazon': {
 
-            'mapbiomas-antlantic-forest': {
-                'collection-1.0': {
-                },
-            },
+            // },
+            // 'mapbiomas-chaco': {
 
-            'mapbiomas-pampa': {
-                'collection-1.0': {
-                },
-            },
+            // },
+
+            // 'mapbiomas-indonesia': {
+            //     'collection-1.0': {
+            //     },
+            // },
+
+            // 'mapbiomas-antlantic-forest': {
+            //     'collection-1.0': {
+            //     },
+            // },
+
+            // 'mapbiomas-pampa': {
+            //     'collection-1.0': {
+            //     },
+            // },
         },
 
-        bandsNames: {
-            'Coverage': 'classification_',
-            'Transitions': 'transition_',
-            'Deforestation_Regeneration': 'classification_'
+        bandsNames: { //TODO: ajustar o nome das bandas no asset publico
+            'deforestation_regeneration': 'classification_',
+            'deforestation_pv': '',
+            'deforestation_sv': 'deforestation_sv_',
+            'secondary_vegetation': 'product_',//'secondary_vegetation_',
+            'secondary_vegetation_age': 'secondary_vegetation_age_'
         },
 
-        dataType: 'Coverage',
+        dataType: 'deforestation_pv',
 
         data: {
-            'Coverage': null,
-            'Transitions': null,
-            'Deforestation_Regeneration': null,
+            'deforestation_regeneration': null,
+            'deforestation_pv': null,
+            'deforestation_sv': null,
+            'secondary_vegetation': null,
+            'secondary_vegetation_age': null
         },
 
         fileDimensions: {
-            'Coverage': 256 * 512,
-            'Transitions': 256 * 124,
-            'Deforestation_Regeneration': 256 * 512,
+            'deforestation_regeneration': 256 * 124,
+            'deforestation_pv': 256 * 124,
+            'deforestation_sv': 256 * 512,
+            'secondary_vegetation': 256 * 512,
+            'secondary_vegetation_age': 256 * 512,
         },
 
         ranges: {
-            'Coverage': {
+            'deforestation_pv': {
+                'min': 1988,
+                'max': 2019
+            },
+            'deforestation_sv': {
                 'min': 0,
-                'max': 45
+                'max': 30 //TODO: ajustar os params min e max para visualização
             },
-            'Transitions': {
-                'min': -2,
-                'max': 3
-            },
-            'Deforestation_Regeneration': {
+            'secondary_vegetation': {
                 'min': 0,
-                'max': 6
+                'max': 1
             },
+            'secondary_vegetation_age': {
+                'min': 0,
+                'max': 30
+            },
+            'deforestation_regeneration': {
+                'min': 0,
+                'max': 7
+            },
+        },
+
+        palette: { //TODO: Criar paleta de cores para visualização
+            'deforestation_pv': [
+                '#fff5f0',
+                '#fee0d2',
+                '#fcbba1',
+                '#fc9272',
+                '#fb6a4a',
+                '#ef3b2c',
+                '#cb181d',
+                '#a50f15',
+                '#67000d'
+            ],
+
+            'deforestation_sv': [
+                '#fff5f0',
+                '#fee0d2',
+                '#fcbba1',
+                '#fc9272',
+                '#fb6a4a',
+                '#ef3b2c',
+                '#cb181d',
+                '#a50f15',
+                '#67000d'
+            ],
+
+            'secondary_vegetation': palettes.get('classification5'),
+
+            'secondary_vegetation_age': [
+                '#ffffe5',
+                '#f7fcb9',
+                '#d9f0a3',
+                '#addd8e',
+                '#78c679',
+                '#41ab5d',
+                '#238443',
+                '#006837',
+                '#004529'
+            ],
+
+            'deforestation_regeneration': [
+                "#212121", // [0] Outros
+                "#fffbc2", // [1] Antrópico
+                "#09611f", // [2] Vegetação primária
+                "#4ea376", // [3] Vegetação secundária
+                "#e31a1c", // [4] Antropismo em vegetação primária
+                "#94fc03", // [5] Recuperação para veg secundaria
+                "#ffa500", // [6] Antropismo em vegetação secundária
+                "#212121", // [7] Não se aplica  
+            ],
+
         },
 
         vector: null,
         activeFeature: null,
         activeName: '',
 
-        palette: {
-            'Coverage': palettes.get('classification5'),
-            'Transitions': ['ffa500', 'ff0000', '818181', '06ff00', '4169e1', '8a2be2']
-        },
-
         taskid: 1,
 
         bufferDistance: 0,
 
-        transitionsCodes: [{
-            name: "1. Floresta",
-            noChange: [1, 2, 3, 4, 5, 6, 7, 8],
-            upVeg: [],
-            downVeg: [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
-            downWater: [],
-            upWater: [26, 33, 31],
-            upPlantacao: [9],
-            ignored: [27]
-        },
-        {
-            name: "2. Formações Naturais não Florestais",
-            noChange: [10, 11, 12, 13],
-            upVeg: [],
-            downVeg: [14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
-            downWater: [],
-            upWater: [26, 33, 31],
-            upPlantacao: [9],
-            ignored: [27, 1, 2, 3, 4, 5, 6, 7, 8]
-        },
-        {
-            name: "3. Uso Agropecuário",
-            noChange: [14, 15, 16, 17, 18, 19, 20, 21, 28],
-            upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
-            downVeg: [],
-            downWater: [],
-            upWater: [26, 31, 33],
-            upPlantacao: [9],
-            ignored: [27, 22, 23, 24, 25, 29, 30]
-        },
-        {
-            name: "4.Áreas não vegetadas",
-            noChange: [22, 23, 24, 25, 29, 30],
-            upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
-            downVeg: [],
-            downWater: [],
-            upWater: [26, 31, 33],
-            upPlantacao: [9],
-            ignored: [27, 14, 15, 18, 19, 20, 21, 28],
-        },
-        {
-            name: "5. Corpos Dágua",
-            noChange: [26, 31, 33],
-            upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
-            downVeg: [],
-            downWater: [14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
-            upWater: [],
-            upPlantacao: [9],
-            ignored: [27]
-        },
-        {
-            name: "Plantacao Florestal",
-            noChange: [9],
-            upVeg: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 32],
-            downVeg: [],
-            downWater: [14, 15, 18, 19, 20, 21, 28, 22, 23, 24, 25, 29, 30],
-            upWater: [26, 31, 33],
-            upPlantacao: [],
-            ignored: [27]
-        },
-        {
-            name: "6. Não observado",
-            noChange: [27],
-            upVeg: [],
-            downVeg: [],
-            downWater: [],
-            upWater: [],
-            upPlantacao: [],
-            ignored: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 28, 22, 23, 24, 25, 26, 28, 29, 30, 31, 32, 33]
-        }
-        ],
-
         className: {
-            1: "Forest",
-            2: "Natural Forest",
-            3: "Forest Formation",
-            4: "Savanna Formation",
-            5: "Magrove",
-            9: "Forest Plantation",
-            10: "Non Forest Natural Formation",
-            11: "Wetland",
-            12: "Grassland",
-            32: "Salt flat",
-            29: "Rocky outcrop",
-            13: "Other Non Forest Natural Formation",
-            14: "Farming",
-            15: "Pasture",
-            18: "Agriculture",
-            19: "Temporary Crops",
-            39: "Soy Beans",
-            20: "Sugar Cane",
-            40: "Rice",
-            41: "Mosaic of Crops",
-            42: "Coffe",
-            43: "Citrus",
-            44: "Cashew",
-            45: "Other",
-            36: "Perennial Crops",
-            21: "Mosaic of Agriculture and Pasture",
-            22: "Non vegetated area",
-            24: "Urban Infrastructure",
-            30: "Mining",
-            23: "Beach and Dune",
-            25: "Other Non Vegetated Area",
-            26: "Water",
-            33: "River, Lake and Ocean",
-            37: "Artificial Water Body",
-            38: "Water Reservoirs",
-            31: "Aquaculture",
-            27: "Non Observed",
-            0: "Non Observed",
+
+            'deforestation_regeneration': {
+                0: 'Other',
+                1: 'Anthropic',
+                2: 'Primary Vegetation',
+                3: 'Secondary Vegetation',
+                4: 'Deforestation in  Primary Vegetation',
+                5: 'Secondary Vegetation Regrowth',
+                6: 'Deforestation in  Secondary Vegetation',
+                7: 'Not applied',
+            },
+            'classification': {
+                1: "Forest",
+                2: "Natural Forest",
+                3: "Forest Formation",
+                4: "Savanna Formation",
+                5: "Magrove",
+                9: "Forest Plantation",
+                10: "Non Forest Natural Formation",
+                11: "Wetland",
+                12: "Grassland",
+                32: "Salt flat",
+                29: "Rocky outcrop",
+                13: "Other Non Forest Natural Formation",
+                14: "Farming",
+                15: "Pasture",
+                18: "Agriculture",
+                19: "Temporary Crops",
+                39: "Soy Beans",
+                20: "Sugar Cane",
+                40: "Rice",
+                41: "Mosaic of Crops",
+                42: "Coffe",
+                43: "Citrus",
+                44: "Cashew",
+                45: "Other",
+                36: "Perennial Crops",
+                21: "Mosaic of Agriculture and Pasture",
+                22: "Non vegetated area",
+                24: "Urban Infrastructure",
+                30: "Mining",
+                23: "Beach and Dune",
+                25: "Other Non Vegetated Area",
+                26: "Water",
+                33: "River, Lake and Ocean",
+                37: "Artificial Water Body",
+                38: "Water Reservoirs",
+                31: "Aquaculture",
+                27: "Non Observed",
+                0: "Non Observed",
+            }
         },
     },
 
@@ -609,23 +433,23 @@ var App = {
 
     startMap: function (year) {
 
-        Map.centerObject(App.options.data.Coverage, 5);
+        Map.centerObject(App.options.data.deforestation_regeneration, 5);
 
         var imageLayer = ui.Map.Layer({
-            'eeObject': App.options.data.Coverage,
+            'eeObject': App.options.data.deforestation_regeneration,
             'visParams': {
                 'bands': ['classification_' + year],
-                'palette': App.options.palette.Coverage,
-                'min': 0,
-                'max': 45,
+                'palette': App.options.palette.deforestation_regeneration,
+                'min': App.options.ranges.deforestation_regeneration.min,
+                'max': App.options.ranges.deforestation_regeneration.max,
                 'format': 'png'
             },
-            'name': year,
+            'name': 'Deforestation and Regeneration',
             'shown': true,
             'opacity': 1.0
         });
 
-        Map.clear();
+        App.ui.clear();
 
         Map.add(imageLayer);
 
@@ -660,59 +484,22 @@ var App = {
         return formated;
     },
 
-    remapTransitions: function (image) {
-        var oldValues = [];
-        var newValues = [];
-
-        App.options.transitionsCodes.forEach(function (c1) {
-            c1.noChange.forEach(function (noChange1) {
-                c1.noChange.forEach(function (noChange2) {
-                    var oldValue = (noChange1 * 100) + noChange2;
-                    oldValues.push(oldValue);
-                    newValues.push(0);
-                });
-                c1.upVeg.forEach(function (upVeg2) {
-                    var oldValue = (noChange1 * 100) + upVeg2;
-                    oldValues.push(oldValue);
-                    newValues.push(1);
-                });
-                c1.downVeg.forEach(function (downVeg2) {
-                    var oldValue = (noChange1 * 100) + downVeg2;
-                    oldValues.push(oldValue);
-                    newValues.push(-1);
-                });
-                c1.downWater.forEach(function (downWater2) {
-                    var oldValue = (noChange1 * 100) + downWater2;
-                    oldValues.push(oldValue);
-                    newValues.push(-2);
-                });
-                c1.upWater.forEach(function (upWater2) {
-                    var oldValue = (noChange1 * 100) + upWater2;
-                    oldValues.push(oldValue);
-                    newValues.push(2);
-                });
-                c1.upPlantacao.forEach(function (upPlantacao2) {
-                    var oldValue = (noChange1 * 100) + upPlantacao2;
-                    oldValues.push(oldValue);
-                    newValues.push(3);
-                });
-                c1.ignored.forEach(function (ignored2) {
-                    var oldValue = (noChange1 * 100) + ignored2;
-                    oldValues.push(oldValue);
-                    newValues.push(0);
-                });
-            });
-        });
-
-        return image.remap(oldValues, newValues).rename(image.bandNames());
-    },
-
     ui: {
 
         init: function () {
 
             this.form.init();
 
+        },
+
+        clear: function () {
+            Map.clear();
+
+            Map.setOptions({
+                'styles': {
+                    'Dark': mapp.getStyle('Dark')
+                }
+            });
         },
 
         setMapbiomasRegion: function (regionName) {
@@ -732,60 +519,34 @@ var App = {
 
             App.ui.form.selectCollection.setPlaceholder('loading collections...');
 
-
             App.ui.form.selectCollection = ui.Select({
                 'items': Object.keys(App.options.collections[regionName]).reverse(),
                 'placeholder': 'select collection',
-                'onChange': function (collectionName) {
-
-                    var assetInteg = App.options.collections[regionName][collectionName].assets.integration;
-                    var assetTrans = App.options.collections[regionName][collectionName].assets.transitions;
-                    var assetDefor = App.options.collections[regionName][collectionName].assets.deforestation_regeneration;
-
+                'onChange': function (collectioName) {
                     ee.Number(1).evaluate(
                         function (a) {
-                            App.options.data.Coverage = ee.Image(assetInteg);
+                            // App.options.data.deforestation_pv = ee.Image(
+                            //     App.options.collections[regionName][collectioName].assets.deforestation_pv);
 
-                            App.options.data.Transitions = ee.Image(assetTrans);
+                            // App.options.data.deforestation_sv = ee.Image(
+                            //     App.options.collections[regionName][collectioName].assets.deforestation_sv);
 
-                            if (assetDefor !== undefined) {
-                                App.options.data.Deforestation_Regenerartion = ee.Image(assetDefor);
-                            }
+                            // App.options.data.secondary_vegetation = ee.Image(
+                            //     App.options.collections[regionName][collectioName].assets.secondary_vegetation);
 
-                            var year = App.options.collections[regionName][collectionName].periods.Coverage.slice(-1)[0];
+                            // App.options.data.secondary_vegetation_age = ee.Image(
+                            //     App.options.collections[regionName][collectioName].assets.secondary_vegetation_age);
+
+                            App.options.data.deforestation_regeneration = ee.Image(
+                                App.options.collections[regionName][collectioName].assets.deforestation_regeneration)
+                                .divide(100).byte();
+
+                            var year = App.options.collections[regionName][collectioName]
+                                .periods.secondary_vegetation.slice(-1)[0];
 
                             App.startMap(year);
-
-
                         }
                     );
-
-                    print(App.options.collections[regionName][collectionName].dataType);
-
-                    App.ui.form.selectDataType = ui.Select({
-                        'items': App.options.collections[regionName][collectionName].dataType,
-                        'placeholder': 'Coverage',
-                        'style': {
-                            'stretch': 'horizontal'
-                        },
-                        'disabled': true,
-                        'onChange': function (dataType) {
-
-                            var regionName = App.ui.form.selectRegion.getValue();
-                            var collectionName = App.ui.form.selectCollection.getValue();
-
-                            App.ui.setDataType(dataType);
-
-                            App.ui.makeLayersList(
-                                App.options.activeName.split('/').slice(-1)[0],
-                                App.options.activeFeature,
-                                App.options.collections[regionName][collectionName].periods[dataType]);
-
-                        },
-                    });
-
-                    App.ui.form.panelDataType.widgets()
-                        .set(1, App.ui.form.selectDataType);
 
                     App.ui.loadingBox();
                 },
@@ -793,7 +554,6 @@ var App = {
                     'stretch': 'horizontal'
                 }
             });
-
 
             App.ui.form.panelCollection.widgets()
                 .set(1, App.ui.form.selectCollection);
@@ -838,14 +598,14 @@ var App = {
                         App.ui.form.panelStates.remove(App.ui.form.selectStates);
                         ee.Number(1).evaluate(
                             function (a) {
-                                var collectionName = App.ui.form.selectCollection.getValue();
+                                var collectioName = App.ui.form.selectCollection.getValue();
 
                                 App.ui.loadTable(tableName);
 
                                 App.ui.makeLayersList(
                                     tableName.split('/').slice(-1)[0],
                                     App.options.activeFeature,
-                                    App.options.collections[regionName][collectionName]
+                                    App.options.collections[regionName][collectioName]
                                         .periods[App.options.dataType]
                                 );
 
@@ -879,7 +639,7 @@ var App = {
 
             Map.centerObject(App.options.activeFeature);
 
-            Map.clear();
+            App.ui.clear();
 
             Map.addLayer(App.options.activeFeature.style({
                 color: 'ff0000',
@@ -899,7 +659,7 @@ var App = {
 
             Map.centerObject(App.options.activeFeature);
 
-            Map.clear();
+            App.ui.clear();
 
             Map.addLayer(App.options.activeFeature.style({
                 color: 'ff0000',
@@ -1005,7 +765,7 @@ var App = {
 
             Map.centerObject(App.options.activeFeature);
 
-            Map.clear();
+            App.ui.clear();
 
             Map.addLayer(App.options.activeFeature.style({
                 color: 'ff0000',
@@ -1024,12 +784,8 @@ var App = {
                 .select([App.options.bandsNames[App.options.dataType] + period])
                 .clip(region);
 
-            if (App.options.dataType == 'Transitions') {
-                image = App.remapTransitions(image);
-            }
-
             var imageLayer = ui.Map.Layer({
-                'eeObject': image,
+                'eeObject': image.selfMask(),
                 'visParams': {
                     'palette': App.options.palette[App.options.dataType],
                     'min': App.options.ranges[App.options.dataType].min,
@@ -1183,11 +939,12 @@ var App = {
                         "geometry": geometry,
                         "scale": 30,
                         "factor": 1000000,
+                        "unit": 'kilometers^2'
                     });
 
                     area = ee.FeatureCollection(area).map(
                         function (feature) {
-                            var className = ee.Dictionary(App.options.className)
+                            var className = ee.Dictionary(App.options.className[App.options.dataType])
                                 .get(feature.get('class'));
 
                             return feature.set('class_name', className).set('band', band);
@@ -1199,7 +956,7 @@ var App = {
             );
 
             areas = ee.FeatureCollection(areas).flatten();
-            print(areas);
+            // print(areas);
 
             var tableName = [regionName, collectionName, featureName, 'area'].join('-');
 
@@ -1222,6 +979,7 @@ var App = {
 
                 this.panelMain.add(this.panelLogo);
                 this.panelMain.add(this.labelTitle);
+                this.panelMain.add(this.labelSubtitle);
 
                 this.panelLogo.add(App.options.logo);
 
@@ -1365,6 +1123,12 @@ var App = {
                 'fontSize': '16px'
             }),
 
+            labelSubtitle: ui.Label('Deforestation and Regenerartion', {
+                // 'fontWeight': 'bold',
+                // 'padding': '1px',
+                'fontSize': '14px'
+            }),
+
             labelType: ui.Label('Type:', {
                 // 'padding': '1px',
                 'fontSize': '16px'
@@ -1428,10 +1192,10 @@ var App = {
 
             selectRegion: ui.Select({
                 'items': [
-                    'mapbiomas-amazon',
+                    // 'mapbiomas-amazon',
                     // 'mapbiomas-atlantic-forest',
                     'mapbiomas-brazil',
-                    'mapbiomas-chaco',
+                    // 'mapbiomas-chaco',
                     // 'mapbiomas-indonesia',
                     // 'mapbiomas-pampa',
                 ],
@@ -1475,12 +1239,31 @@ var App = {
             }),
 
             selectDataType: ui.Select({
-                'items': ['None'],
-                'placeholder': 'None',
+                'items': [
+                    // 'deforestation_pv',
+                    // 'deforestation_sv',
+                    // 'secondary_vegetation',
+                    // 'secondary_vegetation_age',
+                    'deforestation_regeneration'
+                ],
+                'placeholder': 'Data type',
                 'style': {
                     'stretch': 'horizontal'
                 },
                 'disabled': true,
+                'onChange': function (dataType) {
+
+                    var regionName = App.ui.form.selectRegion.getValue();
+                    var collectionName = App.ui.form.selectCollection.getValue();
+
+                    App.ui.setDataType(dataType);
+
+                    App.ui.makeLayersList(
+                        App.options.activeName.split('/').slice(-1)[0],
+                        App.options.activeFeature,
+                        App.options.collections[regionName][collectionName].periods[dataType]);
+
+                },
             }),
 
             selectBuffer: ui.Select({
