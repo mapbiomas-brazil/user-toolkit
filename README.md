@@ -6,7 +6,7 @@
 
 # About
 
-User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial is about the script **mapbiomas-user-toolkit-download.js**
+User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial is about the script **mapbiomas-user-toolkit-lulc.js**
 
 # Release History
 
