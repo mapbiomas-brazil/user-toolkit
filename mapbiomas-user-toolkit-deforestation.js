@@ -20,6 +20,7 @@
 var palettes = require('users/mapbiomas/modules:Palettes.js');
 var logos = require('users/mapbiomas/modules:Logos.js');
 var mapp = require('users/joaovsiqueira1/packages:Mapp.js');
+var legend = require('users/joaovsiqueira1/packages:Legend.js');
 
 /**
  * @description
@@ -444,6 +445,26 @@ var App = {
                 0: "Non Observed",
             }
         },
+
+        legend: {
+            params: {
+                "title": 'Legend',
+                "layers": [
+                    ["#fffbc2", 1, 'Anthropic',],
+                    ["#09611f", 2, 'Primary Vegetation',],
+                    ["#4ea376", 3, 'Secondary Vegetation',],
+                    ["#e31a1c", 4, 'Deforestation in  Primary Vegetation',],
+                    ["#94fc03", 5, 'Secondary Vegetation Regrowth',],
+                    ["#ffa500", 6, 'Deforestation in  Secondary Vegetation',],
+                    ["#212121", 7, 'Not applied',],
+                ],
+                "style": {
+                    "backgroundColor": "#ffffff",
+                    "color": "#212121"
+                },
+                "orientation": "vertical"
+            }
+        }
     },
 
     init: function () {
@@ -565,8 +586,7 @@ var App = {
                             //     App.options.collections[regionName][collectioName].assets.secondary_vegetation_age);
 
                             App.options.data.deforestation_regeneration = ee.Image(
-                                App.options.collections[regionName][collectioName].assets.deforestation_regeneration)
-                                .divide(100).byte();
+                                App.options.collections[regionName][collectioName].assets.deforestation_regeneration);
 
                             var year = App.options.collections[regionName][collectioName]
                                 .periods.secondary_vegetation.slice(-1)[0];
@@ -809,6 +829,7 @@ var App = {
 
             var image = App.options.data[App.options.dataType]
                 .select([App.options.bandsNames[App.options.dataType] + period])
+                .divide(100).byte()
                 .clip(region);
 
             var imageLayer = ui.Map.Layer({
@@ -971,10 +992,20 @@ var App = {
 
                     area = ee.FeatureCollection(area).map(
                         function (feature) {
-                            var className = ee.Dictionary(App.options.className[App.options.dataType])
-                                .get(feature.get('class'));
 
-                            return feature.set('class_name', className).set('band', band);
+                            var defRegClass = ee.Number(feature.get('class')).divide(100).int16();
+                            var lulcClass = ee.Number(feature.get('class')).mod(100).int16();
+
+                            var defRegClassName = ee.Dictionary(App.options.className[App.options.dataType])
+                                .get(defRegClass);
+
+                            var lulcClassName = ee.Dictionary(App.options.className.classification)
+                                .get(lulcClass);
+
+                            return feature
+                                .set('class_name', defRegClassName)
+                                .set('lulc_class_name', lulcClassName)
+                                .set('band', band);
                         }
                     );
 
@@ -1032,6 +1063,8 @@ var App = {
                 this.panelBuffer.add(this.labelBuffer);
                 this.panelBuffer.add(this.selectBuffer);
 
+                this.panelLegend.add(legend.getLegend(App.options.legend.params));
+
                 // this.panelMain.add(this.panelType);
                 this.panelMain.add(this.panelRegion);
                 this.panelMain.add(this.panelCollection);
@@ -1040,6 +1073,7 @@ var App = {
                 this.panelMain.add(this.panelProperties);
                 this.panelMain.add(this.panelFeature);
                 this.panelMain.add(this.panelDataType);
+                this.panelMain.add(this.panelLegend);
                 this.panelMain.add(this.panelBuffer);
 
                 this.panelMain.add(this.labelLayers);
@@ -1114,6 +1148,14 @@ var App = {
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
                     'stretch': 'horizontal'
+                },
+            }),
+
+            panelLegend: ui.Panel({
+                'layout': ui.Panel.Layout.flow('vertical'),
+                'style': {
+                    'stretch': 'vertical',
+                    'position': 'bottom-left'
                 },
             }),
 
