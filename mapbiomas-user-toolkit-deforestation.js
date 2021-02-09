@@ -1007,6 +1007,7 @@ var App = {
                 this.panelMain.add(this.panelLogo);
                 this.panelMain.add(this.labelTitle);
                 this.panelMain.add(this.labelSubtitle);
+                this.panelMain.add(this.labelLink);
 
                 this.panelLogo.add(App.options.logo);
 
@@ -1155,6 +1156,14 @@ var App = {
                 // 'padding': '1px',
                 'fontSize': '14px'
             }),
+
+            labelLink: ui.Label('Legend codes', {
+                // 'fontWeight': 'bold',
+                // 'padding': '1px',
+                'fontSize': '10px'
+            },
+                'https://mapbiomas.org/codigos-de-legenda?cama_set_language=pt-BR'
+            ),
 
             labelType: ui.Label('Type:', {
                 // 'padding': '1px',
