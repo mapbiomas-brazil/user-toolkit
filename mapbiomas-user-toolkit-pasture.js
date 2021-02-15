@@ -202,7 +202,7 @@ var App = {
             'mapbiomas-brazil': {
                 'collection-5.0': {
                     'assets': { //TODO: Inserir os assets públicos
-                        'pasture_quality': 'projects/mapbiomas-workspace/TRANSVERSAIS/PECUARIA5-QUALITY',
+                        'pasture_quality': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_pasture_quality_v1',
                         // 'pasture': '',
                     },
 
@@ -249,7 +249,7 @@ var App = {
         },
 
         bandsNames: { //TODO: ajustar o nome das bandas no asset publico
-            'pasture_quality': 'b1',
+            'pasture_quality': 'pasture_quality',
 
         },
 
@@ -386,8 +386,8 @@ var App = {
         var imageLayer = ui.Map.Layer({
             'eeObject': App.options.data.pasture_quality,
             'visParams': {
-                'bands': ['b1'], // TODO: ajustar o nome das bandas
-                // 'bands': ['classification_' + year],
+                // 'bands': ['b1'], // TODO: ajustar o nome das bandas
+                'bands': ['pasture_quality_' + year],
                 'palette': App.options.palette.pasture_quality,
                 'min': App.options.ranges.pasture_quality.min,
                 'max': App.options.ranges.pasture_quality.max,
@@ -475,11 +475,11 @@ var App = {
                     ee.Number(1).evaluate(
                         function (a) {
 
+                            App.options.data.pasture_quality = ee.Image(
+                                App.options.collections[regionName][collectioName].assets.pasture_quality);
+
                             var year = App.options.collections[regionName][collectioName]
                                 .periods.pasture_quality.slice(-1)[0];
-
-                            App.options.data.pasture_quality = ee.Image(
-                                App.options.collections[regionName][collectioName].assets.pasture_quality + '/' + year + '-1');
 
                             App.startMap(year);
                         }
@@ -718,7 +718,7 @@ var App = {
 
 
             var image = App.options.data[App.options.dataType]
-                .select([App.options.bandsNames[App.options.dataType]])
+                .select([App.options.bandsNames[App.options.dataType] + '_' + period])
                 .clip(region);
 
             var imageLayer = ui.Map.Layer({
@@ -822,13 +822,13 @@ var App = {
                     var period = App.options.collections[regionName][collectionName]
                         .periods[App.options.dataType][i];
 
-                    var fileName = [regionName, collectionName, featureName, period].join('-');
+                    var fileName = [regionName, collectionName, App.options.dataType, featureName, period].join('-');
 
-                    fileName = fileName.replace(/--/g, '-').replace(/--/g, '-').replace('.', '');
+                    fileName = fileName.replace(/--/g, '-').replace(/--/g, '-').replace('.', '').replace('_', '-');
                     fileName = App.formatName(fileName);
 
                     var data = App.options.data[App.options.dataType]
-                        .select([App.options.bandsNames[App.options.dataType]/*  + period */]);
+                        .select([App.options.bandsNames[App.options.dataType] + '_' + period]);
 
                     var region = App.options.activeFeature.geometry();
 
@@ -853,7 +853,7 @@ var App = {
                         fileDimensions: App.options.fileDimensions[App.options.dataType],
                     });
 
-                    bandIds.push(App.options.bandsNames[App.options.dataType]/*  + period */);
+                    bandIds.push(App.options.bandsNames[App.options.dataType] + '_' + period);
                 }
             }
 
@@ -898,9 +898,9 @@ var App = {
             areas = ee.FeatureCollection(areas).flatten();
             // print(areas);
 
-            var tableName = [regionName, collectionName, featureName, 'area'].join('-');
+            var tableName = [regionName, collectionName, App.options.dataType, featureName, 'area'].join('-');
 
-            tableName = tableName.replace(/--/g, '-').replace(/--/g, '-').replace('.', '');
+            tableName = tableName.replace(/--/g, '-').replace(/--/g, '-').replace('.', '').replace('_', '-');
             tableName = App.formatName(tableName);
 
             Export.table.toDrive({
