@@ -44,7 +44,7 @@ var pixelArea = ee.Image.pixelArea().divide(1000000);
 var geometry = mapbiomas.geometry();
 
 /**
- * Convert a complex ob to feature collection
+ * Convert a complex obj to a feature collection
  * @param obj 
  */
 var convert2table = function (obj) {
@@ -85,7 +85,7 @@ var calculateArea = function (image, territory, geometry) {
 
     var reducer = ee.Reducer.sum().group(1, 'class').group(1, 'territory');
 
-    var territotiesData = pixelArea.addBands(territory).addBands(image)
+    var territoriesData = pixelArea.addBands(territory).addBands(image)
         .reduceRegion({
             reducer: reducer,
             geometry: geometry,
@@ -93,15 +93,16 @@ var calculateArea = function (image, territory, geometry) {
             maxPixels: 1e12
         });
 
-    territotiesData = ee.List(territotiesData.get('groups'));
+    territoriesData = ee.List(territoriesData.get('groups'));
 
-    var areas = territotiesData.map(convert2table);
+    var areas = territoriesData.map(convert2table);
 
     areas = ee.FeatureCollection(areas).flatten();
 
     return areas;
 };
 
+// Iterate over years, select the classification and calculate area
 var areas = years.map(
     function (year) {
         var image = mapbiomas.select('classification_' + year);
@@ -119,8 +120,10 @@ var areas = years.map(
     }
 );
 
+// Convert a collection of collections into a single collection
 areas = ee.FeatureCollection(areas).flatten();
 
+// Export a csv file to Google Drive
 Export.table.toDrive({
     collection: areas,
     description: 'areas-teste-toolkit',
