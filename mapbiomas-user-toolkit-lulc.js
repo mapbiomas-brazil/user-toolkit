@@ -24,6 +24,7 @@
  *    1.3.0 - Loads mapbiomas-brazil collection 5.0
  *          - Export a csv file with areas per classe and year
  *    1.3.1 - Loads mapbiomas-chaco collection 2.0
+ *    1.3.2 - Loads mapbiomas-brazil collection 5.0 quality
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -111,7 +112,7 @@ var App = {
 
     options: {
 
-        version: '1.3.1',
+        version: '1.3.2',
 
         logo: logos.mapbiomas,
 
@@ -311,6 +312,7 @@ var App = {
                     'assets': {
                         'integration': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_integration_v1',
                         'transitions': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_transitions_v1',
+                        'quality': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_quality_v1',
                     },
 
                     'periods': {
@@ -341,6 +343,17 @@ var App = {
                             "2002_2010", "2010_2016", "1990_2008", "1990_2019",
                             "2000_2019", "2008_2018", "1986_2015", "2001_2016",
                             "1996_2015"
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019'
                         ]
                     },
                 },
@@ -466,7 +479,8 @@ var App = {
 
         bandsNames: {
             'Coverage': 'classification_',
-            'Transitions': 'transition_'
+            'Transitions': 'transition_',
+            'Quality': 'quality_'
         },
 
         dataType: 'Coverage',
@@ -474,11 +488,13 @@ var App = {
         data: {
             'Coverage': null,
             'Transitions': null,
+            'Quality': null
         },
 
         fileDimensions: {
             'Coverage': 256 * 512,
             'Transitions': 256 * 124,
+            'Quality': 256 * 512,
         },
 
         ranges: {
@@ -490,6 +506,10 @@ var App = {
                 'min': -2,
                 'max': 3
             },
+            'Quality': {
+                'min': 1,
+                'max': 23
+            },
         },
 
         vector: null,
@@ -498,7 +518,8 @@ var App = {
 
         palette: {
             'Coverage': palettes.get('classification5'),
-            'Transitions': ['ffa500', 'ff0000', '818181', '06ff00', '4169e1', '8a2be2']
+            'Transitions': ['ffa500', 'ff0000', '818181', '06ff00', '4169e1', '8a2be2'],
+            'Quality': ['d73027', 'fef9b6', '1d6a37']
         },
 
         taskid: 1,
@@ -762,15 +783,26 @@ var App = {
                 'onChange': function (collectioName) {
                     ee.Number(1).evaluate(
                         function (a) {
+
+
                             App.options.data.Coverage = ee.Image(
                                 App.options.collections[regionName][collectioName].assets.integration);
 
                             App.options.data.Transitions = ee.Image(
                                 App.options.collections[regionName][collectioName].assets.transitions);
 
+                            if (regionName == 'mapbiomas-brazil' & collectioName == 'collection-5.0') {
+
+                                App.options.data.Quality = ee.Image(
+                                    App.options.collections[regionName][collectioName].assets.quality);
+
+                            }
+
                             var year = App.options.collections[regionName][collectioName].periods.Coverage.slice(-1)[0];
 
                             App.startMap(year);
+
+                            App.ui.loadDataType();
                         }
                     );
 
@@ -981,6 +1013,41 @@ var App = {
                             .set(1, App.ui.form.selectFeature);
                     }
                 );
+
+        },
+
+        loadDataType: function () {
+
+            App.ui.form.selectDataType.setPlaceholder('loading data type list...');
+
+            ee.Number(1).evaluate(
+                function (number) {
+
+                    var regionName = App.ui.form.selectRegion.getValue();
+                    var collectionName = App.ui.form.selectCollection.getValue();
+
+                    App.ui.form.selectDataType = ui.Select({
+                        'items': Object.keys(App.options.collections[regionName][collectionName].periods),
+                        'placeholder': 'select data type',
+                        'onChange': function (dataType) {
+
+                            App.ui.setDataType(dataType);
+
+                            App.ui.makeLayersList(
+                                App.options.activeName.split('/').slice(-1)[0],
+                                App.options.activeFeature,
+                                App.options.collections[regionName][collectionName].periods[dataType]);
+
+                        },
+                        'style': {
+                            'stretch': 'horizontal'
+                        }
+                    });
+
+                    App.ui.form.panelDataType.widgets()
+                        .set(1, App.ui.form.selectDataType);
+                }
+            );
 
         },
 
@@ -1210,7 +1277,7 @@ var App = {
                 this.panelMain.add(this.labelTitle);
                 this.panelMain.add(this.labelSubtitle);
                 this.panelMain.add(this.labelLink);
-                
+
                 this.panelLogo.add(App.options.logo);
 
                 this.panelRegion.add(this.labelRegion);
@@ -1352,7 +1419,7 @@ var App = {
                 // 'padding': '1px',
                 'fontSize': '16px'
             }),
-            
+
             labelSubtitle: ui.Label('Land Use and Land Cover', {
                 // 'fontWeight': 'bold',
                 // 'padding': '1px',
@@ -1483,19 +1550,6 @@ var App = {
                     'stretch': 'horizontal'
                 },
                 'disabled': true,
-                'onChange': function (dataType) {
-
-                    var regionName = App.ui.form.selectRegion.getValue();
-                    var collectionName = App.ui.form.selectCollection.getValue();
-
-                    App.ui.setDataType(dataType);
-
-                    App.ui.makeLayersList(
-                        App.options.activeName.split('/').slice(-1)[0],
-                        App.options.activeFeature,
-                        App.options.collections[regionName][collectionName].periods[dataType]);
-
-                },
             }),
 
             selectBuffer: ui.Select({

@@ -89,7 +89,7 @@ var Area = {
         areas = ee.FeatureCollection(areas).flatten()
             .map(
                 function (feature) {
-                    return feature.set("unit", object.unit)
+                    return feature.set("unit", object.unit);
                 }
             );
 
@@ -484,7 +484,7 @@ var App = {
         Map.centerObject(App.options.data.deforestation_regeneration, 5);
 
         var imageLayer = ui.Map.Layer({
-            'eeObject': App.options.data.deforestation_regeneration,
+            'eeObject': App.options.data.deforestation_regeneration.divide(100).byte(),
             'visParams': {
                 'bands': ['classification_' + year],
                 'palette': App.options.palette.deforestation_regeneration,
