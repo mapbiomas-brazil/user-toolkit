@@ -51,6 +51,7 @@
         <paletteEntry label="31 - Aquaculture" value="31" alpha="255" color="#8a2be2"/>
         <paletteEntry label="32 - Salt flat" value="32" alpha="255" color="#968c46"/>
         <paletteEntry label="33 - River, Lake and Ocean" value="33" alpha="255" color="#0000ff"/>
+        <paletteEntry label="34 - Glacial" color="#968c46" value="34" alpha="255"/>
         <paletteEntry label="36 - Perennial Crops" value="36" alpha="255" color="#f3b4f1"/>
         <paletteEntry label="37 - Artificial Water Body" value="37" alpha="255" color="#02106f"/>
         <paletteEntry label="38 - Water Reservoirs" value="38" alpha="255" color="#02106f"/>

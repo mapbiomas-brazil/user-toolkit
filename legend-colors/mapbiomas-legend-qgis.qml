@@ -43,7 +43,8 @@
         <paletteEntry label="30 - Mineração" color="#8a2be2" value="30" alpha="255"/>
         <paletteEntry label="31 - Aquicultura" color="#29eee4" value="31" alpha="255"/>
         <paletteEntry label="33 - Rio, Lago e Oceano" color="#0000ff" value="33" alpha="255"/>
-        <paletteEntry label="34 - Apicum" color="#968c46" value="32" alpha="255"/>
+        <paletteEntry label="32 - Apicum" color="#968c46" value="32" alpha="255"/>
+        <paletteEntry label="34 - Glacias" color="#968c46" value="34" alpha="255"/>
       </colorPalette>
       <colorramp name="[source]" type="randomcolors"/>
     </rasterrenderer>
