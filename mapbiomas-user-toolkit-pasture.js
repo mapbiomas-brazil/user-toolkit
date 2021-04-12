@@ -1201,7 +1201,7 @@ var App = {
             selectDataType: ui.Select({
                 'items': [
                     'pasture_quality',
-                    'pasture',
+                    // 'pasture',
                 ],
                 'placeholder': 'Data type',
                 'style': {
