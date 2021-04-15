@@ -25,6 +25,7 @@
  *          - Export a csv file with areas per classe and year
  *    1.3.1 - Loads mapbiomas-chaco collection 2.0
  *    1.3.2 - Loads mapbiomas-brazil collection 5.0 quality
+ *    1.4.0 - Loads mapbiomas-atlantic-forest collection 1.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -112,7 +113,7 @@ var App = {
 
     options: {
 
-        version: '1.3.2',
+        version: '1.4.0',
 
         logo: logos.mapbiomas,
 
@@ -198,7 +199,15 @@ var App = {
                 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/departamentos',
                 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/provincias',
                 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/biomas',
+            ],
 
+            'mapbiomas-atlantic-forest': [
+                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/biome",
+                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/city",
+                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/conservation_units",
+                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/country",
+                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/level_1_drainage_basin",
+                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/state",
             ],
             // 'mapbiomas-indonesia': [
 
@@ -461,17 +470,48 @@ var App = {
                 },
             },
 
-            'mapbiomas-indonesia': {
+            'mapbiomas-atlantic-forest': {
                 'collection-1.0': {
-                },
-            },
-
-            'mapbiomas-antlantic-forest': {
-                'collection-1.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_integration_v1',
+                        'transitions': 'projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_transitions_v1',
+                        'quality': 'projects/mapbiomas_af_trinacional/public/collection1/mapbiomas_atlantic_forest_collection1_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019',
+                        ],
+                        'Transitions': [
+                            "2000_2001", "2001_2002", "2002_2003", "2003_2004",
+                            "2004_2005", "2005_2006", "2006_2007", "2007_2008",
+                            "2008_2009", "2009_2010", "2010_2011", "2011_2012",
+                            "2012_2013", "2013_2014", "2014_2015", "2015_2016",
+                            "2016_2017", "2017_2018", "2018_2019", "2000_2005",
+                            "2005_2010", "2010_2015", "2015_2019", "2000_2010",
+                            "2010_2019", "2008_2019", "2012_2019", "2002_2010",
+                            "2010_2016", "2000_2019"
+                        ],
+                        'Quality': [
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019',
+                        ]
+                    },
                 },
             },
 
             'mapbiomas-pampa': {
+                'collection-1.0': {
+                },
+            },
+
+            'mapbiomas-indonesia': {
                 'collection-1.0': {
                 },
             },
@@ -795,6 +835,13 @@ var App = {
                                 App.options.collections[regionName][collectioName].assets.transitions);
 
                             if (regionName == 'mapbiomas-brazil' & collectioName == 'collection-5.0') {
+
+                                App.options.data.Quality = ee.Image(
+                                    App.options.collections[regionName][collectioName].assets.quality);
+
+                            }
+                            // TODO: improve this logic
+                            if (regionName == 'mapbiomas-atlantic-forest' & collectioName == 'collection-1.0') {
 
                                 App.options.data.Quality = ee.Image(
                                     App.options.collections[regionName][collectioName].assets.quality);
@@ -1246,13 +1293,27 @@ var App = {
                             var className;
 
                             if (App.options.dataType == 'Coverage') {
+
                                 className = ee.Dictionary(App.options.className)
                                     .get(feature.get('class'));
+
+                                feature = feature.set('class_name', className).set('band', band);
+
+                            } else if (App.options.dataType == 'Transitions') {
+
+                                var classNamet0 = ee.Dictionary(App.options.className)
+                                    .get(ee.Number(feature.get('class')).divide(100).int());
+                                var classNamet1 = ee.Dictionary(App.options.className)
+                                    .get(ee.Number(feature.get('class')).mod(100).int());
+
+                                feature = feature.set('from_class', classNamet0).set('to_class', classNamet1).set('band', band);
                             } else {
-                                className = feature.get('class');
+
+                                className = ee.String(feature.get('class')).cat(' observations');
+                                feature = feature.set('class_name', className).set('band', band);
                             }
 
-                            return feature.set('class_name', className).set('band', band);
+                            return feature;
                         }
                     );
 
@@ -1283,11 +1344,16 @@ var App = {
             init: function () {
 
                 this.panelMain.add(this.panelLogo);
-                this.panelMain.add(this.labelTitle);
+                // this.panelMain.add(this.labelTitle);
                 this.panelMain.add(this.labelSubtitle);
-                this.panelMain.add(this.labelLink);
+                this.panelMain.add(this.panelLink);
+                this.panelLink.add(this.labelLink);
+                this.panelLink.add(this.labelLink1);
+                this.panelLink.add(this.labelLink2);
+                this.panelLink.add(this.labelLink3);
+                this.panelLink.add(this.labelLink4);
 
-                this.panelLogo.add(App.options.logo);
+                // this.panelLogo.add(App.options.logo);
 
                 this.panelRegion.add(this.labelRegion);
                 this.panelRegion.add(this.selectRegion);
@@ -1340,9 +1406,27 @@ var App = {
             }),
 
             panelLogo: ui.Panel({
+                'widgets': ui.Chart(
+                    [['<p style= font-size:18px;font-family: Helvetica, sans-serif><b>MapBiomas User Toolkit 1.4.0</b></p>']],
+                    'Table',
+                    {
+                        'allowHtml': true,
+                        'pagingSymbols': {
+                            prev: '<img width="330" src="https://mapbiomas-br-site.s3.amazonaws.com/mapbiomas_brasil_logo_1.png">',
+                            next: ' '
+                        },
+                    }
+                ),
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
-                    'margin': '0px 0px 0px 110px',
+                    'stretch': 'horizontal'
+                },
+            }),
+
+            panelLink: ui.Panel({
+                'layout': ui.Panel.Layout.flow('horizontal'),
+                'style': {
+                    'stretch': 'horizontal'
                 },
             }),
 
@@ -1435,12 +1519,33 @@ var App = {
                 'fontSize': '14px'
             }),
 
-            labelLink: ui.Label('Legend codes', {
-                // 'fontWeight': 'bold',
-                // 'padding': '1px',
+            labelLink: ui.Label('Legend codes:', {
+                'fontSize': '10px'
+            }
+            ),
+
+            labelLink1: ui.Label('Amazon', {
+                'fontSize': '10px',
+            },
+                'http://amazonia.mapbiomas.org/codigos-de-la-leyenda'
+            ),
+
+            labelLink2: ui.Label('Brazil', {
                 'fontSize': '10px'
             },
-                'https://mapbiomas.org/codigos-de-legenda?cama_set_language=pt-BR'
+                'https://mapbiomas.org/codigos-de-legenda'
+            ),
+
+            labelLink3: ui.Label('Chaco', {
+                'fontSize': '10px'
+            },
+                'http://chaco.mapbiomas.org/codigos-de-la-leyenda-1'
+            ),
+
+            labelLink4: ui.Label('Atlantic Forest', {
+                'fontSize': '10px'
+            },
+                'http://bosqueatlantico.mapbiomas.org/codigos-de-la-leyenda'
             ),
 
             labelType: ui.Label('Type:', {
@@ -1507,7 +1612,7 @@ var App = {
             selectRegion: ui.Select({
                 'items': [
                     'mapbiomas-amazon',
-                    // 'mapbiomas-atlantic-forest',
+                    'mapbiomas-atlantic-forest',
                     'mapbiomas-brazil',
                     'mapbiomas-chaco',
                     // 'mapbiomas-indonesia',
