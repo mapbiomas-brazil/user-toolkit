@@ -26,6 +26,7 @@
  *    1.3.1 - Loads mapbiomas-chaco collection 2.0
  *    1.3.2 - Loads mapbiomas-brazil collection 5.0 quality
  *    1.4.0 - Loads mapbiomas-atlantic-forest collection 1.0
+ *    1.5.0 - Loads mapbiomas-pampa collection 1.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -113,7 +114,7 @@ var App = {
 
     options: {
 
-        version: '1.4.0',
+        version: '1.5.0',
 
         logo: logos.mapbiomas,
 
@@ -200,7 +201,6 @@ var App = {
                 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/provincias',
                 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/biomas',
             ],
-
             'mapbiomas-atlantic-forest': [
                 "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/biome",
                 "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/city",
@@ -208,6 +208,15 @@ var App = {
                 "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/country",
                 "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/level_1_drainage_basin",
                 "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/state",
+            ],
+            'mapbiomas-pampa': [
+                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/biome",
+                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/city",
+                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/conservation_units",
+                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/country",
+                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/indigenous_land",
+                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/level_1_drainage_basin",
+                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/state",
             ],
             // 'mapbiomas-indonesia': [
 
@@ -469,7 +478,6 @@ var App = {
                     },
                 },
             },
-
             'mapbiomas-atlantic-forest': {
                 'collection-1.0': {
                     'assets': {
@@ -505,12 +513,41 @@ var App = {
                     },
                 },
             },
-
             'mapbiomas-pampa': {
                 'collection-1.0': {
+                    'assets': {
+                        'integration': 'projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_integration_v1',
+                        'transitions': 'projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_transitions_v1',
+                        'quality': 'projects/MapBiomas_Pampa/public/collection1/mapbiomas_pampa_collection1_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019',
+                        ],
+                        'Transitions': [
+                            "2000_2001", "2001_2002", "2002_2003", "2003_2004",
+                            "2004_2005", "2005_2006", "2006_2007", "2007_2008",
+                            "2008_2009", "2009_2010", "2010_2011", "2011_2012",
+                            "2012_2013", "2013_2014", "2014_2015", "2015_2016",
+                            "2016_2017", "2017_2018", "2018_2019", "2000_2005",
+                            "2005_2010", "2010_2015", "2015_2019", "2000_2010",
+                            "2010_2019", "2008_2019", "2012_2019", "2002_2010",
+                            "2000_2019"
+                        ],
+                        'Quality': [
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019',
+                        ]
+                    },
                 },
             },
-
             'mapbiomas-indonesia': {
                 'collection-1.0': {
                 },
@@ -842,6 +879,13 @@ var App = {
                             }
                             // TODO: improve this logic
                             if (regionName == 'mapbiomas-atlantic-forest' & collectioName == 'collection-1.0') {
+
+                                App.options.data.Quality = ee.Image(
+                                    App.options.collections[regionName][collectioName].assets.quality);
+
+                            }
+
+                            if (regionName == 'mapbiomas-pampa' & collectioName == 'collection-1.0') {
 
                                 App.options.data.Quality = ee.Image(
                                     App.options.collections[regionName][collectioName].assets.quality);
@@ -1344,7 +1388,7 @@ var App = {
             init: function () {
 
                 this.panelMain.add(this.panelLogo);
-                // this.panelMain.add(this.labelTitle);
+
                 this.panelMain.add(this.labelSubtitle);
                 this.panelMain.add(this.panelLink);
                 this.panelLink.add(this.labelLink);
@@ -1352,8 +1396,7 @@ var App = {
                 this.panelLink.add(this.labelLink2);
                 this.panelLink.add(this.labelLink3);
                 this.panelLink.add(this.labelLink4);
-
-                // this.panelLogo.add(App.options.logo);
+                this.panelLink.add(this.labelLink5);
 
                 this.panelRegion.add(this.labelRegion);
                 this.panelRegion.add(this.selectRegion);
@@ -1407,7 +1450,7 @@ var App = {
 
             panelLogo: ui.Panel({
                 'widgets': ui.Chart(
-                    [['<p style= font-size:18px;font-family: Helvetica, sans-serif><b>MapBiomas User Toolkit 1.4.0</b></p>']],
+                    [['<p style= font-size:18px;font-family: Helvetica, sans-serif><b>MapBiomas User Toolkit 1.5.0</b></p>']],
                     'Table',
                     {
                         'allowHtml': true,
@@ -1530,22 +1573,28 @@ var App = {
                 'http://amazonia.mapbiomas.org/codigos-de-la-leyenda'
             ),
 
-            labelLink2: ui.Label('Brazil', {
+            labelLink2: ui.Label('Atlantic Forest', {
+                'fontSize': '10px'
+            },
+                'http://bosqueatlantico.mapbiomas.org/codigos-de-la-leyenda'
+            ),
+
+            labelLink3: ui.Label('Brazil', {
                 'fontSize': '10px'
             },
                 'https://mapbiomas.org/codigos-de-legenda'
             ),
 
-            labelLink3: ui.Label('Chaco', {
+            labelLink4: ui.Label('Chaco', {
                 'fontSize': '10px'
             },
                 'http://chaco.mapbiomas.org/codigos-de-la-leyenda-1'
             ),
 
-            labelLink4: ui.Label('Atlantic Forest', {
+            labelLink5: ui.Label('Pampa', {
                 'fontSize': '10px'
             },
-                'http://bosqueatlantico.mapbiomas.org/codigos-de-la-leyenda'
+                'http://pampa.mapbiomas.org/codigos-de-la-leyenda-1'
             ),
 
             labelType: ui.Label('Type:', {
@@ -1616,7 +1665,7 @@ var App = {
                     'mapbiomas-brazil',
                     'mapbiomas-chaco',
                     // 'mapbiomas-indonesia',
-                    // 'mapbiomas-pampa',
+                    'mapbiomas-pampa',
                 ],
                 'placeholder': 'None',
                 'style': {
