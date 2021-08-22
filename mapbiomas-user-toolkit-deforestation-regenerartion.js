@@ -1242,7 +1242,7 @@ var App = {
                 'fontSize': '16px'
             }),
 
-            labelNotes: ui.Label('Click on OK button to start the task.', {
+            labelNotes: ui.Label('Go to TASK tab in the up-rght corner and click RUN', {
                 // 'padding': '1px',
                 'fontSize': '16px'
             }),

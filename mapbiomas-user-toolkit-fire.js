@@ -11,6 +11,7 @@
  *
  * @version
  *    1.0.0 - First release
+ *    1.1.0 - Collection 1.0 fire
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -19,6 +20,7 @@
 
 var palettes = require('users/mapbiomas/modules:Palettes.js');
 var logos = require('users/mapbiomas/modules:Logos.js');
+var mapp = require('users/joaovsiqueira1/packages:Mapp.js');
 
 /**
  * @description
@@ -98,7 +100,7 @@ var App = {
 
     options: {
 
-        version: '1.0.0',
+        version: '1.1.0',
 
         logo: logos.mapbiomas,
 
@@ -172,57 +174,101 @@ var App = {
 
         collections: {
             'mapbiomas-brazil': {
-                'collection-5.0': {
+                'collection-1.0': {
                     'assets': {
-                        'burned_cover': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_burned_cover_cumulated_v1',
-                        'burned_cover_cumulated': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_burned_cover_cumulated_v1',
+                        'annual_burned_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-fire-collection1-annual-burned-coverage-1',
+                        'monthly_burned_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-fire-collection1-monthly-burned-coverage-1',
+                        'fire_frequency': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-fire-collection1-fire-frequency-1',
+                        // 'burned_cover_cumulated': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_burned_cover_cumulated_v1',
                     },
 
                     'periods': {
-                        'burned_cover': [
-                            '2000', '2001', '2002', '2003',
-                            '2004', '2005', '2006', '2007',
-                            '2008', '2009', '2010', '2011',
-                            '2012', '2013', '2014', '2015',
-                            '2016', '2017', '2018', '2019'
+                        'annual_burned_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020'
                         ],
-                        'burned_cover_cumulated': [
-                            '2000', '2001', '2002', '2003',
-                            '2004', '2005', '2006', '2007',
-                            '2008', '2009', '2010', '2011',
-                            '2012', '2013', '2014', '2015',
-                            '2016', '2017', '2018', '2019'
+                        'monthly_burned_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020'
                         ],
+                        'fire_frequency': [
+                            "1985_1985", "1985_1986", "1985_1987", "1985_1988",
+                            "1985_1989", "1985_1990", "1985_1991", "1985_1992",
+                            "1985_1993", "1985_1994", "1985_1995", "1985_1996",
+                            "1985_1997", "1985_1998", "1985_1999", "1985_2000",
+                            "1985_2001", "1985_2002", "1985_2003", "1985_2004",
+                            "1985_2005", "1985_2006", "1985_2007", "1985_2008",
+                            "1985_2009", "1985_2010", "1985_2011", "1985_2012",
+                            "1985_2013", "1985_2014", "1985_2015", "1985_2016",
+                            "1985_2017", "1985_2018", "1985_2019", "1985_2020",
+                            "2020_2020", "2019_2020", "2018_2020", "2017_2020",
+                            "2016_2020", "2015_2020", "2014_2020", "2013_2020",
+                            "2012_2020", "2011_2020", "2010_2020", "2009_2020",
+                            "2008_2020", "2007_2020", "2006_2020", "2005_2020",
+                            "2004_2020", "2003_2020", "2002_2020", "2001_2020",
+                            "2000_2020", "1999_2020", "1998_2020", "1997_2020",
+                            "1996_2020", "1995_2020", "1994_2020", "1993_2020",
+                            "1992_2020", "1991_2020", "1990_2020", "1989_2020",
+                            "1988_2020", "1987_2020", "1986_2020", "1990_1995",
+                            "1995_2000", "2000_2005", "2005_2010", "2010_2015",
+                            "1995_2005", "2005_2015", "2000_2015",
+                        ]
+                        // 'burned_cover_cumulated': [
+                        //     '2000', '2001', '2002', '2003',
+                        //     '2004', '2005', '2006', '2007',
+                        //     '2008', '2009', '2010', '2011',
+                        //     '2012', '2013', '2014', '2015',
+                        //     '2016', '2017', '2018', '2019'
+                        // ],
                     },
                 },
             },
         },
 
         bandsNames: {
-            'burned_cover': 'cover_',
-            'burned_cover_cumulated': 'cover_',
+            'annual_burned_coverage': 'burned_coverage_',
+            'monthly_burned_coverage': 'burned_coverage_',
+            'fire_frequency': 'fire_frequency_',
+            // 'burned_cover_cumulated': 'cover_',
         },
 
-        dataType: 'burned_cover_cumulated',
+        dataType: 'annual_burned_coverage',
 
         data: {
-            'burned_cover': null,
-            'burned_cover_cumulated': null,
+            'annual_burned_coverage': null,
+            'monthly_burned_coverage': null,
+            'fire_frequency': null,
+            // 'burned_cover_cumulated': null,
         },
 
         fileDimensions: {
-            'burned_cover': 256 * 124,
-            'burned_cover_cumulated': 256 * 124,
+            'annual_burned_coverage': 256 * 124,
+            'monthly_burned_coverage': 256 * 124,
+            'fire_frequency': 256 * 124,
+            // 'burned_cover_cumulated': 256 * 124,
+
         },
 
         ranges: {
-            'burned_cover': {
+            'annual_burned_coverage': {
                 'min': 0,
-                'max': 45
+                'max': 1
             },
-            'burned_cover_cumulated': {
-                'min': 0,
-                'max': 45
+            'monthly_burned_coverage': {
+                'min': 1,
+                'max': 12
+            },
+            'fire_frequency': {
+                'min': 1,
+                'max': 36
             },
         },
 
@@ -231,8 +277,32 @@ var App = {
         activeName: '',
 
         palette: {
-            'burned_cover': palettes.get('classification5'),
-            'burned_cover_cumulated': palettes.get('classification5'),
+            'annual_burned_coverage': [
+                '#ffffff',
+                '#870508'
+            ],
+            'monthly_burned_coverage': [
+                '#a900ff',
+                '#6f02ff',
+                '#020aff',
+                '#0675ff',
+                '#06ffff',
+                '#ffee00',
+                '#ff7700',
+                '#ff0800',
+                '#c20202',
+                '#0aa602',
+                '#0cff00'
+            ],
+            'fire_frequency': [
+                '#ffffff',
+                '#f8d71f',
+                '#daa118',
+                '#bd6c12',
+                '#9f360b',
+                '#810004',
+                '#4d0709'
+            ],
         },
 
         taskid: 1,
@@ -298,15 +368,15 @@ var App = {
 
     startMap: function (year) {
 
-        Map.centerObject(App.options.data.burned_cover, 5);
+        Map.centerObject(App.options.data.annual_burned_coverage, 5);
 
         var imageLayer = ui.Map.Layer({
-            'eeObject': App.options.data.burned_cover,
+            'eeObject': App.options.data.annual_burned_coverage,
             'visParams': {
-                'bands': [App.options.bandsNames.burned_cover + year],
-                'palette': App.options.palette.burned_cover,
-                'min': 0,
-                'max': 45,
+                'bands': [App.options.bandsNames.annual_burned_coverage + year],
+                'palette': App.options.palette.annual_burned_coverage,
+                'min': App.options.ranges.annual_burned_coverage.min,
+                'max': App.options.ranges.annual_burned_coverage.max,
                 'format': 'png'
             },
             'name': year,
@@ -315,6 +385,12 @@ var App = {
         });
 
         Map.clear();
+
+        Map.setOptions({
+            'styles': {
+                'Dark': mapp.getStyle('Dark')
+            }
+        });
 
         Map.add(imageLayer);
 
@@ -355,7 +431,11 @@ var App = {
 
             App.ui.form.init();
 
-
+            Map.setOptions({
+                'styles': {
+                    'Dark': mapp.getStyle('Dark')
+                }
+            });
         },
 
         setMapbiomasRegion: function (regionName) {
@@ -383,15 +463,19 @@ var App = {
                         function (a) {
 
 
-                            App.options.data.burned_cover = ee.Image(
-                                App.options.collections[regionName][collectioName].assets.burned_cover)
+                            App.options.data.annual_burned_coverage = ee.Image(
+                                App.options.collections[regionName][collectioName].assets.annual_burned_coverage)
+                                .gt(0).byte();
+
+                            App.options.data.monthly_burned_coverage = ee.Image(
+                                App.options.collections[regionName][collectioName].assets.monthly_burned_coverage)
                                 .divide(100).byte();
 
-                            App.options.data.burned_cover_cumulated = ee.Image(
-                                App.options.collections[regionName][collectioName].assets.burned_cover_cumulated)
+                            App.options.data.fire_frequency = ee.Image(
+                                App.options.collections[regionName][collectioName].assets.fire_frequency)
                                 .divide(100).byte();
 
-                            var year = App.options.collections[regionName][collectioName].periods.burned_cover.slice(-1)[0];
+                            var year = App.options.collections[regionName][collectioName].periods.annual_burned_coverage.slice(-1)[0];
 
                             App.startMap(year);
 
@@ -492,10 +576,16 @@ var App = {
 
             Map.clear();
 
+            Map.setOptions({
+                'styles': {
+                    'Dark': mapp.getStyle('Dark')
+                }
+            });
+
             Map.addLayer(App.options.activeFeature.style({
-                color: 'ff0000',
+                color: '#000055',
                 width: 1,
-                fillColor: 'ff000033',
+                fillColor: '#0000ff11',
             }), {},
                 tableName.split('/')[3],
                 true);
@@ -512,10 +602,16 @@ var App = {
 
             Map.clear();
 
+            Map.setOptions({
+                'styles': {
+                    'Dark': mapp.getStyle('Dark')
+                }
+            });
+
             Map.addLayer(App.options.activeFeature.style({
-                color: 'ff0000',
+                color: '#000055',
                 width: 1,
-                fillColor: 'ff000033',
+                fillColor: '#0000ff11',
             }), {},
                 tableName.split('/')[3],
                 true);
@@ -584,9 +680,10 @@ var App = {
                                             var collectionName = App.ui.form.selectCollection.getValue();
 
                                             App.ui.loadFeature(featureName);
+                                            App.options.activeName = featureName;
 
                                             App.ui.makeLayersList(
-                                                featureName,
+                                                App.options.activeName,
                                                 App.options.activeFeature,
                                                 App.options.collections[regionName][collectionName]
                                                     .periods[App.options.dataType]);
@@ -653,10 +750,16 @@ var App = {
 
             Map.clear();
 
+            Map.setOptions({
+                'styles': {
+                    'Dark': mapp.getStyle('Dark')
+                }
+            });
+
             Map.addLayer(App.options.activeFeature.style({
-                color: 'ff0000',
+                color: '#000055',
                 width: 1,
-                fillColor: 'ff000033',
+                fillColor: '#0000ff11',
             }), {},
                 name,
                 true);
@@ -664,7 +767,6 @@ var App = {
         },
 
         addImageLayer: function (period, label, region) {
-
 
             var image = App.options.data[App.options.dataType]
                 .select([App.options.bandsNames[App.options.dataType] + period])
@@ -831,8 +933,10 @@ var App = {
                         function (feature) {
                             var className;
 
-                            className = ee.Dictionary(App.options.className)
-                                .get(ee.Number(feature.get('class')));
+                            // className = ee.Dictionary(App.options.className)
+                            //     .get(ee.Number(feature.get('class')));
+
+                            className = ee.Number(feature.get('class'));
 
                             return feature.set('class_name', className).set('band', band);
                         }
@@ -862,7 +966,9 @@ var App = {
 
         showDisclaimer: function () {
 
-            App.ui.form.panelDisclaimer.widgets().reset(App.ui.form.labelDisclaimer);
+            App.ui.form.panelDisclaimer.widgets().reset([]);
+            App.ui.form.panelDisclaimerText.widgets().reset(App.ui.form.labelDisclaimer);
+            App.ui.form.panelDisclaimer.add(App.ui.form.panelDisclaimerText);
             App.ui.form.panelDisclaimer.add(App.ui.form.buttonDisclaimerOk);
 
             Map.add(App.ui.form.panelDisclaimer);
@@ -875,11 +981,7 @@ var App = {
             init: function () {
 
                 this.panelMain.add(this.panelLogo);
-                this.panelMain.add(this.labelTitle);
-                this.panelMain.add(this.labelSubtitle);
                 this.panelMain.add(this.labelLink);
-
-                this.panelLogo.add(App.options.logo);
 
                 this.panelRegion.add(this.labelRegion);
                 this.panelRegion.add(this.selectRegion);
@@ -935,9 +1037,20 @@ var App = {
             }),
 
             panelLogo: ui.Panel({
+                'widgets': ui.Chart(
+                    [['<p style=font-size:18px;font-family: Helvetica, sans-serif><b>MapBiomas User Toolkit 1.1.0</b></p>']],
+                    'Table',
+                    {
+                        'allowHtml': true,
+                        'pagingSymbols': {
+                            prev: '<img style="background-color:#ffffff" width="325" src="https://staging.plataforma.brasil.mapbiomas.org/static/media/logo-mapbiomas-fogo.7c26b36a.png">',
+                            next: ' '
+                        },
+                    }
+                ),
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
-                    'margin': '0px 0px 0px 110px',
+                    'stretch': 'horizontal'
                 },
             }),
 
@@ -1009,7 +1122,16 @@ var App = {
             panelDisclaimer: ui.Panel({
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
-                    'width': '300px',
+                    // 'width': '700px',
+                    // 'height': '350px',
+                },
+            }),
+
+            panelDisclaimerText: ui.Panel({
+                'layout': ui.Panel.Layout.flow('vertical'),
+                'style': {
+                    'width': '700px',
+                    'height': '300px',
                 },
             }),
 
@@ -1080,7 +1202,7 @@ var App = {
                 'fontSize': '16px'
             }),
 
-            labelNotes: ui.Label('Click on OK button to start the task.', {
+            labelNotes: ui.Label('Go to TASK tab in the up-rght corner and click RUN', {
                 // 'padding': '1px',
                 'fontSize': '16px'
             }),
@@ -1092,16 +1214,19 @@ var App = {
 
             labelDisclaimer: [
                 ui.Label('DISCLAIMER'),
-                ui.Label('Este é um produto Beta e os dados ainda estão em validação.\
-                Podem haver tanto erros de comissão como de omissão que ainda não foram quantificados.\
-                Agradecemos a comunicação sobre os usos deste dado de forma que possamos conectá-lo\
-                quando sairem novas versões já com a devida validação.\
-                Escreva para contato@mapbiomas.org.'),
+                ui.Label('Esta é a primeira coleção completa do MapBiomas Fogo com o mapeamento de cicatrizes de fogo no Brasil de 1985 a 2020, com dados Anuais e Mensais para todo o período incluindo: (i) dado no ano e acumulado em um período; (ii) frequência de ocorrência de cicatriz de queimada; (iii) classificação da cobertura e uso do terra objetivo de queimada.\
+                O fogo associado a áreas recém desmatadas podem ocorrer tanto em áreas classificadas como vegetação nativa como em áreas de uso antrópico dependendo da época do ano em que os dados de cobertura e uso foram classificados e o momento em que ocorreu o fogo.\
+                A descrição do método de mapeamento das cicatrizes de fogo e sua classificação por classe de vegetação queimada bem como da determinação da frequência podem ser acessados na seção de metodologias do MapBiomas.\
+                Os mapas anuais de cicatrizes de queimadas bem como os principais conjuntos de estatísticas consolidadas estão disponíveis na área de download do MapBiomas.\
+                Caso tenha sugestões, críticas e idéias para aprimorar o trabalho entre em contato pelo e- mail: contato@mapbiomas.org ou acesse o Fórum MapBiomas.\
+                Os dados do MapBiomas são públicos, abertos e gratuitos sob licença Creative Commons CC - CY - SA e mediante a referência da fonte observando o seguinte formato: "Projeto MapBiomas – Mapeamento de cicatrizes de fogo no Brasil Coleção 1, acessado em [DATA] através do link: [LINK]".'),
                 ui.Label(''),
-                ui.Label('This is a Beta product and the data is still in validation.\
-                There can be both commission and omission errors that have not yet been quantified.\
-                We appreciate the communication about the uses of this data so that we can connect it \
-                when new versions come out with the necessary validation.Please right to contato@mapbiomas.org.')
+                ui.Label('This is the first complete collection of MapBiomas Fogo with the mapping of fire scars in Brazil from 1985 to 2020, with Annual and Monthly data for the entire period including: (i) non-year data and accumulated in a period; (ii) frequency of a fire scar; (iii) classification of land cover and land use intended for burning.\
+                Fires associated with recently deforested areas can occur both in areas classified as native vegetation and in areas of anthropogenic use depending on the time of year in which the coverage and use data were classified and the time when the fire occurred.\
+                The description of the method of mapping fire scars and their classification by burnt vegetation class as well as the determination of frequency can be found in the methodology section of MapBiomas.\
+                Annual maps of burn scars as well as the main sets of consolidated statistics are available in the download area of ​​MapBiomas.\
+                If you have suggestions, criticisms and ideas to improve the work, please contact us by e- mail: contato@mapbiomas.org or visit the MapBiomas Forum.\
+                MapBiomas data is public, available and free under a Creative Commons CC - CY - SA license and by reference to the source, observing the following format: "MapBiomas Project - Mapping of fire scars in Brazil Collection 1, accessed in [DATE] through link: [LINK] ".'),
             ],
 
             selectName: ui.Select({
@@ -1169,8 +1294,12 @@ var App = {
             }),
 
             selectDataType: ui.Select({
-                'items': ['Coverage', 'Transitions'],
-                'placeholder': 'Coverage',
+                'items': [
+                    'annual_burned_coverage',
+                    'monthly_burned_coverage',
+                    'fire_frequency'
+                ],
+                'placeholder': 'annual_burned_coverage',
                 'style': {
                     'stretch': 'horizontal'
                 },
