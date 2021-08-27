@@ -27,6 +27,7 @@
  *    1.3.2 - Loads mapbiomas-brazil collection 5.0 quality
  *    1.4.0 - Loads mapbiomas-atlantic-forest collection 1.0
  *    1.5.0 - Loads mapbiomas-pampa collection 1.0
+ *    1.6.0 - Loads mapbiomas-brazil collection 6.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -114,7 +115,7 @@ var App = {
 
     options: {
 
-        version: '1.5.0',
+        version: '1.6.0',
 
         logo: logos.mapbiomas,
 
@@ -151,38 +152,82 @@ var App = {
 
         tables: {
             'mapbiomas-brazil': [
-                'projects/mapbiomas-workspace/AUXILIAR/areas-protegidas',
-                'projects/mapbiomas-workspace/AUXILIAR/biomas-2019',
-                'projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-1',
-                'projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-2',
-                'projects/mapbiomas-workspace/AUXILIAR/estados-2017',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AC',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AL',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AM',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AP',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-BA',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-CE',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-DF',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-ES',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-GO',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MA',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MG',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MS',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MT',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PA',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PB',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PE',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PI',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PR',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RJ',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RN',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RO',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RR',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RS',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-SC',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-SE',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-SP',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-TO',
+                {
+                    'label': 'atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/atlantic_forest_law',
+                },
+                {
+                    'label': 'biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biome',
+                },
+                {
+                    'label': 'biosphere_reserve',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biosphere_reserve',
+                },
+                {
+                    'label': 'city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/city',
+                },
+                {
+                    'label': 'country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/country',
+                },
+                {
+                    'label': 'federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_integral_protection',
+                },
+                {
+                    'label': 'federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_sustainable_use',
+                },
+                {
+                    'label': 'indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/indigenous_land',
+                },
+                {
+                    'label': 'legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/legal_amazon',
+                },
+                {
+                    'label': 'level_1_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin',
+                },
+                {
+                    'label': 'level_1_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin_pnrh',
+                },
+                {
+                    'label': 'level_2_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin',
+                },
+                {
+                    'label': 'level_2_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin_pnrh',
+                },
+                {
+                    'label': 'quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/quilombo',
+                },
+                {
+                    'label': 'semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/semiarid',
+                },
+                {
+                    'label': 'settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/settlement',
+                },
+                {
+                    'label': 'state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state',
+                },
+                {
+                    'label': 'state_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_integral_protection',
+                },
+                {
+                    'label': 'state_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_sustainable_use',
+                },
             ],
             'mapbiomas-amazon': [
                 'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/limite-raisg-2',
@@ -372,6 +417,55 @@ var App = {
                             '2009', '2010', '2011', '2012',
                             '2013', '2014', '2015', '2016',
                             '2017', '2018', '2019'
+                        ]
+                    },
+                },
+                'collection-6.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_integration_v1',
+                        'transitions': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_transitions_v1',
+                        'quality': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_quality_v1', // the same collection 5
+                    },
+
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020'
+                        ],
+                        'Transitions': [
+                            "1985_1986", "1986_1987", "1987_1988", "1988_1989",
+                            "1989_1990", "1990_1991", "1991_1992", "1992_1993",
+                            "1993_1994", "1994_1995", "1995_1996", "1996_1997",
+                            "1997_1998", "1998_1999", "1999_2000", "2000_2001",
+                            "2001_2002", "2002_2003", "2003_2004", "2004_2005",
+                            "2005_2006", "2006_2007", "2007_2008", "2008_2009",
+                            "2009_2010", "2010_2011", "2011_2012", "2012_2013",
+                            "2013_2014", "2014_2015", "2015_2016", "2016_2017",
+                            "2017_2018", "2018_2019", "2019_2020", "1985_1990",
+                            "1990_1995", "1995_2000", "2000_2005", "2005_2010",
+                            "2010_2015", "2015_2020", "1990_2000", "2000_2010",
+                            "2010_2020", "1985_2020", "2008_2020", "2012_2020",
+                            "1994_2002", "2002_2010", "2010_2016", "1990_2008",
+                            "1990_2020", "2000_2020", "2008_2018", "1986_2015",
+                            "2001_2016", "1996_2015",
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020'
                         ]
                     },
                 },
@@ -577,7 +671,7 @@ var App = {
         ranges: {
             'Coverage': {
                 'min': 0,
-                'max': 45
+                'max': 49
             },
             'Transitions': {
                 'min': -2,
@@ -594,7 +688,7 @@ var App = {
         activeName: '',
 
         palette: {
-            'Coverage': palettes.get('classification5'),
+            'Coverage': palettes.get('classification6'),
             'Transitions': ['ffa500', 'ff0000', '818181', '06ff00', '4169e1', '8a2be2'],
             'Quality': ['d73027', 'fef9b6', '1d6a37']
         },
@@ -703,6 +797,11 @@ var App = {
             44: "Pastizal disperso", // Only for Chaco
             45: "Leñosas dispersas", // Only for Chaco
 
+            46: 'Coffe',
+            47: 'Citrus',
+            48: 'Other Perennial Crops',
+            49: 'Wooded Restinga',
+
             36: "Perennial Crops",
             21: "Mosaic of Agriculture and Pasture",
             22: "Non vegetated area",
@@ -741,8 +840,8 @@ var App = {
             'visParams': {
                 'bands': ['classification_' + year],
                 'palette': App.options.palette.Coverage,
-                'min': 0,
-                'max': 45,
+                'min': App.options.ranges.Coverage.min,
+                'max': App.options.ranges.Coverage.max,
                 'format': 'png'
             },
             'name': year,
@@ -877,6 +976,12 @@ var App = {
                                     App.options.collections[regionName][collectioName].assets.quality);
 
                             }
+                            if (regionName == 'mapbiomas-brazil' & collectioName == 'collection-6.0') {
+
+                                App.options.data.Quality = ee.Image(
+                                    App.options.collections[regionName][collectioName].assets.quality);
+
+                            }
                             // TODO: improve this logic
                             if (regionName == 'mapbiomas-atlantic-forest' & collectioName == 'collection-1.0') {
 
@@ -884,7 +989,6 @@ var App = {
                                     App.options.collections[regionName][collectioName].assets.quality);
 
                             }
-
                             if (regionName == 'mapbiomas-pampa' & collectioName == 'collection-1.0') {
 
                                 App.options.data.Quality = ee.Image(
@@ -1009,8 +1113,6 @@ var App = {
 
             App.options.activeFeature = App.options.table;
 
-            Map.centerObject(App.options.activeFeature);
-
             Map.clear();
 
             Map.addLayer(App.options.activeFeature.style({
@@ -1018,7 +1120,7 @@ var App = {
                 width: 1,
                 fillColor: 'ff000033',
             }), {},
-                tableName.split('/')[3],
+                tableName.split('/').reverse()[0],
                 true);
 
         },
@@ -1077,6 +1179,7 @@ var App = {
                             'placeholder': 'select feature',
                             'onChange': function (featureName) {
                                 if (featureName != 'None') {
+                                    App.options.activeName = featureName;
                                     App.options.featureName = featureName;
 
                                     ee.Number(1).evaluate(
@@ -1450,7 +1553,7 @@ var App = {
 
             panelLogo: ui.Panel({
                 'widgets': ui.Chart(
-                    [['<p style= font-size:18px;font-family: Helvetica, sans-serif><b>MapBiomas User Toolkit 1.5.0</b></p>']],
+                    [['<p style= font-size:18px;font-family: Helvetica, sans-serif><b>MapBiomas User Toolkit 1.6.0</b></p>']],
                     'Table',
                     {
                         'allowHtml': true,
@@ -1758,7 +1861,11 @@ var App = {
                         ee.Number(1).evaluate(
                             function (a) {
                                 App.ui.loadTableStates(App.options.activeName);
-                                App.ui.makeLayersList(App.options.activeName.split('/')[3], App.options.activeFeature, App.options.periods[App.options.dataType]);
+                                App.ui.makeLayersList(
+                                    App.options.activeName.split('/')[3],
+                                    App.options.activeFeature,
+                                    App.options.periods[App.options.dataType]
+                                );
                                 App.ui.loadPropertiesNames();
                                 App.ui.form.selectDataType.setDisabled(false);
                             }
