@@ -580,7 +580,7 @@ var App = {
 
             App.options.activeFeature = App.options.table;
 
-            Map.centerObject(App.options.activeFeature);
+            // Map.centerObject(App.options.activeFeature);
 
             Map.clear();
 
