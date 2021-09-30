@@ -235,13 +235,12 @@ var App = {
             ],
             'mapbiomas-amazon': [
                 {
-<<<<<<< HEAD
                     'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/biome',
                     'label': 'biome',
                 },
                 {
                     'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/city_new',
-                    'label': 'city_new',
+                    'label': 'city',
                 },
                 {
                     'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/country',
@@ -274,38 +273,6 @@ var App = {
                 {
                     'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/state_conservation_units',
                     'label': 'state_conservation_units',
-=======
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/limite-raisg-2',
-                    'label': 'limite-raisg'
-                },
-                {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/biomas-2',
-                    'label': 'biomas'
-                },
-                {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/cuencas-2',
-                    'label': 'cuencas'
-                },
-                {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/departamentos-2',
-                    'label': 'departamentos'
-                },
-                {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/paises-2',
-                    'label': 'paises'
-                },
-                {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-tis-2',
-                    'label': 'anps-tis'
-                },
-                {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-nacionales-2',
-                    'label': 'anps-nacionales'
-                },
-                {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-departamentales-2',
-                    'label': 'anps-departamentales'
->>>>>>> 0d8a4450fc8b7761870e5ed3e55c7f235b661b19
                 },
             ],
             'mapbiomas-chaco': [
