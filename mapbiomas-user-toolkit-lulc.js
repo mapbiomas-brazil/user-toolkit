@@ -7,6 +7,9 @@
  *  
  * @author
  *      João Siqueira
+ * 
+ * @contact
+ *      Tasso Azevedo, Marcos Rosa and João Siqueira
  *      contato@mapbiomas.org
  *
  * @version
@@ -28,6 +31,7 @@
  *    1.4.0 - Loads mapbiomas-atlantic-forest collection 1.0
  *    1.5.0 - Loads mapbiomas-pampa collection 1.0
  *    1.6.0 - Loads mapbiomas-brazil collection 6.0
+ *    1.7.0 - Loads mapbiomas-amazon collection 3.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -115,7 +119,7 @@ var App = {
 
     options: {
 
-        version: '1.6.0',
+        version: '1.7.0',
 
         logo: logos.mapbiomas,
 
@@ -230,38 +234,124 @@ var App = {
                 },
             ],
             'mapbiomas-amazon': [
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/limite-raisg-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/biomas-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/cuencas-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/departamentos-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/paises-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-tis-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-nacionales-2',
-                'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-departamentales-2',
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/biome',
+                    'label': 'biome',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/city_new',
+                    'label': 'city_new',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/country',
+                    'label': 'country',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/country_per_biome',
+                    'label': 'country_per_biome',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/drainage_basin',
+                    'label': 'drainage_basin',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/federal_conservation_units',
+                    'label': 'federal_conservation_units',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/indigenous_land',
+                    'label': 'indigenous_land',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/raisg_limit',
+                    'label': 'raisg_limit',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/state',
+                    'label': 'state',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/state_conservation_units',
+                    'label': 'state_conservation_units',
+                },
             ],
             'mapbiomas-chaco': [
-                'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/paises',
-                'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/limite-chaco',
-                'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/departamentos',
-                'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/provincias',
-                'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/biomas',
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/paises',
+                    'label': 'paises'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/limite-chaco',
+                    'label': 'limite-chaco'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/departamentos',
+                    'label': 'departamentos'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/provincias',
+                    'label': 'provincias'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/biomas',
+                    'label': 'biomas'
+                },
             ],
             'mapbiomas-atlantic-forest': [
-                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/biome",
-                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/city",
-                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/conservation_units",
-                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/country",
-                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/level_1_drainage_basin",
-                "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/state",
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/biome",
+                    'label': 'biome'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/city",
+                    'label': 'city'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/conservation_units",
+                    'label': 'conservation_units'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/country",
+                    'label': 'country'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/level_1_drainage_basin",
+                    'label': 'level_1_drainage_basin'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/state",
+                    'label': 'state'
+                },
             ],
             'mapbiomas-pampa': [
-                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/biome",
-                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/city",
-                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/conservation_units",
-                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/country",
-                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/indigenous_land",
-                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/level_1_drainage_basin",
-                "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/state",
+                {
+                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/biome",
+                    'label': 'biome'
+                },
+                {
+                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/city",
+                    'label': 'city'
+                },
+                {
+                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/conservation_units",
+                    'label': 'conservation_units'
+                },
+                {
+                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/country",
+                    'label': 'country'
+                },
+                {
+                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/indigenous_land",
+                    'label': 'indigenous_land'
+                },
+                {
+                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/level_1_drainage_basin",
+                    'label': 'level_1_drainage_basin'
+                },
+                {
+                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/state",
+                    'label': 'state'
+                },
             ],
             // 'mapbiomas-indonesia': [
 
@@ -525,6 +615,41 @@ var App = {
                             "1990_2000", "2000_2010", "2010_2018", "1985_2018",
                             "2008_2017", "2012_2018", "1994_2002", "2002_2010",
                             "2010_2016", "2008_2018", "1986_2015", "2000_2018"
+                        ]
+                    },
+                },
+                'collection-3.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_integration_v2',
+                        'transitions': 'projects/mapbiomas-raisg/public/collection3/mapbiomas_raisg_panamazonia_collection3_transitions_v2',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020'
+                        ],
+                        'Transitions': [
+                            '1985_1986', '1986_1987', '1987_1988', '1988_1989',
+                            '1989_1990', '1990_1991', '1991_1992', '1992_1993',
+                            '1993_1994', '1994_1995', '1995_1996', '1996_1997',
+                            '1997_1998', '1998_1999', '1999_2000', '2000_2001',
+                            '2001_2002', '2002_2003', '2003_2004', '2004_2005',
+                            '2005_2006', '2006_2007', '2007_2008', '2008_2009',
+                            '2009_2010', '2010_2011', '2011_2012', '2012_2013',
+                            '2013_2014', '2014_2015', '2015_2016', '2016_2017',
+                            '2017_2018', '2018_2019', '2019_2020', '1985_1990',
+                            '1990_1995', '1995_2000', '2000_2005', '2005_2010',
+                            '2010_2015', '2015_2020', '1990_2000', '2000_2010',
+                            '2010_2020', '1985_2020', '2008_2017', '1994_2002',
+                            '2002_2010', '2010_2016', '1986_2015', '1990_2020',
+                            '2000_2020', '2008_2020', '2012_2020',
                         ]
                     },
                 },
