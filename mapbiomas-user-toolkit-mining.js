@@ -11,7 +11,6 @@
  *
  * @version
  *    1.0.0 - First release
- *    1.1.0 - Pasture Quality - Collection 6.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -106,7 +105,7 @@ var App = {
 
     options: {
 
-        version: '1.1.0',
+        version: '1.0.0',
 
         logo: logos.mapbiomas,
 
@@ -220,147 +219,146 @@ var App = {
                     'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_sustainable_use',
                 },
             ],
-            // 'mapbiomas-amazon': [
-            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/limite-raisg-2',
-            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/biomas-2',
-            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/cuencas-2',
-            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/departamentos-2',
-            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/paises-2',
-            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-tis-2',
-            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-nacionales-2',
-            //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/anps-departamentales-2',
-            // ],
-            // 'mapbiomas-chaco': [
-            //     'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/paises',
-            //     'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/limite-chaco',
-            //     'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/departamentos',
-            //     'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/provincias',
-            //     'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/biomas',
-
-            // ],
-            // 'mapbiomas-indonesia': [
-
-            // ],
         },
 
         collections: {
             'mapbiomas-brazil': {
-                // 'collection-5.0': {
-                //     'assets': {
-                //         'pasture_quality': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_pasture_quality_v1',
-                //         // 'pasture': '',
-                //     },
-
-                //     'periods': {
-                //         'pasture_quality': [
-                //             '2010', '2018',
-                //         ],
-                //         'pasture': [
-                //             '1988', '1989', '1990', '1991',
-                //             '1992', '1993', '1994', '1995',
-                //             '1996', '1997', '1998', '1999',
-                //             '2000', '2001', '2002', '2003',
-                //             '2004', '2005', '2006', '2007',
-                //             '2008', '2009', '2010', '2011',
-                //             '2012', '2013', '2014', '2015',
-                //             '2016', '2017',
-                //         ],
-
-                //     },
-                // },
                 'collection-6.0': {
                     'assets': {
-                        'pasture_quality': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_pasture_quality_v1',
-                        // 'pasture': '',
+                        'mined_substance': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_mined_substance_v1',
                     },
 
                     'periods': {
-                        'pasture_quality': [
-                            '2000', '2001', '2002', '2003',
-                            '2004', '2005', '2006', '2007',
-                            '2008', '2009', '2010', '2011',
-                            '2012', '2013', '2014', '2015',
-                            '2016', '2017', '2018', '2019',
-                            '2020'
+                        'mined_substance': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020'
                         ],
-                        'pasture': [
-                            '1988', '1989', '1990', '1991',
-                            '1992', '1993', '1994', '1995',
-                            '1996', '1997', '1998', '1999',
-                            '2000', '2001', '2002', '2003',
-                            '2004', '2005', '2006', '2007',
-                            '2008', '2009', '2010', '2011',
-                            '2012', '2013', '2014', '2015',
-                            '2016', '2017',
-                        ],
-
                     },
                 },
             },
 
-            // 'mapbiomas-amazon': {
-
-            // },
-            // 'mapbiomas-chaco': {
-
-            // },
-
-            // 'mapbiomas-indonesia': {
-            //     'collection-1.0': {
-            //     },
-            // },
-
-            // 'mapbiomas-antlantic-forest': {
-            //     'collection-1.0': {
-            //     },
-            // },
-
-            // 'mapbiomas-pampa': {
-            //     'collection-1.0': {
-            //     },
-            // },
         },
 
-        bandsNames: { //TODO: ajustar o nome das bandas no asset publico
-            'pasture_quality': 'pasture_quality',
+        bandsNames: {
+            'mined_substance': 'mined_substance',
 
         },
 
-        dataType: 'pasture_quality',
+        dataType: 'mined_substance',
 
         data: {
-            'pasture_quality': null,
+            'mined_substance': null,
         },
 
         fileDimensions: {
-            'pasture_quality': 256 * 512,
-            // 'pasture': 256 * 124,
+            'mined_substance': 256 * 256,
         },
 
         ranges: {
-            'pasture_quality': {
-                'min': 1,
-                'max': 3
+            'mined_substance': {
+                'min': 101,
+                'max': 301
             },
-            'pasture': {
-                'min': 0,
-                'max': 1 //TODO: ajustar os params min e max para visualização
-            },
-
         },
 
+        sldStyle: '\
+            <FeatureTypeStyle>\
+                <Rule>\
+                    <RasterSymbolizer>\
+                        <ColorMap type="values">\
+                            <ColorMapEntry color="#f4a582" quantity="101" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="102" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="103" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="104" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="105" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="106" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="107" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="108" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="109" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="110" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="111" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="112" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="113" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="114" label="" />\
+                            <ColorMapEntry color="#f4a582" quantity="115" label="" />\
+                            <ColorMapEntry color="#92c5de" quantity="116" label="" />\
+                            <ColorMapEntry color="#92c5de" quantity="117" label="" />\
+                            <ColorMapEntry color="#92c5de" quantity="118" label="" />\
+                            <ColorMapEntry color="#92c5de" quantity="119" label="" />\
+                            <ColorMapEntry color="#92c5de" quantity="120" label="" />\
+                            <ColorMapEntry color="#92c5de" quantity="121" label="" />\
+                            <ColorMapEntry color="#92c5de" quantity="122" label="" />\
+                            <ColorMapEntry color="#0571b0" quantity="123" label="" />\
+                            <ColorMapEntry color="#ca0020" quantity="126" label="" />\
+                            <ColorMapEntry color="#ca0020" quantity="127" label="" />\
+                            <ColorMapEntry color="#ca0020" quantity="128" label="" />\
+                            <ColorMapEntry color="#ca0020" quantity="129" label="" />\
+                            <ColorMapEntry color="#e66101" quantity="201" label="" />\
+                            <ColorMapEntry color="#e66101" quantity="202" label="" />\
+                            <ColorMapEntry color="#e66101" quantity="214" label="" />\
+                            <ColorMapEntry color="#e66101" quantity="215" label="" />\
+                            <ColorMapEntry color="#fdb863" quantity="216" label="" />\
+                            <ColorMapEntry color="#fdb863" quantity="217" label="" />\
+                            <ColorMapEntry color="#fdb863" quantity="218" label="" />\
+                            <ColorMapEntry color="#b2abd2" quantity="223" label="" />\
+                            <ColorMapEntry color="#b2abd2" quantity="224" label="" />\
+                            <ColorMapEntry color="#b2abd2" quantity="225" label="" />\
+                            <ColorMapEntry color="#5e3c99" quantity="226" label="" />\
+                            <ColorMapEntry color="#3caea3" quantity="301" label="" />\
+                        </ColorMap>\
+                    </RasterSymbolizer>\
+                </Rule>\
+            </FeatureTypeStyle>',
+
         palette: {
-            'pasture_quality': [
-                '#A61C00', // 1. Severe degradation
-                '#FDAE61', // 2. Moderate degradation
-                '#2D7BB6', // 3. No degraded
+            'mined_substance': [
+                '#f4a582', //101
+                '#f4a582', //102
+                '#f4a582', //103
+                '#f4a582', //104
+                '#f4a582', //105
+                '#f4a582', //106
+                '#f4a582', //107
+                '#f4a582', //108
+                '#f4a582', //109
+                '#f4a582', //110
+                '#f4a582', //111
+                '#f4a582', //112
+                '#f4a582', //113
+                '#f4a582', //114
+                '#f4a582', //115
+                '#92c5de', //116
+                '#92c5de', //117
+                '#92c5de', //118
+                '#92c5de', //119
+                '#92c5de', //120
+                '#92c5de', //121
+                '#92c5de', //122
+                '#0571b0', //123
+                '#ca0020', //126
+                '#ca0020', //127
+                '#ca0020', //128
+                '#ca0020', //129
+                '#e66101', //201
+                '#e66101', //202
+                '#e66101', //214
+                '#e66101', //215
+                '#fdb863', //216
+                '#fdb863', //217
+                '#fdb863', //218
+                '#b2abd2', //223
+                '#b2abd2', //224
+                '#b2abd2', //225
+                '#5e3c99', //226
+                '#3caea3', //301
             ],
-
-            'pasture': [
-                '#ffffff',
-                '#ffd738',
-            ],
-
         },
 
         vector: null,
@@ -373,28 +371,91 @@ var App = {
 
         className: {
 
-            'pasture_quality': {
-                1: 'Severe degradation',
-                2: 'Moderate degradation',
-                3: 'No degraded',
+            'mined_substance': {
+                101: '2. Industrial/2.2 Metálicas/Metálicas',
+                102: '2. Industrial/2.2 Metálicas/2.2.01 Ferro',
+                103: '2. Industrial/2.2 Metálicas/2.2.02 Manganês',
+                104: '2. Industrial/2.2 Metálicas/2.2.03 Níquel',
+                105: '2. Industrial/2.2 Metálicas/2.2.04 Amianto',
+                106: '2. Industrial/2.2 Metálicas/2.2.05 Molibidênio',
+                107: '2. Industrial/2.2 Metálicas/2.2.06 Titânio',
+                108: '2. Industrial/2.2 Metálicas/2.2.07 Cromo',
+                109: '2. Industrial/2.2 Metálicas/2.2.08 Cobre',
+                110: '2. Industrial/2.2 Metálicas/2.2.09 Alumínio',
+                111: '2. Industrial/2.2 Metálicas/2.2.10 Magnésio',
+                112: '2. Industrial/2.2 Metálicas/2.2.11 Bário',
+                113: '2. Industrial/2.2 Metálicas/2.2.12 Níobio',
+                114: '2. Industrial/2.2 Metálicas/2.2.13 Estanho',
+                115: '2. Industrial/2.2 Metálicas/2.2.14 Ouro',
+                116: '2. Industrial/2.3 Não Metálicas/Não Metálicas',
+                117: '2. Industrial/2.3 Não Metálicas/2.3.01 Minerais Classe 2',
+                118: '2. Industrial/2.3 Não Metálicas/2.3.02 Fluor',
+                119: '2. Industrial/2.3 Não Metálicas/2.3.03 Fósforo',
+                120: '2. Industrial/2.3 Não Metálicas/2.3.04 Gráfita',
+                121: '2. Industrial/2.3 Não Metálicas/2.3.05 Silício',
+                122: '2. Industrial/2.3 Não Metálicas/2.3.06 Calcário',
+                123: '2. Industrial/2.4 Não Identificado/Não Identificado',
+                126: '2. Industrial/2.1 Energéticas/Energéticas',
+                127: '2. Industrial/2.1 Energéticas/2.1.01 Carvão mineral',
+                128: '2. Industrial/2.1 Energéticas/2.1.02 Urânio',
+                129: '2. Industrial/2.1 Energéticas/2.1.03 Gás natural e petróleo',
+                201: '1. Garimpo/1.1 Metálicas/Metálicas',
+                202: '1. Garimpo/1.1 Metálicas/1.1.03 Outros',
+                214: '1. Garimpo/1.1 Metálicas/1.1.02 Estanho',
+                215: '1. Garimpo/1.1 Metálicas/1.1.01 Ouro',
+                216: '1. Garimpo/1.2 Não Metálicas/Não Metálicas',
+                217: '1. Garimpo/1.2 Não Metálicas/1.2.01 Minerais Classe 2',
+                218: '1. Garimpo/1.2 Não Metálicas/1.2.02 Outros',
+                223: '1. Garimpo/1.3 Pedras Preciosas & Rochas Ornamentais/Pedras Preciosas & Rochas Ornamentais',
+                224: '1. Garimpo/1.3 Pedras Preciosas & Rochas Ornamentais/1.3.01 Pedras preciosas',
+                225: '1. Garimpo/1.3 Pedras Preciosas & Rochas Ornamentais/1.3.02 Rochas Ornamentais',
+                226: '1. Garimpo/1.4 Não Identificado/Não Identificado',
+                301: '3. Outros/Outros/Outros',
             },
 
         },
 
         legend: {
-            params: {
-                "title": 'Legend',
-                "layers": [
-                    ['#A61C00', 1, 'Severe degradation',],
-                    ['#FDAE61', 2, 'Moderate degradation',],
-                    ['#2D7BB6', 3, 'No degraded',],
-                ],
-                "style": {
-                    "backgroundColor": "#ffffff",
-                    "color": "#212121"
+            params: [
+                {
+                    "title": '1. Garimpo',
+                    "layers": [
+                        ['#e66101', null, '1.1 Metálicas'],
+                        ['#fdb863', null, '1.2 Não Metálicas'],
+                        ['#b2abd2', null, '1.3 Pedras Preciosas & Rochas Ornamentais'],
+                        ['#5e3c99', null, '1.4 Não Identificado'],
+                    ],
+                    "style": {
+                        "backgroundColor": "#ffffff",
+                        "color": "#212121"
+                    },
+                    "orientation": "vertical"
                 },
-                "orientation": "vertical"
-            }
+                {
+                    "title": '2. Industrial',
+                    "layers": [
+                        ['#f4a582', null, '2.2 Metálicas'],
+                        ['#92c5de', null, '2.3 Não Metálicas'],
+                        ['#ca0020', null, '2.1 Energéticas'],
+                    ],
+                    "style": {
+                        "backgroundColor": "#ffffff",
+                        "color": "#212121"
+                    },
+                    "orientation": "vertical"
+                },
+                {
+                    "title": '3. Outros',
+                    "layers": [
+                        ['#3caea3', null, '3.1 Outros'],
+                    ],
+                    "style": {
+                        "backgroundColor": "#ffffff",
+                        "color": "#212121"
+                    },
+                    "orientation": "vertical"
+                },
+            ]
         }
     },
 
@@ -412,23 +473,31 @@ var App = {
 
     startMap: function (year) {
 
-        Map.centerObject(App.options.data.pasture_quality, 5);
+        Map.centerObject(App.options.data.mined_substance, 5);
 
         var imageLayer = ui.Map.Layer({
-            'eeObject': App.options.data.pasture_quality,
+            'eeObject': App.options.data.mined_substance
+                .select('mined_substance_' + year)
+                .sldStyle(App.options.sldStyle),
             'visParams': {
-                'bands': ['pasture_quality_' + year],
-                'palette': App.options.palette.pasture_quality,
-                'min': App.options.ranges.pasture_quality.min,
-                'max': App.options.ranges.pasture_quality.max,
+                // 'bands': ['mined_substance_' + year],
+                // 'palette': App.options.palette.mined_substance,
+                // 'min': App.options.ranges.mined_substance.min,
+                // 'max': App.options.ranges.mined_substance.max,
                 'format': 'png'
             },
-            'name': 'Pasture Quality',
+            'name': 'Mined Substance',
             'shown': true,
             'opacity': 1.0
         });
 
         App.ui.clear();
+
+        Map.setOptions({
+            'styles': {
+                'Dark': mapp.getStyle('Dark')
+            }
+        });
 
         Map.add(imageLayer);
 
@@ -505,11 +574,11 @@ var App = {
                     ee.Number(1).evaluate(
                         function (a) {
 
-                            App.options.data.pasture_quality = ee.Image(
-                                App.options.collections[regionName][collectioName].assets.pasture_quality);
+                            App.options.data.mined_substance = ee.Image(
+                                App.options.collections[regionName][collectioName].assets.mined_substance);
 
                             var year = App.options.collections[regionName][collectioName]
-                                .periods.pasture_quality.slice(-1)[0];
+                                .periods.mined_substance.slice(-1)[0];
 
                             App.startMap(year);
                         }
@@ -624,7 +693,7 @@ var App = {
 
             App.options.activeFeature = App.options.table;
 
-            // Map.centerObject(App.options.activeFeature);
+            Map.centerObject(App.options.activeFeature);
 
             App.ui.clear();
 
@@ -752,11 +821,11 @@ var App = {
                 .clip(region);
 
             var imageLayer = ui.Map.Layer({
-                'eeObject': image.selfMask(),
+                'eeObject': image.selfMask().sldStyle(App.options.sldStyle),
                 'visParams': {
-                    'palette': App.options.palette[App.options.dataType],
-                    'min': App.options.ranges[App.options.dataType].min,
-                    'max': App.options.ranges[App.options.dataType].max,
+                    // 'palette': App.options.palette[App.options.dataType],
+                    // 'min': App.options.ranges[App.options.dataType].min,
+                    // 'max': App.options.ranges[App.options.dataType].max,
                     'format': 'png'
                 },
                 'name': label,
@@ -938,7 +1007,14 @@ var App = {
                 'description': tableName,
                 'folder': 'MAPBIOMAS-EXPORT',
                 'fileNamePrefix': tableName,
-                'fileFormat': 'CSV'
+                'fileFormat': 'CSV',
+                'selectors': [
+                    'class_name',
+                    'class',
+                    'band',
+                    'area',
+                    'unit'
+                ]
             });
 
         },
@@ -975,7 +1051,9 @@ var App = {
                 this.panelBuffer.add(this.labelBuffer);
                 this.panelBuffer.add(this.selectBuffer);
 
-                this.panelLegend.add(legend.getLegend(App.options.legend.params));
+                this.panelLegend.add(legend.getLegend(App.options.legend.params[0]));
+                this.panelLegend.add(legend.getLegend(App.options.legend.params[1]));
+                this.panelLegend.add(legend.getLegend(App.options.legend.params[2]));
 
                 // this.panelMain.add(this.panelType);
                 this.panelMain.add(this.panelRegion);
@@ -1105,7 +1183,7 @@ var App = {
                 'fontSize': '16px'
             }),
 
-            labelSubtitle: ui.Label('Pasture', {
+            labelSubtitle: ui.Label('Mining', {
                 // 'fontWeight': 'bold',
                 // 'padding': '1px',
                 'fontSize': '14px'
@@ -1230,8 +1308,7 @@ var App = {
 
             selectDataType: ui.Select({
                 'items': [
-                    'pasture_quality',
-                    // 'pasture',
+                    'mined_substance',
                 ],
                 'placeholder': 'Data type',
                 'style': {
