@@ -11,6 +11,7 @@
  *
  * @version
  *    1.0.0 - First release
+ *    1.1.0 - Irrigated Agriculture - Collection 6.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -105,7 +106,7 @@ var App = {
 
     options: {
 
-        version: '1.0.0',
+        version: '1.1.0',
 
         logo: logos.mapbiomas,
 
@@ -142,38 +143,82 @@ var App = {
 
         tables: {
             'mapbiomas-brazil': [
-                'projects/mapbiomas-workspace/AUXILIAR/areas-protegidas',
-                'projects/mapbiomas-workspace/AUXILIAR/biomas-2019',
-                'projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-1',
-                'projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-2',
-                'projects/mapbiomas-workspace/AUXILIAR/estados-2017',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AC',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AL',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AM',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AP',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-BA',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-CE',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-DF',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-ES',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-GO',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MA',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MG',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MS',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MT',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PA',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PB',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PE',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PI',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PR',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RJ',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RN',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RO',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RR',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RS',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-SC',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-SE',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-SP',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-TO',
+                {
+                    'label': 'atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/atlantic_forest_law',
+                },
+                {
+                    'label': 'biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biome',
+                },
+                {
+                    'label': 'biosphere_reserve',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biosphere_reserve',
+                },
+                {
+                    'label': 'city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/city',
+                },
+                {
+                    'label': 'country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/country',
+                },
+                {
+                    'label': 'federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_integral_protection',
+                },
+                {
+                    'label': 'federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_sustainable_use',
+                },
+                {
+                    'label': 'indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/indigenous_land',
+                },
+                {
+                    'label': 'legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/legal_amazon',
+                },
+                {
+                    'label': 'level_1_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin',
+                },
+                {
+                    'label': 'level_1_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin_pnrh',
+                },
+                {
+                    'label': 'level_2_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin',
+                },
+                {
+                    'label': 'level_2_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin_pnrh',
+                },
+                {
+                    'label': 'quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/quilombo',
+                },
+                {
+                    'label': 'semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/semiarid',
+                },
+                {
+                    'label': 'settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/settlement',
+                },
+                {
+                    'label': 'state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state',
+                },
+                {
+                    'label': 'state_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_integral_protection',
+                },
+                {
+                    'label': 'state_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_sustainable_use',
+                },
             ],
             // 'mapbiomas-amazon': [
             //     'projects/mapbiomas-raisg/DATOS_AUXILIARES/VECTORES/limite-raisg-2',
@@ -200,19 +245,51 @@ var App = {
 
         collections: {
             'mapbiomas-brazil': {
-                'collection-5.0': {
-                    'assets': { //TODO: Inserir os assets públicos
-                        'irrigated_agriculture': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_irrigated_agriculture_v1',
+                // 'collection-5.0': {
+                //     'assets': {
+                //         'irrigated_agriculture': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_irrigated_agriculture_v1',
+                //         // 'agriculture': '',
+                //     },
+
+                //     'periods': {
+                //         'irrigated_agriculture': [
+                //             '2000', '2001', '2002', '2003',
+                //             '2004', '2005', '2006', '2007',
+                //             '2008', '2009', '2010', '2011',
+                //             '2012', '2013', '2014', '2015',
+                //             '2016', '2017', '2018', '2019'
+                //         ],
+                //         'agriculture': [
+                //             '1985', '1986', '1987', '1988',
+                //             '1989', '1990', '1991', '1992',
+                //             '1993', '1994', '1995', '1996',
+                //             '1997', '1998', '1999', '2000',
+                //             '2001', '2002', '2003', '2004',
+                //             '2005', '2006', '2007', '2008',
+                //             '2009', '2010', '2011', '2012',
+                //             '2013', '2014', '2015', '2016',
+                //             '2017', '2018', '2019'
+                //         ],
+
+                //     },
+                // },
+                'collection-6.0': {
+                    'assets': {
+                        'irrigated_agriculture': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_irrigated_agriculture_v1',
                         // 'agriculture': '',
                     },
 
                     'periods': {
                         'irrigated_agriculture': [
-                            '2000', '2001', '2002', '2003',
-                            '2004', '2005', '2006', '2007',
-                            '2008', '2009', '2010', '2011',
-                            '2012', '2013', '2014', '2015',
-                            '2016', '2017', '2018', '2019'
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020'
                         ],
                         'agriculture': [
                             '1985', '1986', '1987', '1988',
@@ -223,7 +300,7 @@ var App = {
                             '2005', '2006', '2007', '2008',
                             '2009', '2010', '2011', '2012',
                             '2013', '2014', '2015', '2016',
-                            '2017', '2018', '2019'
+                            '2017', '2018', '2019', '2020'
                         ],
 
                     },
@@ -272,7 +349,7 @@ var App = {
         ranges: {
             'irrigated_agriculture': {
                 'min': 1,
-                'max': 4
+                'max': 3
             },
             'agriculture': {
                 'min': 0,
@@ -281,11 +358,14 @@ var App = {
 
         },
 
-        palette: { //TODO: Criar paleta de cores para visualização
+        palette: {
             'irrigated_agriculture': [
-                '#f500d0', // [1] Center-pivot irrigation
-                '#bc00f5', // [2] Other irrigation systems
+                '#F605E9', // 1. Irrigation center pivot
+                '#3D0841', // 2. Irrigated rice
+                '#8B1DB9', // 3. Other irrigation systems
             ],
+
+
 
             'agriculture': [
                 '#ffffff',
@@ -305,57 +385,20 @@ var App = {
         className: {
 
             'irrigated_agriculture': {
-                1: 'Center-pivot irrigation',
-                2: 'Other irrigation systems',
+                1: 'Irrigation center pivot',
+                2: 'Irrigated rice',
+                3: 'Other irrigation systems',
             },
-            'classification': {
-                1: "Forest",
-                2: "Natural Forest",
-                3: "Forest Formation",
-                4: "Savanna Formation",
-                5: "Magrove",
-                9: "Forest Plantation",
-                10: "Non Forest Natural Formation",
-                11: "Wetland",
-                12: "Grassland",
-                32: "Salt flat",
-                29: "Rocky outcrop",
-                13: "Other Non Forest Natural Formation",
-                14: "Farming",
-                15: "Pasture",
-                18: "Agriculture",
-                19: "Temporary Crops",
-                39: "Soy Beans",
-                20: "Sugar Cane",
-                40: "Rice",
-                41: "Mosaic of Crops",
-                42: "Coffe",
-                43: "Citrus",
-                44: "Cashew",
-                45: "Other",
-                36: "Perennial Crops",
-                21: "Mosaic of Agriculture and Pasture",
-                22: "Non vegetated area",
-                24: "Urban Infrastructure",
-                30: "Mining",
-                23: "Beach and Dune",
-                25: "Other Non Vegetated Area",
-                26: "Water",
-                33: "River, Lake and Ocean",
-                37: "Artificial Water Body",
-                38: "Water Reservoirs",
-                31: "Aquaculture",
-                27: "Non Observed",
-                0: "Non Observed",
-            }
+
         },
 
         legend: {
             params: {
                 "title": 'Legend',
                 "layers": [
-                    ["#f500d0", 1, 'Center-pivot irrigation',],
-                    ["#bc00f5", 2, 'Other irrigation systems',],
+                    ['#F605E9', 1, 'Irrigation center pivot',],
+                    ['#3D0841', 2, 'Irrigated rice',],
+                    ['#8B1DB9', 3, 'Other irrigation systems',],
                 ],
                 "style": {
                     "backgroundColor": "#ffffff",
@@ -385,7 +428,6 @@ var App = {
         var imageLayer = ui.Map.Layer({
             'eeObject': App.options.data.irrigated_agriculture,
             'visParams': {
-                // 'bands': ['b1'], // TODO: ajustar o nome das bandas
                 'bands': ['irrigated_agriculture_' + year],
                 'palette': App.options.palette.irrigated_agriculture,
                 'min': App.options.ranges.irrigated_agriculture.min,
@@ -593,7 +635,7 @@ var App = {
 
             App.options.activeFeature = App.options.table;
 
-            Map.centerObject(App.options.activeFeature);
+            // Map.centerObject(App.options.activeFeature);
 
             App.ui.clear();
 
