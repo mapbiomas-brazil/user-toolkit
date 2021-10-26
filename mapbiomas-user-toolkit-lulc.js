@@ -1615,8 +1615,10 @@ var App = {
 
             init: function () {
 
-                this.panelMain.add(this.panelLogo);
+                this.panelLogo.add(App.options.logo);
 
+                this.panelMain.add(this.panelLogo);
+                this.panelMain.add(this.labelTitle);
                 this.panelMain.add(this.labelSubtitle);
                 this.panelMain.add(this.panelLink);
                 this.panelLink.add(this.labelLink);
@@ -1677,20 +1679,21 @@ var App = {
             }),
 
             panelLogo: ui.Panel({
-                'widgets': ui.Chart(
-                    [['<p style= font-size:18px;font-family: Helvetica, sans-serif><b>MapBiomas User Toolkit 1.7.0</b></p>']],
-                    'Table',
-                    {
-                        'allowHtml': true,
-                        'pagingSymbols': {
-                            prev: '<img width="330" src="https://mapbiomas-br-site.s3.amazonaws.com/mapbiomas_brasil_logo_1.png">',
-                            next: ' '
-                        },
-                    }
-                ),
+                // 'widgets': ui.Chart(
+                //     [['<p style= font-size:18px;font-family: Helvetica, sans-serif><b>MapBiomas User Toolkit 1.7.0</b></p>']],
+                //     'Table',
+                //     {
+                //         'allowHtml': true,
+                //         'pagingSymbols': {
+                //             prev: '<img width="330" src="https://mapbiomas-br-site.s3.amazonaws.com/mapbiomas_brasil_logo_1.png">',
+                //             next: ' '
+                //         },
+                //     }
+                // ),
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
-                    'stretch': 'horizontal'
+                    'stretch': 'horizontal',
+                    'margin': '0px 0px 0px 110px',
                 },
             }),
 

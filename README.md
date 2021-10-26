@@ -22,6 +22,19 @@ User Toolkit to download MapBiomas data with Google Earth Engine. This tutorial 
     * Updated for collection 4.1
 * 1.3.0
     * Updated for collection 5.0
+    * Export a csv file with areas per classe and year
+* 1.3.1
+    * Loads mapbiomas-chaco collection 2.0
+* 1.3.2
+    * Loads mapbiomas-brazil collection 5.0 quality
+* 1.4.0
+    * Loads mapbiomas-atlantic-forest collection 1.0
+* 1.5.0
+    * Loads mapbiomas-pampa collection 1.0
+* 1.6.0
+    * Loads mapbiomas-brazil collection 6.0
+* 1.7.0
+    * Loads mapbiomas-amazon collection 3.0
 
 <div class="fluid-row" id="header">
   <h1 class="title toc-ignore">Video tutorial (pt-br)</h1>
