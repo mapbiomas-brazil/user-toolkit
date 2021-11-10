@@ -32,6 +32,7 @@
  *    1.5.0 - Loads mapbiomas-pampa collection 1.0
  *    1.6.0 - Loads mapbiomas-brazil collection 6.0
  *    1.7.0 - Loads mapbiomas-amazon collection 3.0
+ *    1.8.0 - Loads mapbiomas-indonesia collection 1.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -119,7 +120,7 @@ var App = {
 
     options: {
 
-        version: '1.7.0',
+        version: '1.8.0',
 
         logo: logos.mapbiomas,
 
@@ -353,9 +354,40 @@ var App = {
                     'label': 'state'
                 },
             ],
-            // 'mapbiomas-indonesia': [
-
-            // ],
+            'mapbiomas-indonesia': [
+                {
+                    'label': 'city',
+                    'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION1/city'
+                },
+                {
+                    'label': 'country',
+                    'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION1/country'
+                },
+                {
+                    'label': 'regions',
+                    'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION1/regions'
+                },
+                {
+                    'label': 'state',
+                    'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION1/state'
+                },
+                // {
+                //     'label': 'category',
+                //     'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION1/category'
+                // },
+                // {
+                //     'label': 'land-tenure',
+                //     'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION1/land-tenure'
+                // },
+                // {
+                //     'label': 'level-1-subcategory',
+                //     'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION1/level-1-subcategory'
+                // },
+                // {
+                //     'label': 'level-2-subcategory',
+                //     'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION1/level-2-subcategory'
+                // },
+            ],
         },
 
         collections: {
@@ -769,6 +801,37 @@ var App = {
             },
             'mapbiomas-indonesia': {
                 'collection-1.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_integration_v1',
+                        'transitions': 'projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_transitions_v2',
+                        'quality': 'projects/mapbiomas-indonesia/public/collection1/mapbiomas_indonesia_collection1_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019',
+                        ],
+                        'Transitions': [
+                            "2000_2001", "2001_2002", "2002_2003", "2003_2004",
+                            "2004_2005", "2005_2006", "2006_2007", "2007_2008",
+                            "2008_2009", "2009_2010", "2010_2011", "2011_2012",
+                            "2012_2013", "2013_2014", "2014_2015", "2015_2016",
+                            "2016_2017", "2017_2018", "2018_2019", "2000_2005",
+                            "2005_2010", "2010_2015", "2015_2019", "2000_2010",
+                            "2010_2019", "2000_2019", "2011_2019", "2013_2019",
+                            "2014_2019", "2004_2019",
+                        ],
+                        'Quality': [
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019',
+                        ]
+                    },
                 },
             },
         },
@@ -1378,7 +1441,7 @@ var App = {
             App.options.activeFeature = App.options.table
                 .filterMetadata(App.options.propertyName, 'equals', name);
 
-            Map.centerObject(App.options.activeFeature);
+            // Map.centerObject(App.options.activeFeature);
 
             Map.clear();
 
@@ -1620,13 +1683,14 @@ var App = {
                 this.panelMain.add(this.panelLogo);
                 this.panelMain.add(this.labelTitle);
                 this.panelMain.add(this.labelSubtitle);
+                this.panelMain.add(this.labelLink);
                 this.panelMain.add(this.panelLink);
-                this.panelLink.add(this.labelLink);
                 this.panelLink.add(this.labelLink1);
                 this.panelLink.add(this.labelLink2);
                 this.panelLink.add(this.labelLink3);
                 this.panelLink.add(this.labelLink4);
                 this.panelLink.add(this.labelLink5);
+                this.panelLink.add(this.labelLink6);
 
                 this.panelRegion.add(this.labelRegion);
                 this.panelRegion.add(this.selectRegion);
@@ -1828,6 +1892,12 @@ var App = {
                 'http://pampa.mapbiomas.org/codigos-de-la-leyenda-1'
             ),
 
+            labelLink6: ui.Label('Indonesia', {
+                'fontSize': '10px',
+            },
+                'http://amazonia.mapbiomas.org/codigos-de-la-leyenda'
+            ),
+
             labelType: ui.Label('Type:', {
                 // 'padding': '1px',
                 'fontSize': '16px'
@@ -1895,7 +1965,7 @@ var App = {
                     'mapbiomas-atlantic-forest',
                     'mapbiomas-brazil',
                     'mapbiomas-chaco',
-                    // 'mapbiomas-indonesia',
+                    'mapbiomas-indonesia',
                     'mapbiomas-pampa',
                 ],
                 'placeholder': 'None',
