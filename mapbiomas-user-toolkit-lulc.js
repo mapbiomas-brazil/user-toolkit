@@ -33,6 +33,7 @@
  *    1.6.0 - Loads mapbiomas-brazil collection 6.0
  *    1.7.0 - Loads mapbiomas-amazon collection 3.0
  *    1.8.0 - Loads mapbiomas-indonesia collection 1.0
+ *    1.9.0 - New tabs and download entire Brazilian maps from storage
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -120,7 +121,7 @@ var App = {
 
     options: {
 
-        version: '1.8.0',
+        version: '1.9.0',
 
         logo: logos.mapbiomas,
 
