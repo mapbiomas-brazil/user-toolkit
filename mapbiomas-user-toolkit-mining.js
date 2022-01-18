@@ -1023,56 +1023,65 @@ var App = {
 
             init: function () {
 
-                this.panelMain.add(this.panelLogo);
-                this.panelMain.add(this.labelTitle);
-                this.panelMain.add(this.labelSubtitle);
-                this.panelMain.add(this.labelLink);
+                App.ui.form.panelMain.add(App.ui.form.panelLogo);
+                App.ui.form.panelMain.add(App.ui.form.labelTitle);
+                App.ui.form.panelMain.add(App.ui.form.labelSubtitle);
+                App.ui.form.panelMain.add(App.ui.form.labelLink);
 
-                this.panelLogo.add(App.options.logo);
+                App.ui.form.panelMain.add(App.ui.form.tabs);
+                App.ui.form.panelMain.add(App.ui.form.panel1);
 
-                this.panelRegion.add(this.labelRegion);
-                this.panelRegion.add(this.selectRegion);
+                App.ui.form.tab1.add(App.ui.form.checkboxTab1);
+                App.ui.form.tab2.add(App.ui.form.checkboxTab2);
 
-                this.panelCollection.add(this.labelCollection);
-                this.panelCollection.add(this.selectCollection);
+                App.ui.form.tabs.add(App.ui.form.tab1);
+                App.ui.form.tabs.add(App.ui.form.tab2);
 
-                this.panelFeatureCollections.add(this.labelTables);
-                this.panelFeatureCollections.add(this.selectFeatureCollections);
+                App.ui.form.panelLogo.add(App.options.logo);
 
-                this.panelProperties.add(this.labelProperties);
-                this.panelProperties.add(this.selectProperties);
+                App.ui.form.panelRegion.add(App.ui.form.labelRegion);
+                App.ui.form.panelRegion.add(App.ui.form.selectRegion);
 
-                this.panelFeature.add(this.labelFeature);
-                this.panelFeature.add(this.selectFeature);
+                App.ui.form.panelCollection.add(App.ui.form.labelCollection);
+                App.ui.form.panelCollection.add(App.ui.form.selectCollection);
 
-                this.panelDataType.add(this.labelDataType);
-                this.panelDataType.add(this.selectDataType);
+                App.ui.form.panelFeatureCollections.add(App.ui.form.labelTables);
+                App.ui.form.panelFeatureCollections.add(App.ui.form.selectFeatureCollections);
 
-                this.panelBuffer.add(this.labelBuffer);
-                this.panelBuffer.add(this.selectBuffer);
+                App.ui.form.panelProperties.add(App.ui.form.labelProperties);
+                App.ui.form.panelProperties.add(App.ui.form.selectProperties);
 
-                this.panelLegend.add(legend.getLegend(App.options.legend.params[0]));
-                this.panelLegend.add(legend.getLegend(App.options.legend.params[1]));
-                this.panelLegend.add(legend.getLegend(App.options.legend.params[2]));
+                App.ui.form.panelFeature.add(App.ui.form.labelFeature);
+                App.ui.form.panelFeature.add(App.ui.form.selectFeature);
+
+                App.ui.form.panelDataType.add(App.ui.form.labelDataType);
+                App.ui.form.panelDataType.add(App.ui.form.selectDataType);
+
+                App.ui.form.panelBuffer.add(App.ui.form.labelBuffer);
+                App.ui.form.panelBuffer.add(App.ui.form.selectBuffer);
+
+                App.ui.form.panelLegend.add(legend.getLegend(App.options.legend.params[0]));
+                App.ui.form.panelLegend.add(legend.getLegend(App.options.legend.params[1]));
+                App.ui.form.panelLegend.add(legend.getLegend(App.options.legend.params[2]));
 
                 // this.panelMain.add(this.panelType);
-                this.panelMain.add(this.panelRegion);
-                this.panelMain.add(this.panelCollection);
-                this.panelMain.add(this.panelFeatureCollections);
-                this.panelMain.add(this.panelStates);
-                this.panelMain.add(this.panelProperties);
-                this.panelMain.add(this.panelFeature);
-                this.panelMain.add(this.panelDataType);
-                this.panelMain.add(this.panelLegend);
-                this.panelMain.add(this.panelBuffer);
+                App.ui.form.panel1.add(App.ui.form.panelRegion);
+                App.ui.form.panel1.add(App.ui.form.panelCollection);
+                App.ui.form.panel1.add(App.ui.form.panelFeatureCollections);
+                App.ui.form.panel1.add(App.ui.form.panelStates);
+                App.ui.form.panel1.add(App.ui.form.panelProperties);
+                App.ui.form.panel1.add(App.ui.form.panelFeature);
+                App.ui.form.panel1.add(App.ui.form.panelDataType);
+                App.ui.form.panel1.add(App.ui.form.panelLegend);
+                App.ui.form.panel1.add(App.ui.form.panelBuffer);
 
-                this.panelMain.add(this.labelLayers);
-                this.panelMain.add(this.panelLayersList);
+                App.ui.form.panel1.add(App.ui.form.labelLayers);
+                App.ui.form.panel1.add(App.ui.form.panelLayersList);
 
-                this.panelMain.add(this.buttonExport2Drive);
-                this.panelMain.add(this.labelNotes);
+                App.ui.form.panel1.add(App.ui.form.buttonExport2Drive);
+                App.ui.form.panel1.add(App.ui.form.labelNotes);
 
-                ui.root.add(this.panelMain);
+                ui.root.add(App.ui.form.panelMain);
 
             },
 
@@ -1396,6 +1405,129 @@ var App = {
                 "style": {
                     // 'padding': '2px',
                     'stretch': 'horizontal'
+                }
+            }),
+
+            // panels and tabs
+            tabs: ui.Panel({
+                layout: ui.Panel.Layout.flow('horizontal')
+            }),
+
+            checkboxTab1: ui.Checkbox({
+                'label': '  Toolkit ',
+                'style': {
+                    'margin': '5px 0px 5px -16px',
+                    'stretch': 'horizontal',
+                    'backgroundColor': '#00000000',
+                },
+                'onChange': function (checked) {
+                    if (checked) {
+                        App.ui.form.checkboxTab2.setValue(false);
+                        App.ui.form.tab1.style().set('border', '1px solid #808080');
+                        App.ui.form.tab2.style().set('border', '1px solid #80808033');
+
+                        App.ui.form.panelMain.remove(App.ui.form.panel2);
+                        App.ui.form.panelMain.add(App.ui.form.panel1);
+                    }
+                }
+            }),
+
+            checkboxTab2: ui.Checkbox({
+                'label': '  Direct Link',
+                'style': {
+                    'margin': '5px 20px 5px -16px',
+                    'stretch': 'horizontal',
+                    'backgroundColor': '#00000000',
+                },
+                'onChange': function (checked) {
+                    if (checked) {
+                        App.ui.form.checkboxTab1.setValue(false);
+                        App.ui.form.tab1.style().set('border', '1px solid #80808033');
+                        App.ui.form.tab2.style().set('border', '1px solid #808080');
+
+                        App.ui.form.panelMain.remove(App.ui.form.panel1);
+                        App.ui.form.panelMain.add(App.ui.form.panel2);
+                    }
+
+                }
+            }),
+
+            tab1: ui.Panel({
+                'style': {
+                    'width': '100px',
+                    'backgroundColor': '#dddddd00',
+                    'stretch': 'horizontal',
+                    'border': '1px solid #808080',
+                    'margin': '0px 0px 0px 6px'
+                },
+            }),
+
+            tab2: ui.Panel({
+                'style': {
+                    'width': '100px',
+                    'backgroundColor': '#dddddd00',
+                    'stretch': 'horizontal',
+                    'border': '1px solid #80808033',
+                }
+            }),
+
+            panel1: ui.Panel({
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel2: ui.Panel({
+                widgets: [
+                    ui.Label('Brazil'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2020.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
                 }
             }),
 
