@@ -11,6 +11,7 @@
  *
  * @version
  *    1.0.0 - First release
+ *    1.1.0 - Loads mapbiomas-brazil collection 7.0 mining data
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -105,9 +106,12 @@ var App = {
 
     options: {
 
-        version: '1.0.0',
+        version: '1.1.0',
 
-        logo: logos.mapbiomas,
+        logo: {
+            uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
+            base64: null
+        },
 
         statesNames: {
             'None': 'None',
@@ -144,79 +148,79 @@ var App = {
             'mapbiomas-brazil': [
                 {
                     'label': 'atlantic_forest_law',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/atlantic_forest_law',
                 },
                 {
                     'label': 'biome',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biome',
                 },
                 {
                     'label': 'biosphere_reserve',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biosphere_reserve',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biosphere_reserve',
                 },
                 {
                     'label': 'city',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/city',
                 },
                 {
                     'label': 'country',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/country',
                 },
                 {
                     'label': 'federal_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_integral_protection',
                 },
                 {
                     'label': 'federal_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_sustainable_use',
                 },
                 {
                     'label': 'indigenous_land',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/indigenous_land',
                 },
                 {
                     'label': 'legal_amazon',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/legal_amazon',
                 },
                 {
                     'label': 'level_1_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin',
                 },
                 {
                     'label': 'level_1_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin_pnrh',
                 },
                 {
                     'label': 'level_2_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin',
                 },
                 {
                     'label': 'level_2_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin_pnrh',
                 },
                 {
                     'label': 'quilombo',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/quilombo',
                 },
                 {
                     'label': 'semiarid',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/semiarid',
                 },
                 {
                     'label': 'settlement',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/settlement',
                 },
                 {
                     'label': 'state',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state',
                 },
                 {
                     'label': 'state_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_integral_protection',
                 },
                 {
                     'label': 'state_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_sustainable_use',
                 },
             ],
         },
@@ -239,6 +243,26 @@ var App = {
                             '2009', '2010', '2011', '2012',
                             '2013', '2014', '2015', '2016',
                             '2017', '2018', '2019', '2020'
+                        ],
+                    },
+                },
+                'collection-7.0': {
+                    'assets': {
+                        'mined_substance': 'projects/mapbiomas-workspace/public/collection7/mapbiomas_collection70_mined_substance_v1',
+                    },
+
+                    'periods': {
+                        'mined_substance': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
                         ],
                     },
                 },
@@ -296,6 +320,8 @@ var App = {
                             <ColorMapEntry color="#92c5de" quantity="121" label="" />\
                             <ColorMapEntry color="#92c5de" quantity="122" label="" />\
                             <ColorMapEntry color="#0571b0" quantity="123" label="" />\
+                            <ColorMapEntry color="#0571b0" quantity="124" label="" />\
+                            <ColorMapEntry color="#0571b0" quantity="125" label="" />\
                             <ColorMapEntry color="#ca0020" quantity="126" label="" />\
                             <ColorMapEntry color="#ca0020" quantity="127" label="" />\
                             <ColorMapEntry color="#ca0020" quantity="128" label="" />\
@@ -342,22 +368,22 @@ var App = {
                 '#92c5de', //121
                 '#92c5de', //122
                 '#0571b0', //123
+                '#0571b0', //124
+                '#0571b0', //125
                 '#ca0020', //126
                 '#ca0020', //127
                 '#ca0020', //128
                 '#ca0020', //129
-                '#e66101', //201
-                '#e66101', //202
                 '#e66101', //214
                 '#e66101', //215
                 '#fdb863', //216
                 '#fdb863', //217
-                '#fdb863', //218
                 '#b2abd2', //223
                 '#b2abd2', //224
                 '#b2abd2', //225
                 '#5e3c99', //226
                 '#3caea3', //301
+
             ],
         },
 
@@ -395,6 +421,10 @@ var App = {
                 121: '2. Industrial/2.3 Não Metálicas/2.3.05 Silício',
                 122: '2. Industrial/2.3 Não Metálicas/2.3.06 Calcário',
                 123: '2. Industrial/2.4 Não Identificado/Não Identificado',
+
+                124: '2. Industrial/2.4 Pedras Preciosas & Rochas Ornamentais/Pedras Preciosas',
+                125: '2. Industrial/2.4 Pedras Preciosas & Rochas Ornamentais/Rochas Ornamentais',
+
                 126: '2. Industrial/2.1 Energéticas/Energéticas',
                 127: '2. Industrial/2.1 Energéticas/2.1.01 Carvão mineral',
                 128: '2. Industrial/2.1 Energéticas/2.1.02 Urânio',
@@ -1023,7 +1053,20 @@ var App = {
 
             init: function () {
 
+                var blob = ee.Blob(App.options.logo.uri);
+
+                blob.string().evaluate(
+                    function (str) {
+                        str = str.replace(/\n/g, '');
+                        App.options.logo.base64 = ui.Label({
+                            imageUrl: str,
+                        });
+                        App.ui.form.panelLogo.add(App.options.logo.base64);
+                    }
+                );
+
                 App.ui.form.panelMain.add(App.ui.form.panelLogo);
+
                 App.ui.form.panelMain.add(App.ui.form.labelTitle);
                 App.ui.form.panelMain.add(App.ui.form.labelSubtitle);
                 App.ui.form.panelMain.add(App.ui.form.labelLink);
@@ -1036,8 +1079,6 @@ var App = {
 
                 App.ui.form.tabs.add(App.ui.form.tab1);
                 App.ui.form.tabs.add(App.ui.form.tab2);
-
-                App.ui.form.panelLogo.add(App.options.logo);
 
                 App.ui.form.panelRegion.add(App.ui.form.labelRegion);
                 App.ui.form.panelRegion.add(App.ui.form.selectRegion);
@@ -1097,7 +1138,8 @@ var App = {
             panelLogo: ui.Panel({
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
-                    'margin': '0px 0px 0px 110px',
+                    'stretch': 'horizontal',
+                    'margin': '10px 0px 5px 15px',
                 },
             }),
 
@@ -1482,42 +1524,43 @@ var App = {
                     ui.Label('Brazil'),
                     ui.Panel({
                         widgets: [
-                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1985.tif' }),
-                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1986.tif' }),
-                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1987.tif' }),
-                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1988.tif' }),
-                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1989.tif' }),
-                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1990.tif' }),
-                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1991.tif' }),
-                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1992.tif' }),
-                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1993.tif' }),
-                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1994.tif' }),
-                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1995.tif' }),
-                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1996.tif' }),
-                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1997.tif' }),
-                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1998.tif' }),
-                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_1999.tif' }),
-                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2000.tif' }),
-                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2001.tif' }),
-                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2002.tif' }),
-                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2003.tif' }),
-                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2004.tif' }),
-                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2005.tif' }),
-                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2006.tif' }),
-                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2007.tif' }),
-                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2008.tif' }),
-                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2009.tif' }),
-                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2010.tif' }),
-                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2011.tif' }),
-                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2012.tif' }),
-                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2013.tif' }),
-                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2014.tif' }),
-                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2015.tif' }),
-                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2016.tif' }),
-                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2017.tif' }),
-                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2018.tif' }),
-                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2019.tif' }),
-                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/mining/brasil_mining_2020.tif' }),
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2021.tif' }),
                         ],
                         'layout': ui.Panel.Layout.flow('horizontal', true),
                         style: {
