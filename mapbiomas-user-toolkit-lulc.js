@@ -21,7 +21,7 @@
  *    1.1.4 - Update transitions data to collection 4.1
  *    1.2.0 - Loads mapbiomas-brazil collection 3.1
  *          - Loads mapbiomas-brazil collection 4.0
- *          - Laods mapbiomas-chaco collection 1.0
+ *          - Loads mapbiomas-chaco collection 1.0
  *          - Loads mapbiomas-amazon collection 1.0
  *          - Updated mapbiomas-amazon collection 2.0
  *    1.3.0 - Loads mapbiomas-brazil collection 5.0
@@ -34,6 +34,9 @@
  *    1.7.0 - Loads mapbiomas-amazon collection 3.0
  *    1.8.0 - Loads mapbiomas-indonesia collection 1.0
  *    1.9.0 - New tabs and download entire Brazilian maps from storage
+ *    1.10.0 - Loads mapbiomas-brazil collection 7.0
+ *    1.11.0 - Loads mapbiomas-chaco collection 3.0
+ *    1.12.0 - Loads mapbiomas-atlantic-forest collection 2.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -121,9 +124,12 @@ var App = {
 
     options: {
 
-        version: '1.9.0',
+        version: '1.12.0',
 
-        logo: logos.mapbiomas,
+        logo: {
+            uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
+            base64: null
+        },
 
         statesNames: {
             'None': 'None',
@@ -160,79 +166,79 @@ var App = {
             'mapbiomas-brazil': [
                 {
                     'label': 'atlantic_forest_law',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/atlantic_forest_law',
                 },
                 {
                     'label': 'biome',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biome',
                 },
                 {
                     'label': 'biosphere_reserve',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biosphere_reserve',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biosphere_reserve',
                 },
                 {
                     'label': 'city',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/city',
                 },
                 {
                     'label': 'country',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/country',
                 },
                 {
                     'label': 'federal_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_integral_protection',
                 },
                 {
                     'label': 'federal_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_sustainable_use',
                 },
                 {
                     'label': 'indigenous_land',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/indigenous_land',
                 },
                 {
                     'label': 'legal_amazon',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/legal_amazon',
                 },
                 {
                     'label': 'level_1_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin',
                 },
                 {
                     'label': 'level_1_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin_pnrh',
                 },
                 {
                     'label': 'level_2_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin',
                 },
                 {
                     'label': 'level_2_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin_pnrh',
                 },
                 {
                     'label': 'quilombo',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/quilombo',
                 },
                 {
                     'label': 'semiarid',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/semiarid',
                 },
                 {
                     'label': 'settlement',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/settlement',
                 },
                 {
                     'label': 'state',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state',
                 },
                 {
                     'label': 'state_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_integral_protection',
                 },
                 {
                     'label': 'state_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_sustainable_use',
                 },
             ],
             'mapbiomas-amazon': [
@@ -279,49 +285,73 @@ var App = {
             ],
             'mapbiomas-chaco': [
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/paises',
-                    'label': 'paises'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/biome',
+                    'label': 'biome'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/limite-chaco',
-                    'label': 'limite-chaco'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/chaco_bolivia',
+                    'label': 'chaco bolivia'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/departamentos',
-                    'label': 'departamentos'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/chaco_burkart',
+                    'label': 'chaco burkart'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/provincias',
-                    'label': 'provincias'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/parque_chaqueno',
+                    'label': 'parque chaqueno'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/biomas',
-                    'label': 'biomas'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/provincia_fitogeografica_chaquena',
+                    'label': 'provincia fitogeografica chaquena'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/chaco_conservation_units',
+                    'label': 'conservation units'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/city',
+                    'label': 'city'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/country',
+                    'label': 'country'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/state',
+                    'label': 'state'
                 },
             ],
             'mapbiomas-atlantic-forest': [
                 {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/biome",
-                    'label': 'biome'
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/atlantic_forest_limit",
+                    'label': 'atlantic_forest_limit'
                 },
                 {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/city",
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/city",
                     'label': 'city'
                 },
                 {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/conservation_units",
-                    'label': 'conservation_units'
-                },
-                {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/country",
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/country",
                     'label': 'country'
                 },
                 {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/level_1_drainage_basin",
-                    'label': 'level_1_drainage_basin'
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/indigenous_land",
+                    'label': 'indigenous_land'
                 },
                 {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/state",
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/international_protected_areas",
+                    'label': 'international_protected_areas'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/national_protected_areas",
+                    'label': 'national_protected_areas'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/level_2_drainage_basin",
+                    'label': 'level_2_drainage_basin'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/state",
                     'label': 'state'
                 },
             ],
@@ -592,6 +622,57 @@ var App = {
                         ]
                     },
                 },
+                'collection-7.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-workspace/public/collection7/mapbiomas_collection70_integration_v2',
+                        'transitions': 'projects/mapbiomas-workspace/public/collection7/mapbiomas_collection70_transitions_v3',
+                        'quality': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_quality_v1', // the same collection 5
+                    },
+
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
+                        ],
+                        'Transitions': [
+                            "1985_1986", "1986_1987", "1987_1988", "1988_1989",
+                            "1989_1990", "1990_1991", "1991_1992", "1992_1993",
+                            "1993_1994", "1994_1995", "1995_1996", "1996_1997",
+                            "1997_1998", "1998_1999", "1999_2000", "2000_2001",
+                            "2001_2002", "2002_2003", "2003_2004", "2004_2005",
+                            "2005_2006", "2006_2007", "2007_2008", "2008_2009",
+                            "2009_2010", "2010_2011", "2011_2012", "2012_2013",
+                            "2013_2014", "2014_2015", "2015_2016", "2016_2017",
+                            "2017_2018", "2018_2019", "2019_2020", "2020_2021",
+                            "1985_1990", "1990_1995", "1995_2000", "2000_2005",
+                            "2005_2010", "2010_2015", "2015_2020", "1990_2000",
+                            "2000_2010", "2010_2020", "1985_2021", "2008_2021",
+                            "2012_2021", "1994_2002", "2002_2010", "2010_2016",
+                            "2016_2021", "1993_2008", "1990_2008", "1990_2021",
+                            "2000_2021", "2008_2018", "1986_2015", "2001_2016",
+                            "1996_2015",
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020'
+                        ]
+                    },
+                },
             },
             'mapbiomas-amazon': {
                 'collection-1.0': {
@@ -729,6 +810,31 @@ var App = {
                         ]
                     },
                 },
+                'collection-3.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-chaco/public/collection3/mapbiomas_chaco_collection3_integration_v2',
+                        'transitions': 'projects/mapbiomas-chaco/public/collection3/mapbiomas_chaco_collection3_transitions_v2',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019',
+                            '2020', '2021'
+                        ],
+                        'Transitions': [
+                            "2000_2001", "2001_2002", "2002_2003", "2003_2004",
+                            "2004_2005", "2005_2006", "2006_2007", "2007_2008",
+                            "2008_2009", "2009_2010", "2010_2011", "2011_2012",
+                            "2012_2013", "2013_2014", "2014_2015", "2015_2016",
+                            "2016_2017", "2017_2018", "2018_2019", "2019_2020",
+                            "2020_2021", "2000_2005", "2005_2010", "2010_2015",
+                            "2015_2020", "2000_2010", "2010_2020", //"2000_2021",
+                        ]
+                    },
+                },
             },
             'mapbiomas-atlantic-forest': {
                 'collection-1.0': {
@@ -761,6 +867,55 @@ var App = {
                             '2008', '2009', '2010', '2011',
                             '2012', '2013', '2014', '2015',
                             '2016', '2017', '2018', '2019',
+                        ]
+                    },
+                },
+                'collection-2.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas_af_trinacional/public/collection2/mapbiomas_atlantic_forest_collection20_integration_v1',
+                        'transitions': 'projects/mapbiomas_af_trinacional/public/collection2/mapbiomas_atlantic_forest_collection20_transitions_v1',
+                        'quality': 'projects/mapbiomas_af_trinacional/public/collection2/mapbiomas_atlantic_forest_collection20_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
+                        ],
+                        'Transitions': [
+                            "1985_1986", "1986_1987", "1987_1988", "1988_1989",
+                            "1989_1990", "1990_1991", "1991_1992", "1992_1993",
+                            "1993_1994", "1994_1995", "1995_1996", "1996_1997",
+                            "1997_1998", "1998_1999", "1999_2000", "2000_2001",
+                            "2001_2002", "2002_2003", "2003_2004", "2004_2005",
+                            "2005_2006", "2006_2007", "2007_2008", "2008_2009",
+                            "2009_2010", "2010_2011", "2011_2012", "2012_2013",
+                            "2013_2014", "2014_2015", "2015_2016", "2016_2017",
+                            "2017_2018", "2018_2019", "2019_2020", "2020_2021",
+                            "1985_1990", "1990_1995", "1995_2000", "2000_2005",
+                            "2005_2010", "2010_2015", "2015_2020", "1990_2000",
+                            "2000_2010", "2010_2020", "1985_2021", "2008_2021",
+                            "2012_2021", "1994_2002", "2002_2010", "2010_2016",
+                            "2016_2021", "1993_2008"
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
                         ]
                     },
                 },
@@ -860,7 +1015,7 @@ var App = {
         ranges: {
             'Coverage': {
                 'min': 0,
-                'max': 49
+                'max': 62
             },
             'Transitions': {
                 'min': -2,
@@ -877,7 +1032,7 @@ var App = {
         activeName: '',
 
         palette: {
-            'Coverage': palettes.get('classification6'),
+            'Coverage': palettes.get('classification7'),
             'Transitions': ['ffa500', 'ff0000', '818181', '06ff00', '4169e1', '8a2be2'],
             'Quality': ['d73027', 'fef9b6', '1d6a37']
         },
@@ -969,44 +1124,45 @@ var App = {
             10: "Non Forest Natural Formation",
             11: "Wetland",
             12: "Grassland (Pastizal, Formación Herbácea)",
-            32: "Salt flat",
-            29: "Rocky outcrop",
             13: "Other Non Forest Natural Formation",
             14: "Farming",
             15: "Pasture",
             18: "Agriculture",
             19: "Temporary Crops (Herbaceas - Agricultura)",
-            39: "Soy Beans",
             20: "Sugar Cane",
+            21: "Mosaic of Agriculture and Pasture",
+            22: "Non vegetated area",
+            23: "Beach and Dune",
+            24: "Urban Infrastructure",
+            25: "Other Non Vegetated Area",
+            26: "Water",
+            27: "Non Observed",
+            29: "Rocky outcrop",
+            30: "Mining",
+            31: "Aquaculture",
+            32: "Salt flat",
+            33: "River, Lake and Ocean",
+            35: "Oil Palm",
+            36: "Perennial Crops",
+            37: "Artificial Water Body",
+            38: "Water Reservoirs",
+            39: "Soy Beans",
             40: "Rice",
             41: "Mosaic of Crops",
-
             42: "Pastizal abierto", // Only for Chaco
             43: "Pastizal cerrado", // Only for Chaco
             44: "Pastizal disperso", // Only for Chaco
             45: "Leñosas dispersas", // Only for Chaco
-
             46: 'Coffe',
             47: 'Citrus',
             48: 'Other Perennial Crops',
-            49: 'Wooded Restinga',
-
-            36: "Perennial Crops",
-            21: "Mosaic of Agriculture and Pasture",
-            22: "Non vegetated area",
-            24: "Urban Infrastructure",
-            30: "Mining",
-            23: "Beach and Dune",
-            25: "Other Non Vegetated Area",
-            26: "Water",
-            33: "River, Lake and Ocean",
-            37: "Artificial Water Body",
-            38: "Water Reservoirs",
-            31: "Aquaculture",
-            27: "Non Observed",
+            49: 'Wooded Sandbank Vegetation',
+            50: 'Herbaceous Sandbank Vegetation',
+            57: 'Cultivo Simples', // Only for Chaco
+            58: 'Cultivo Múltiple', // Only for Chaco
+            62: "Cotton",
             0: "Non Observed",
 
-            35: "Oil Palm"
         },
     },
 
@@ -1173,8 +1329,20 @@ var App = {
                                     App.options.collections[regionName][collectioName].assets.quality);
 
                             }
+                            if (regionName == 'mapbiomas-brazil' & collectioName == 'collection-7.0') {
+
+                                App.options.data.Quality = ee.Image(
+                                    App.options.collections[regionName][collectioName].assets.quality);
+
+                            }
                             // TODO: improve this logic
                             if (regionName == 'mapbiomas-atlantic-forest' & collectioName == 'collection-1.0') {
+
+                                App.options.data.Quality = ee.Image(
+                                    App.options.collections[regionName][collectioName].assets.quality);
+
+                            }
+                            if (regionName == 'mapbiomas-atlantic-forest' & collectioName == 'collection-2.0') {
 
                                 App.options.data.Quality = ee.Image(
                                     App.options.collections[regionName][collectioName].assets.quality);
@@ -1681,7 +1849,17 @@ var App = {
 
             init: function () {
 
-                App.ui.form.panelLogo.add(App.options.logo);
+                var blob = ee.Blob(App.options.logo.uri);
+
+                blob.string().evaluate(
+                    function (str) {
+                        str = str.replace(/\n/g, '');
+                        App.options.logo.base64 = ui.Label({
+                            imageUrl: str,
+                        });
+                        App.ui.form.panelLogo.add(App.options.logo.base64);
+                    }
+                );
 
                 App.ui.form.panelMain.add(App.ui.form.panelLogo);
                 App.ui.form.panelMain.add(App.ui.form.labelTitle);
@@ -1755,21 +1933,10 @@ var App = {
             }),
 
             panelLogo: ui.Panel({
-                // 'widgets': ui.Chart(
-                //     [['<p style= font-size:18px;font-family: Helvetica, sans-serif><b>MapBiomas User Toolkit 1.7.0</b></p>']],
-                //     'Table',
-                //     {
-                //         'allowHtml': true,
-                //         'pagingSymbols': {
-                //             prev: '<img width="330" src="https://mapbiomas-br-site.s3.amazonaws.com/mapbiomas_brasil_logo_1.png">',
-                //             next: ' '
-                //         },
-                //     }
-                // ),
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
                     'stretch': 'horizontal',
-                    'margin': '0px 0px 0px 110px',
+                    'margin': '10px 0px 5px 15px',
                 },
             }),
 
@@ -2036,6 +2203,7 @@ var App = {
                     '3km',
                     '4km',
                     '5km',
+                    '10km',
                 ],
                 'placeholder': 'None',
                 'style': {
@@ -2049,6 +2217,7 @@ var App = {
                         '3km': 3000,
                         '4km': 4000,
                         '5km': 5000,
+                        '10km': 10000,
                     };
 
                     App.options.bufferDistance = distances[distance];
@@ -2175,42 +2344,43 @@ var App = {
                     ui.Label('Brazil'),
                     ui.Panel({
                         widgets: [
-                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1985.tif' }),
-                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1986.tif' }),
-                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1987.tif' }),
-                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1988.tif' }),
-                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1989.tif' }),
-                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1990.tif' }),
-                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1991.tif' }),
-                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1992.tif' }),
-                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1993.tif' }),
-                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1994.tif' }),
-                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1995.tif' }),
-                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1996.tif' }),
-                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1997.tif' }),
-                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1998.tif' }),
-                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_1999.tif' }),
-                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2000.tif' }),
-                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2001.tif' }),
-                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2002.tif' }),
-                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2003.tif' }),
-                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2004.tif' }),
-                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2005.tif' }),
-                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2006.tif' }),
-                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2007.tif' }),
-                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2008.tif' }),
-                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2009.tif' }),
-                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2010.tif' }),
-                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2011.tif' }),
-                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2012.tif' }),
-                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2013.tif' }),
-                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2014.tif' }),
-                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2015.tif' }),
-                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2016.tif' }),
-                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2017.tif' }),
-                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2018.tif' }),
-                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2019.tif' }),
-                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-6/lclu/coverage/brasil_coverage_2020.tif' }),
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2021.tif' }),
                         ],
                         'layout': ui.Panel.Layout.flow('horizontal', true),
                         style: {
