@@ -37,6 +37,7 @@
  *    1.10.0 - Loads mapbiomas-brazil collection 7.0
  *    1.11.0 - Loads mapbiomas-chaco collection 3.0
  *    1.12.0 - Loads mapbiomas-atlantic-forest collection 2.0
+ *    1.13.0 - Loads mapbiomas-amazon collection 4.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -124,7 +125,7 @@ var App = {
 
     options: {
 
-        version: '1.12.0',
+        version: '1.13.0',
 
         logo: {
             uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
@@ -243,43 +244,43 @@ var App = {
             ],
             'mapbiomas-amazon': [
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/biome',
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/biome',
                     'label': 'biome',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/city_new',
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/city',
                     'label': 'city',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/country',
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/country',
                     'label': 'country',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/country_per_biome',
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/country_per_biome',
                     'label': 'country_per_biome',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/drainage_basin',
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/drainage_basin',
                     'label': 'drainage_basin',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/federal_conservation_units',
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/federal_conservation_units',
                     'label': 'federal_conservation_units',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/indigenous_land',
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/indigenous_land',
                     'label': 'indigenous_land',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/raisg_limit',
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/raisg_limit',
                     'label': 'raisg_limit',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/state',
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/state',
                     'label': 'state',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/state_conservation_units',
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/state_conservation_units',
                     'label': 'state_conservation_units',
                 },
             ],
@@ -767,6 +768,43 @@ var App = {
                         ]
                     },
                 },
+                'collection-4.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-raisg/public/collection4/mapbiomas_raisg_panamazonia_collection4_integration_v1',
+                        'transitions': 'projects/mapbiomas-raisg/public/collection4/mapbiomas_raisg_panamazonia_collection4_transitions_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
+                        ],
+                        'Transitions': [
+                            '1985_1986', '1986_1987', '1987_1988', '1988_1989',
+                            '1989_1990', '1990_1991', '1991_1992', '1992_1993',
+                            '1993_1994', '1994_1995', '1995_1996', '1996_1997',
+                            '1997_1998', '1998_1999', '1999_2000', '2000_2001',
+                            '2001_2002', '2002_2003', '2003_2004', '2004_2005',
+                            '2005_2006', '2006_2007', '2007_2008', '2008_2009',
+                            '2009_2010', '2010_2011', '2011_2012', '2012_2013',
+                            '2013_2014', '2014_2015', '2015_2016', '2016_2017',
+                            '2017_2018', '2018_2019', '2019_2020', '2020_2021',
+                            '1985_1990', '1990_1995', '1995_2000', '2000_2005',
+                            '2005_2010', '2010_2015', '2015_2020', '1990_2000',
+                            '2000_2010', '2010_2020', '1985_2021', '2008_2017',
+                            '1994_2002', '2002_2010', '2010_2016', '1986_2015',
+                            '1990_2021', '2000_2021', '2008_2021', '2010_2021',
+                            '2012_2021',
+                        ]
+                    },
+                },
             },
             'mapbiomas-chaco': {
                 'collection-1.0': {
@@ -1142,6 +1180,7 @@ var App = {
             31: "Aquaculture",
             32: "Salt flat",
             33: "River, Lake and Ocean",
+            34: "Glacier",
             35: "Oil Palm",
             36: "Perennial Crops",
             37: "Artificial Water Body",

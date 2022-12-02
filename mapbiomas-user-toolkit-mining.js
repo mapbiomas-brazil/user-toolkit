@@ -11,6 +11,7 @@
  *
  * @version
  *    1.0.0 - First release
+ *    1.1.0 - Loads mapbiomas-brazil collection 7.0 mining data
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -105,9 +106,12 @@ var App = {
 
     options: {
 
-        version: '1.0.0',
+        version: '1.1.0',
 
-        logo: logos.mapbiomas,
+        logo: {
+            uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
+            base64: null
+        },
 
         statesNames: {
             'None': 'None',
@@ -144,79 +148,79 @@ var App = {
             'mapbiomas-brazil': [
                 {
                     'label': 'atlantic_forest_law',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/atlantic_forest_law',
                 },
                 {
                     'label': 'biome',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biome',
                 },
                 {
                     'label': 'biosphere_reserve',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biosphere_reserve',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biosphere_reserve',
                 },
                 {
                     'label': 'city',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/city',
                 },
                 {
                     'label': 'country',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/country',
                 },
                 {
                     'label': 'federal_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_integral_protection',
                 },
                 {
                     'label': 'federal_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_sustainable_use',
                 },
                 {
                     'label': 'indigenous_land',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/indigenous_land',
                 },
                 {
                     'label': 'legal_amazon',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/legal_amazon',
                 },
                 {
                     'label': 'level_1_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin',
                 },
                 {
                     'label': 'level_1_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin_pnrh',
                 },
                 {
                     'label': 'level_2_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin',
                 },
                 {
                     'label': 'level_2_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin_pnrh',
                 },
                 {
                     'label': 'quilombo',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/quilombo',
                 },
                 {
                     'label': 'semiarid',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/semiarid',
                 },
                 {
                     'label': 'settlement',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/settlement',
                 },
                 {
                     'label': 'state',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state',
                 },
                 {
                     'label': 'state_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_integral_protection',
                 },
                 {
                     'label': 'state_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_sustainable_use',
                 },
             ],
         },
@@ -239,6 +243,26 @@ var App = {
                             '2009', '2010', '2011', '2012',
                             '2013', '2014', '2015', '2016',
                             '2017', '2018', '2019', '2020'
+                        ],
+                    },
+                },
+                'collection-7.0': {
+                    'assets': {
+                        'mined_substance': 'projects/mapbiomas-workspace/public/collection7/mapbiomas_collection70_mined_substance_v1',
+                    },
+
+                    'periods': {
+                        'mined_substance': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
                         ],
                     },
                 },
@@ -296,6 +320,8 @@ var App = {
                             <ColorMapEntry color="#92c5de" quantity="121" label="" />\
                             <ColorMapEntry color="#92c5de" quantity="122" label="" />\
                             <ColorMapEntry color="#0571b0" quantity="123" label="" />\
+                            <ColorMapEntry color="#0571b0" quantity="124" label="" />\
+                            <ColorMapEntry color="#0571b0" quantity="125" label="" />\
                             <ColorMapEntry color="#ca0020" quantity="126" label="" />\
                             <ColorMapEntry color="#ca0020" quantity="127" label="" />\
                             <ColorMapEntry color="#ca0020" quantity="128" label="" />\
@@ -342,22 +368,22 @@ var App = {
                 '#92c5de', //121
                 '#92c5de', //122
                 '#0571b0', //123
+                '#0571b0', //124
+                '#0571b0', //125
                 '#ca0020', //126
                 '#ca0020', //127
                 '#ca0020', //128
                 '#ca0020', //129
-                '#e66101', //201
-                '#e66101', //202
                 '#e66101', //214
                 '#e66101', //215
                 '#fdb863', //216
                 '#fdb863', //217
-                '#fdb863', //218
                 '#b2abd2', //223
                 '#b2abd2', //224
                 '#b2abd2', //225
                 '#5e3c99', //226
                 '#3caea3', //301
+
             ],
         },
 
@@ -395,6 +421,10 @@ var App = {
                 121: '2. Industrial/2.3 Não Metálicas/2.3.05 Silício',
                 122: '2. Industrial/2.3 Não Metálicas/2.3.06 Calcário',
                 123: '2. Industrial/2.4 Não Identificado/Não Identificado',
+
+                124: '2. Industrial/2.4 Pedras Preciosas & Rochas Ornamentais/Pedras Preciosas',
+                125: '2. Industrial/2.4 Pedras Preciosas & Rochas Ornamentais/Rochas Ornamentais',
+
                 126: '2. Industrial/2.1 Energéticas/Energéticas',
                 127: '2. Industrial/2.1 Energéticas/2.1.01 Carvão mineral',
                 128: '2. Industrial/2.1 Energéticas/2.1.02 Urânio',
@@ -1023,56 +1053,76 @@ var App = {
 
             init: function () {
 
-                this.panelMain.add(this.panelLogo);
-                this.panelMain.add(this.labelTitle);
-                this.panelMain.add(this.labelSubtitle);
-                this.panelMain.add(this.labelLink);
+                var blob = ee.Blob(App.options.logo.uri);
 
-                this.panelLogo.add(App.options.logo);
+                blob.string().evaluate(
+                    function (str) {
+                        str = str.replace(/\n/g, '');
+                        App.options.logo.base64 = ui.Label({
+                            imageUrl: str,
+                        });
+                        App.ui.form.panelLogo.add(App.options.logo.base64);
+                    }
+                );
 
-                this.panelRegion.add(this.labelRegion);
-                this.panelRegion.add(this.selectRegion);
+                App.ui.form.panelMain.add(App.ui.form.panelLogo);
 
-                this.panelCollection.add(this.labelCollection);
-                this.panelCollection.add(this.selectCollection);
+                App.ui.form.panelMain.add(App.ui.form.labelTitle);
+                App.ui.form.panelMain.add(App.ui.form.labelSubtitle);
+                App.ui.form.panelMain.add(App.ui.form.labelLink);
 
-                this.panelFeatureCollections.add(this.labelTables);
-                this.panelFeatureCollections.add(this.selectFeatureCollections);
+                App.ui.form.panelMain.add(App.ui.form.tabs);
+                App.ui.form.panelMain.add(App.ui.form.panel1);
 
-                this.panelProperties.add(this.labelProperties);
-                this.panelProperties.add(this.selectProperties);
+                App.ui.form.tab1.add(App.ui.form.checkboxTab1);
+                App.ui.form.tab2.add(App.ui.form.checkboxTab2);
 
-                this.panelFeature.add(this.labelFeature);
-                this.panelFeature.add(this.selectFeature);
+                App.ui.form.tabs.add(App.ui.form.tab1);
+                App.ui.form.tabs.add(App.ui.form.tab2);
 
-                this.panelDataType.add(this.labelDataType);
-                this.panelDataType.add(this.selectDataType);
+                App.ui.form.panelRegion.add(App.ui.form.labelRegion);
+                App.ui.form.panelRegion.add(App.ui.form.selectRegion);
 
-                this.panelBuffer.add(this.labelBuffer);
-                this.panelBuffer.add(this.selectBuffer);
+                App.ui.form.panelCollection.add(App.ui.form.labelCollection);
+                App.ui.form.panelCollection.add(App.ui.form.selectCollection);
 
-                this.panelLegend.add(legend.getLegend(App.options.legend.params[0]));
-                this.panelLegend.add(legend.getLegend(App.options.legend.params[1]));
-                this.panelLegend.add(legend.getLegend(App.options.legend.params[2]));
+                App.ui.form.panelFeatureCollections.add(App.ui.form.labelTables);
+                App.ui.form.panelFeatureCollections.add(App.ui.form.selectFeatureCollections);
+
+                App.ui.form.panelProperties.add(App.ui.form.labelProperties);
+                App.ui.form.panelProperties.add(App.ui.form.selectProperties);
+
+                App.ui.form.panelFeature.add(App.ui.form.labelFeature);
+                App.ui.form.panelFeature.add(App.ui.form.selectFeature);
+
+                App.ui.form.panelDataType.add(App.ui.form.labelDataType);
+                App.ui.form.panelDataType.add(App.ui.form.selectDataType);
+
+                App.ui.form.panelBuffer.add(App.ui.form.labelBuffer);
+                App.ui.form.panelBuffer.add(App.ui.form.selectBuffer);
+
+                App.ui.form.panelLegend.add(legend.getLegend(App.options.legend.params[0]));
+                App.ui.form.panelLegend.add(legend.getLegend(App.options.legend.params[1]));
+                App.ui.form.panelLegend.add(legend.getLegend(App.options.legend.params[2]));
 
                 // this.panelMain.add(this.panelType);
-                this.panelMain.add(this.panelRegion);
-                this.panelMain.add(this.panelCollection);
-                this.panelMain.add(this.panelFeatureCollections);
-                this.panelMain.add(this.panelStates);
-                this.panelMain.add(this.panelProperties);
-                this.panelMain.add(this.panelFeature);
-                this.panelMain.add(this.panelDataType);
-                this.panelMain.add(this.panelLegend);
-                this.panelMain.add(this.panelBuffer);
+                App.ui.form.panel1.add(App.ui.form.panelRegion);
+                App.ui.form.panel1.add(App.ui.form.panelCollection);
+                App.ui.form.panel1.add(App.ui.form.panelFeatureCollections);
+                App.ui.form.panel1.add(App.ui.form.panelStates);
+                App.ui.form.panel1.add(App.ui.form.panelProperties);
+                App.ui.form.panel1.add(App.ui.form.panelFeature);
+                App.ui.form.panel1.add(App.ui.form.panelDataType);
+                App.ui.form.panel1.add(App.ui.form.panelLegend);
+                App.ui.form.panel1.add(App.ui.form.panelBuffer);
 
-                this.panelMain.add(this.labelLayers);
-                this.panelMain.add(this.panelLayersList);
+                App.ui.form.panel1.add(App.ui.form.labelLayers);
+                App.ui.form.panel1.add(App.ui.form.panelLayersList);
 
-                this.panelMain.add(this.buttonExport2Drive);
-                this.panelMain.add(this.labelNotes);
+                App.ui.form.panel1.add(App.ui.form.buttonExport2Drive);
+                App.ui.form.panel1.add(App.ui.form.labelNotes);
 
-                ui.root.add(this.panelMain);
+                ui.root.add(App.ui.form.panelMain);
 
             },
 
@@ -1088,7 +1138,8 @@ var App = {
             panelLogo: ui.Panel({
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
-                    'margin': '0px 0px 0px 110px',
+                    'stretch': 'horizontal',
+                    'margin': '10px 0px 5px 15px',
                 },
             }),
 
@@ -1396,6 +1447,130 @@ var App = {
                 "style": {
                     // 'padding': '2px',
                     'stretch': 'horizontal'
+                }
+            }),
+
+            // panels and tabs
+            tabs: ui.Panel({
+                layout: ui.Panel.Layout.flow('horizontal')
+            }),
+
+            checkboxTab1: ui.Checkbox({
+                'label': '  Toolkit ',
+                'style': {
+                    'margin': '5px 0px 5px -16px',
+                    'stretch': 'horizontal',
+                    'backgroundColor': '#00000000',
+                },
+                'onChange': function (checked) {
+                    if (checked) {
+                        App.ui.form.checkboxTab2.setValue(false);
+                        App.ui.form.tab1.style().set('border', '1px solid #808080');
+                        App.ui.form.tab2.style().set('border', '1px solid #80808033');
+
+                        App.ui.form.panelMain.remove(App.ui.form.panel2);
+                        App.ui.form.panelMain.add(App.ui.form.panel1);
+                    }
+                }
+            }),
+
+            checkboxTab2: ui.Checkbox({
+                'label': '  Direct Link',
+                'style': {
+                    'margin': '5px 20px 5px -16px',
+                    'stretch': 'horizontal',
+                    'backgroundColor': '#00000000',
+                },
+                'onChange': function (checked) {
+                    if (checked) {
+                        App.ui.form.checkboxTab1.setValue(false);
+                        App.ui.form.tab1.style().set('border', '1px solid #80808033');
+                        App.ui.form.tab2.style().set('border', '1px solid #808080');
+
+                        App.ui.form.panelMain.remove(App.ui.form.panel1);
+                        App.ui.form.panelMain.add(App.ui.form.panel2);
+                    }
+
+                }
+            }),
+
+            tab1: ui.Panel({
+                'style': {
+                    'width': '100px',
+                    'backgroundColor': '#dddddd00',
+                    'stretch': 'horizontal',
+                    'border': '1px solid #808080',
+                    'margin': '0px 0px 0px 6px'
+                },
+            }),
+
+            tab2: ui.Panel({
+                'style': {
+                    'width': '100px',
+                    'backgroundColor': '#dddddd00',
+                    'stretch': 'horizontal',
+                    'border': '1px solid #80808033',
+                }
+            }),
+
+            panel1: ui.Panel({
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel2: ui.Panel({
+                widgets: [
+                    ui.Label('Brazil'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/mining/brasil_mining_2021.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
                 }
             }),
 
