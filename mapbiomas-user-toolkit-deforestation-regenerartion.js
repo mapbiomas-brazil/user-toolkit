@@ -12,6 +12,7 @@
  * @version
  *    1.0.0 - Data from collection 5.0
  *    1.1.0 - Data from collection 6.0
+ *    1.2.0 - Data from collection 7.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -106,7 +107,7 @@ var App = {
 
     options: {
 
-        version: '1.1.0',
+        version: '1.2.0',
 
         logo: logos.mapbiomas,
 
@@ -145,79 +146,79 @@ var App = {
             'mapbiomas-brazil': [
                 {
                     'label': 'atlantic_forest_law',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/atlantic_forest_law',
                 },
                 {
                     'label': 'biome',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biome',
                 },
                 {
                     'label': 'biosphere_reserve',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biosphere_reserve',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biosphere_reserve',
                 },
                 {
                     'label': 'city',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/city',
                 },
                 {
                     'label': 'country',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/country',
                 },
                 {
                     'label': 'federal_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_integral_protection',
                 },
                 {
                     'label': 'federal_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_sustainable_use',
                 },
                 {
                     'label': 'indigenous_land',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/indigenous_land',
                 },
                 {
                     'label': 'legal_amazon',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/legal_amazon',
                 },
                 {
                     'label': 'level_1_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin',
                 },
                 {
                     'label': 'level_1_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin_pnrh',
                 },
                 {
                     'label': 'level_2_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin',
                 },
                 {
                     'label': 'level_2_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin_pnrh',
                 },
                 {
                     'label': 'quilombo',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/quilombo',
                 },
                 {
                     'label': 'semiarid',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/semiarid',
                 },
                 {
                     'label': 'settlement',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/settlement',
                 },
                 {
                     'label': 'state',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state',
                 },
                 {
                     'label': 'state_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_integral_protection',
                 },
                 {
                     'label': 'state_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_sustainable_use',
                 },
             ],
             // 'mapbiomas-amazon': [
@@ -351,6 +352,63 @@ var App = {
                             '2008', '2009', '2010', '2011',
                             '2012', '2013', '2014', '2015',
                             '2016', '2017', '2018'
+                        ],
+                        'deforestation_pv': [
+                            'deforestation_pv_year'
+                        ],
+
+
+                    },
+                },
+                'collection-7.0': {
+                    'assets': { //TODO: Inserir os assets públicos
+                        'deforestation_regeneration': 'projects/mapbiomas-workspace/public/collection7/mapbiomas_collection70_deforestation_regeneration_v1',
+                        // 'deforestation_pv': ''
+                        // 'deforestation_sv': '',
+                        // 'secondary_vegetation': '',
+                        // 'secondary_vegetation_age': '',
+                    },
+
+                    'periods': {
+                        'deforestation_regeneration': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019'
+                        ],
+                        'secondary_vegetation': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019'
+                        ],
+                        'secondary_vegetation_age': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019'
+                        ],
+                        'deforestation_sv': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019'
                         ],
                         'deforestation_pv': [
                             'deforestation_pv_year'
@@ -512,38 +570,49 @@ var App = {
                 3: "Forest Formation",
                 4: "Savanna Formation",
                 5: "Magrove",
+                6: "Áreas Naturales Inundables - Leñosas (Bosque Inundable)",
                 9: "Forest Plantation",
                 10: "Non Forest Natural Formation",
                 11: "Wetland",
-                12: "Grassland",
-                32: "Salt flat",
-                29: "Rocky outcrop",
+                12: "Grassland (Pastizal, Formación Herbácea)",
                 13: "Other Non Forest Natural Formation",
                 14: "Farming",
                 15: "Pasture",
                 18: "Agriculture",
-                19: "Temporary Crops",
-                39: "Soy Beans",
+                19: "Temporary Crops (Herbaceas - Agricultura)",
                 20: "Sugar Cane",
-                40: "Rice",
-                41: "Mosaic of Crops",
-                42: "Coffe",
-                43: "Citrus",
-                44: "Cashew",
-                45: "Other",
-                36: "Perennial Crops",
                 21: "Mosaic of Agriculture and Pasture",
                 22: "Non vegetated area",
-                24: "Urban Infrastructure",
-                30: "Mining",
                 23: "Beach and Dune",
+                24: "Urban Infrastructure",
                 25: "Other Non Vegetated Area",
                 26: "Water",
+                27: "Non Observed",
+                29: "Rocky outcrop",
+                30: "Mining",
+                31: "Aquaculture",
+                32: "Salt flat",
                 33: "River, Lake and Ocean",
+                34: "Glacier",
+                35: "Oil Palm",
+                36: "Perennial Crops",
                 37: "Artificial Water Body",
                 38: "Water Reservoirs",
-                31: "Aquaculture",
-                27: "Non Observed",
+                39: "Soy Beans",
+                40: "Rice",
+                41: "Mosaic of Crops",
+                42: "Pastizal abierto", // Only for Chaco
+                43: "Pastizal cerrado", // Only for Chaco
+                44: "Pastizal disperso", // Only for Chaco
+                45: "Leñosas dispersas", // Only for Chaco
+                46: 'Coffe',
+                47: 'Citrus',
+                48: 'Other Perennial Crops',
+                49: 'Wooded Sandbank Vegetation',
+                50: 'Herbaceous Sandbank Vegetation',
+                57: 'Cultivo Simples', // Only for Chaco
+                58: 'Cultivo Múltiple', // Only for Chaco
+                62: "Cotton",
                 0: "Non Observed",
             }
         },
@@ -690,6 +759,17 @@ var App = {
                             App.options.data.deforestation_regeneration = ee.Image(
                                 App.options.collections[regionName][collectioName].assets.deforestation_regeneration);
 
+                            //
+                            var bandNames = App.options.data.deforestation_regeneration.bandNames()
+                                .map(
+                                    function (band) {
+                                        return ee.String(band).replace('product', 'classification');
+                                    }
+                                )
+
+                            App.options.data.deforestation_regeneration = App.options.data.deforestation_regeneration.rename(bandNames);
+
+                            //
                             var year = App.options.collections[regionName][collectioName]
                                 .periods.secondary_vegetation.slice(-1)[0];
 
