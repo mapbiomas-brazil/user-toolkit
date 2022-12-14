@@ -38,6 +38,7 @@
  *    1.11.0 - Loads mapbiomas-chaco collection 3.0
  *    1.12.0 - Loads mapbiomas-atlantic-forest collection 2.0
  *    1.13.0 - Loads mapbiomas-amazon collection 4.0
+ *    1.14.0 - Loads mapbiomas-pampa collection 2.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -125,7 +126,7 @@ var App = {
 
     options: {
 
-        version: '1.13.0',
+        version: '1.14.0',
 
         logo: {
             uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
@@ -989,6 +990,56 @@ var App = {
                             '2008', '2009', '2010', '2011',
                             '2012', '2013', '2014', '2015',
                             '2016', '2017', '2018', '2019',
+                        ]
+                    },
+                },
+                'collection-2.0': {
+                    'assets': {
+                        'integration': 'projects/MapBiomas_Pampa/public/collection2/mapbiomas_pampa_collection2_integration_v1',
+                        'transitions': 'projects/MapBiomas_Pampa/public/collection2/mapbiomas_pampa_collection2_transitions_v1',
+                        'quality': 'projects/MapBiomas_Pampa/public/collection2/mapbiomas_pampa_collection2_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
+                        ],
+                        'Transitions': [
+                            '1985_1986', '1986_1987', '1987_1988', '1988_1989',
+                            '1989_1990', '1990_1991', '1991_1992', '1992_1993',
+                            '1993_1994', '1994_1995', '1995_1996', '1996_1997',
+                            '1997_1998', '1998_1999', '1999_2000', '2000_2001',
+                            '2001_2002', '2002_2003', '2003_2004', '2004_2005',
+                            '2005_2006', '2006_2007', '2007_2008', '2008_2009',
+                            '2009_2010', '2010_2011', '2011_2012', '2012_2013',
+                            '2013_2014', '2014_2015', '2015_2016', '2016_2017',
+                            '2017_2018', '2018_2019', '2019_2020', '2020_2021',
+                            '1985_1990', '1990_1995', '1995_2000', '2000_2005',
+                            '2005_2010', '2010_2015', '2015_2020', '1990_2000',
+                            '2000_2010', '2010_2020', '1985_2021', '2008_2017',
+                            '1994_2002', '2002_2010', '2010_2016', '1986_2015',
+                            '1990_2021', '2000_2021', '2008_2021', '2010_2021',
+                            '2012_2021',
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
                         ]
                     },
                 },
@@ -2328,6 +2379,7 @@ var App = {
                         App.ui.form.tab2.style().set('border', '1px solid #80808033');
 
                         App.ui.form.panelMain.remove(App.ui.form.panel2);
+                        App.ui.form.panelMain.remove(App.ui.form.panel3);
                         App.ui.form.panelMain.add(App.ui.form.panel1);
                     }
                 }
@@ -2348,6 +2400,7 @@ var App = {
 
                         App.ui.form.panelMain.remove(App.ui.form.panel1);
                         App.ui.form.panelMain.add(App.ui.form.panel2);
+                        App.ui.form.panelMain.add(App.ui.form.panel3);
                     }
 
                 }
@@ -2420,6 +2473,61 @@ var App = {
                             ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2019.tif' }),
                             ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2020.tif' }),
                             ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/brasil/collection-7/lclu/coverage/brasil_coverage_2021.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel3: ui.Panel({
+                widgets: [
+                    ui.Label('Pampa'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2021.tif' }),
                         ],
                         'layout': ui.Panel.Layout.flow('horizontal', true),
                         style: {
