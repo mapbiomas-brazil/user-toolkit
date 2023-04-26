@@ -143,79 +143,79 @@ var App = {
             'mapbiomas-brazil': [
                 {
                     'label': 'atlantic_forest_law',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/atlantic_forest_law',
                 },
                 {
                     'label': 'biome',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/biome',
                 },
                 {
                     'label': 'biosphere_reserve',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biosphere_reserve',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/biosphere_reserve',
                 },
                 {
                     'label': 'city',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/city',
                 },
                 {
                     'label': 'country',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/country',
                 },
                 {
                     'label': 'federal_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/federal_conservation_units_integral_protection',
                 },
                 {
                     'label': 'federal_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/federal_conservation_units_sustainable_use',
                 },
                 {
                     'label': 'indigenous_land',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/indigenous_land',
                 },
                 {
                     'label': 'legal_amazon',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/legal_amazon',
                 },
                 {
                     'label': 'level_1_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_1_drainage_basin',
                 },
                 {
                     'label': 'level_1_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_1_drainage_basin_pnrh',
                 },
                 {
                     'label': 'level_2_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_2_drainage_basin',
                 },
                 {
                     'label': 'level_2_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_2_drainage_basin_pnrh',
                 },
                 {
                     'label': 'quilombo',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/quilombo',
                 },
                 {
                     'label': 'semiarid',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/semiarid',
                 },
                 {
                     'label': 'settlement',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/settlement',
                 },
                 {
                     'label': 'state',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state',
                 },
                 {
                     'label': 'state_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state_conservation_units_integral_protection',
                 },
                 {
                     'label': 'state_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state_conservation_units_sustainable_use',
                 },
             ],
         },
@@ -286,6 +286,56 @@ var App = {
                             '2009', '2010', '2011', '2012', '2013', '2014',
                             '2015', '2016', '2017', '2018', '2019', '2020',
                             '2021'
+                        ],
+                        'monthly_burned_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020',
+                            '2021'
+                        ],
+                        'fire_frequency': [
+                            "1985_1985", "1985_1986", "1985_1987", "1985_1988",
+                            "1985_1989", "1985_1990", "1985_1991", "1985_1992",
+                            "1985_1993", "1985_1994", "1985_1995", "1985_1996",
+                            "1985_1997", "1985_1998", "1985_1999", "1985_2000",
+                            "1985_2001", "1985_2002", "1985_2003", "1985_2004",
+                            "1985_2005", "1985_2006", "1985_2007", "1985_2008",
+                            "1985_2009", "1985_2010", "1985_2011", "1985_2012",
+                            "1985_2013", "1985_2014", "1985_2015", "1985_2016",
+                            "1985_2017", "1985_2018", "1985_2019", "1985_2021",
+                            "2020_2021", "2019_2021", "2018_2021", "2017_2021",
+                            "2016_2021", "2015_2021", "2014_2021", "2013_2021",
+                            "2012_2021", "2011_2021", "2010_2021", "2009_2021",
+                            "2008_2021", "2007_2021", "2006_2021", "2005_2021",
+                            "2004_2021", "2003_2021", "2002_2021", "2001_2021",
+                            "2000_2021", "1999_2021", "1998_2021", "1997_2021",
+                            "1996_2021", "1995_2021", "1994_2021", "1993_2021",
+                            "1992_2021", "1991_2021", "1990_2021", "1989_2021",
+                            "1988_2021", "1987_2021", "1986_2021", "1990_1995",
+                            "1995_2000", "2000_2005", "2005_2010", "2010_2015",
+                            "1995_2005", "2005_2015", "2000_2015",
+                        ]
+                    },
+                },
+                'collection-2.0': {
+                    'assets': {
+                        'annual_burned_coverage': 'projects/mapbiomas-workspace/public/collection7_1/mapbiomas-fire-collection2-annual-burned-coverage-1',
+                        'monthly_burned_coverage': 'projects/mapbiomas-workspace/public/collection7_1/mapbiomas-fire-collection2-monthly-burned-coverage-1',
+                        'fire_frequency': 'projects/mapbiomas-workspace/public/collection7_1/mapbiomas-fire-collection2-fire-frequency-1',
+                    },
+
+                    'periods': {
+                        'annual_burned_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020',
+                            '2021',
                         ],
                         'monthly_burned_coverage': [
                             '1985', '1986', '1987', '1988', '1989', '1990',
@@ -1314,14 +1364,14 @@ var App = {
 
             labelDisclaimer: [
                 ui.Label('DISCLAIMER'),
-                ui.Label('Esta é a Coleção 1.1 do MapBiomas Fogo com o mapeamento de cicatrizes de fogo no Brasil de 1985 a 2021, com dados Anuais e Mensais para todo o período incluindo: (i) dado no ano e acumulado em um período; (ii) frequência de ocorrência de cicatriz de queimada; (iii) classificação da cobertura e uso do terra objetivo de queimada.\
+                ui.Label('Esta é a Coleção 2.0 do MapBiomas Fogo com o mapeamento de cicatrizes de fogo no Brasil de 1985 a 2021, com dados Anuais e Mensais para todo o período incluindo: (i) dado no ano e acumulado em um período; (ii) frequência de ocorrência de cicatriz de queimada; (iii) classificação da cobertura e uso do terra objetivo de queimada.\
                 O fogo associado a áreas recém desmatadas podem ocorrer tanto em áreas classificadas como vegetação nativa como em áreas de uso antrópico dependendo da época do ano em que os dados de cobertura e uso foram classificados e o momento em que ocorreu o fogo.\
                 A descrição do método de mapeamento das cicatrizes de fogo e sua classificação por classe de vegetação queimada bem como da determinação da frequência podem ser acessados na seção de metodologias do MapBiomas.\
                 Os mapas anuais de cicatrizes de queimadas bem como os principais conjuntos de estatísticas consolidadas estão disponíveis na área de download do MapBiomas.\
                 Caso tenha sugestões, críticas e idéias para aprimorar o trabalho entre em contato pelo e- mail: contato@mapbiomas.org ou acesse o Fórum MapBiomas.\
                 Os dados do MapBiomas são públicos, abertos e gratuitos sob licença Creative Commons CC - CY - SA e mediante a referência da fonte observando o seguinte formato: "Projeto MapBiomas – Mapeamento de cicatrizes de fogo no Brasil Coleção 1, acessado em [DATA] através do link: [LINK]".'),
                 ui.Label(''),
-                ui.Label('This is the Collection 1.1 of MapBiomas Fogo with the mapping of fire scars in Brazil from 1985 to 2021, with Annual and Monthly data for the entire period including: (i) non-year data and accumulated in a period; (ii) frequency of a fire scar; (iii) classification of land cover and land use intended for burning.\
+                ui.Label('This is the Collection 2.0 of MapBiomas Fogo with the mapping of fire scars in Brazil from 1985 to 2021, with Annual and Monthly data for the entire period including: (i) non-year data and accumulated in a period; (ii) frequency of a fire scar; (iii) classification of land cover and land use intended for burning.\
                 Fires associated with recently deforested areas can occur both in areas classified as native vegetation and in areas of anthropogenic use depending on the time of year in which the coverage and use data were classified and the time when the fire occurred.\
                 The description of the method of mapping fire scars and their classification by burnt vegetation class as well as the determination of frequency can be found in the methodology section of MapBiomas.\
                 Annual maps of burn scars as well as the main sets of consolidated statistics are available in the download area of ​​MapBiomas.\

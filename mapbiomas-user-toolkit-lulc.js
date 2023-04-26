@@ -39,6 +39,8 @@
  *    1.12.0 - Loads mapbiomas-atlantic-forest collection 2.0
  *    1.13.0 - Loads mapbiomas-amazon collection 4.0
  *    1.14.0 - Loads mapbiomas-pampa collection 2.0
+ *    1.15.0 - Loads mapbiomas-peru collection 1.0
+ *    1.16.0 - Loads mapbiomas-brazil collection 7.1
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -126,7 +128,7 @@ var App = {
 
     options: {
 
-        version: '1.14.0',
+        version: '1.16.0',
 
         logo: {
             uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
@@ -168,79 +170,79 @@ var App = {
             'mapbiomas-brazil': [
                 {
                     'label': 'atlantic_forest_law',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/atlantic_forest_law',
                 },
                 {
                     'label': 'biome',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/biome',
                 },
                 {
                     'label': 'biosphere_reserve',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biosphere_reserve',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/biosphere_reserve',
                 },
                 {
                     'label': 'city',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/city',
                 },
                 {
                     'label': 'country',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/country',
                 },
                 {
                     'label': 'federal_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/federal_conservation_units_integral_protection',
                 },
                 {
                     'label': 'federal_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/federal_conservation_units_sustainable_use',
                 },
                 {
                     'label': 'indigenous_land',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/indigenous_land',
                 },
                 {
                     'label': 'legal_amazon',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/legal_amazon',
                 },
                 {
                     'label': 'level_1_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_1_drainage_basin',
                 },
                 {
                     'label': 'level_1_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_1_drainage_basin_pnrh',
                 },
                 {
                     'label': 'level_2_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_2_drainage_basin',
                 },
                 {
                     'label': 'level_2_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_2_drainage_basin_pnrh',
                 },
                 {
                     'label': 'quilombo',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/quilombo',
                 },
                 {
                     'label': 'semiarid',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/semiarid',
                 },
                 {
                     'label': 'settlement',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/settlement',
                 },
                 {
                     'label': 'state',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state',
                 },
                 {
                     'label': 'state_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state_conservation_units_integral_protection',
                 },
                 {
                     'label': 'state_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state_conservation_units_sustainable_use',
                 },
             ],
             'mapbiomas-amazon': [
@@ -420,6 +422,84 @@ var App = {
                 //     'label': 'level-2-subcategory',
                 //     'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION1/level-2-subcategory'
                 // },
+            ],
+            'mapbiomas-peru': [
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-1',
+                    'label': 'nivel-politico-1'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-2',
+                    'label': 'nivel-politico-2'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-3',
+                    'label': 'nivel-politico-3'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-4',
+                    'label': 'nivel-politico-4'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/bioma-pais',
+                    'label': 'bioma-pais'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/unidad-hidrografica',
+                    'label': 'unidad-hidrografica'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/comunidad-nativa-solicitud',
+                    'label': 'comunidad-nativa-solicitud'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/comunidad-nativa-titulada',
+                    'label': 'comunidad-nativa-titulada'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/reserva-indigena',
+                    'label': 'reserva-indigena'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/reserva-territorial',
+                    'label': 'reserva-territorial'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/comunidad-campesina-reconocida',
+                    'label': 'comunidad-campesina-reconocida'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/comunidad-campesina-titulada',
+                    'label': 'comunidad-campesina-titulada'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/area-natural-protegida',
+                    'label': 'area-natural-protegida'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/area-conservacion-regional',
+                    'label': 'area-conservacion-regional'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/area-conservacion-privada',
+                    'label': 'area-conservacion-privada'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/ecosistema-fragil',
+                    'label': 'ecosistema-fragil'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/ecozona',
+                    'label': 'ecozona'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/ecorregion',
+                    'label': 'ecorregion'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/region-geografica',
+                    'label': 'region-geografica'
+                },
             ],
         },
 
@@ -629,6 +709,57 @@ var App = {
                         'integration': 'projects/mapbiomas-workspace/public/collection7/mapbiomas_collection70_integration_v2',
                         'transitions': 'projects/mapbiomas-workspace/public/collection7/mapbiomas_collection70_transitions_v3',
                         'quality': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_quality_v1', // the same collection 5
+                    },
+
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
+                        ],
+                        'Transitions': [
+                            "1985_1986", "1986_1987", "1987_1988", "1988_1989",
+                            "1989_1990", "1990_1991", "1991_1992", "1992_1993",
+                            "1993_1994", "1994_1995", "1995_1996", "1996_1997",
+                            "1997_1998", "1998_1999", "1999_2000", "2000_2001",
+                            "2001_2002", "2002_2003", "2003_2004", "2004_2005",
+                            "2005_2006", "2006_2007", "2007_2008", "2008_2009",
+                            "2009_2010", "2010_2011", "2011_2012", "2012_2013",
+                            "2013_2014", "2014_2015", "2015_2016", "2016_2017",
+                            "2017_2018", "2018_2019", "2019_2020", "2020_2021",
+                            "1985_1990", "1990_1995", "1995_2000", "2000_2005",
+                            "2005_2010", "2010_2015", "2015_2020", "1990_2000",
+                            "2000_2010", "2010_2020", "1985_2021", "2008_2021",
+                            "2012_2021", "1994_2002", "2002_2010", "2010_2016",
+                            "2016_2021", "1993_2008", "1990_2008", "1990_2021",
+                            "2000_2021", "2008_2018", "1986_2015", "2001_2016",
+                            "1996_2015",
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020'
+                        ]
+                    },
+                },
+                'collection-7.1': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-workspace/public/collection7_1/mapbiomas_collection71_integration_v1',
+                        'transitions': 'projects/mapbiomas-workspace/public/collection7_1/mapbiomas_collection71_transitions_v1',
+                        'quality': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_quality_v1', // the same collection 7
                     },
 
                     'periods': {
@@ -1075,6 +1206,58 @@ var App = {
                             '2008', '2009', '2010', '2011',
                             '2012', '2013', '2014', '2015',
                             '2016', '2017', '2018', '2019',
+                        ]
+                    },
+                },
+            },
+            'mapbiomas-peru': {
+                'collection-1.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-public/assets/peru/collection1/mapbiomas_peru_collection1_integration_v1',
+                        'transitions': 'projects/mapbiomas-public/assets/peru/collection1/mapbiomas_peru_collection1_transitions_v1',
+                        'quality': 'projects/mapbiomas-public/assets/peru/collection1/mapbiomas_peru_collection1_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
+                        ],
+                        'Transitions': [
+                            '1985_1986', '1986_1987', '1987_1988', '1988_1989',
+                            '1989_1990', '1990_1991', '1991_1992', '1992_1993',
+                            '1993_1994', '1994_1995', '1995_1996', '1996_1997',
+                            '1997_1998', '1998_1999', '1999_2000', '2000_2001',
+                            '2001_2002', '2002_2003', '2003_2004', '2004_2005',
+                            '2005_2006', '2006_2007', '2007_2008', '2008_2009',
+                            '2009_2010', '2010_2011', '2011_2012', '2012_2013',
+                            '2013_2014', '2014_2015', '2015_2016', '2016_2017',
+                            '2017_2018', '2018_2019', '2019_2020', '2020_2021',
+                            '1985_1990', '1990_1995', '1995_2000', '2000_2005',
+                            '2005_2010', '2010_2015', '2015_2020', '1990_2000',
+                            '2000_2010', '2010_2020', '1985_2021', '2008_2017',
+                            '1994_2002', '2002_2010', '2010_2016', '1986_2015',
+                            '1990_2021', '2000_2021', '2008_2021', '2010_2021',
+                            '2012_2021',
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
                         ]
                     },
                 },
@@ -1955,7 +2138,8 @@ var App = {
                 App.ui.form.panelMain.add(App.ui.form.labelTitle);
                 App.ui.form.panelMain.add(App.ui.form.labelSubtitle);
                 App.ui.form.panelMain.add(App.ui.form.labelLink);
-                App.ui.form.panelMain.add(App.ui.form.panelLink);
+                App.ui.form.panelMain.add(App.ui.form.panelLink1);
+                App.ui.form.panelMain.add(App.ui.form.panelLink2);
 
                 App.ui.form.panelMain.add(App.ui.form.tabs);
                 App.ui.form.panelMain.add(App.ui.form.panel1);
@@ -1966,12 +2150,13 @@ var App = {
                 App.ui.form.tabs.add(App.ui.form.tab1);
                 App.ui.form.tabs.add(App.ui.form.tab2);
 
-                App.ui.form.panelLink.add(App.ui.form.labelLink1);
-                App.ui.form.panelLink.add(App.ui.form.labelLink2);
-                App.ui.form.panelLink.add(App.ui.form.labelLink3);
-                App.ui.form.panelLink.add(App.ui.form.labelLink4);
-                App.ui.form.panelLink.add(App.ui.form.labelLink5);
-                App.ui.form.panelLink.add(App.ui.form.labelLink6);
+                App.ui.form.panelLink1.add(App.ui.form.labelLink1);
+                App.ui.form.panelLink1.add(App.ui.form.labelLink2);
+                App.ui.form.panelLink1.add(App.ui.form.labelLink3);
+                App.ui.form.panelLink1.add(App.ui.form.labelLink4);
+                App.ui.form.panelLink1.add(App.ui.form.labelLink5);
+                App.ui.form.panelLink1.add(App.ui.form.labelLink6);
+                App.ui.form.panelLink2.add(App.ui.form.labelLink7);
 
                 App.ui.form.panelRegion.add(App.ui.form.labelRegion);
                 App.ui.form.panelRegion.add(App.ui.form.selectRegion);
@@ -2030,7 +2215,14 @@ var App = {
                 },
             }),
 
-            panelLink: ui.Panel({
+            panelLink1: ui.Panel({
+                'layout': ui.Panel.Layout.flow('horizontal'),
+                'style': {
+                    'stretch': 'horizontal'
+                },
+            }),
+
+            panelLink2: ui.Panel({
                 'layout': ui.Panel.Layout.flow('horizontal'),
                 'style': {
                     'stretch': 'horizontal'
@@ -2155,16 +2347,23 @@ var App = {
                 'http://chaco.mapbiomas.org/codigos-de-la-leyenda-1'
             ),
 
-            labelLink5: ui.Label('Pampa', {
+            labelLink5: ui.Label('Indonesia', {
+                'fontSize': '10px',
+            },
+                'https://mapbiomas.nusantara.earth/assets/files/Kode%20Legenda%20-%20Legend%20Code.pdf'
+            ),
+
+            labelLink6: ui.Label('Pampa', {
                 'fontSize': '10px'
             },
                 'http://pampa.mapbiomas.org/codigos-de-la-leyenda-1'
             ),
 
-            labelLink6: ui.Label('Indonesia', {
+
+            labelLink7: ui.Label('Peru', {
                 'fontSize': '10px',
             },
-                'http://amazonia.mapbiomas.org/codigos-de-la-leyenda'
+                'https://mapbiomas-peru.s3.amazonaws.com/DESCARGAS/LEYENDA/C%C3%B3digo_de_la_Leyenda_-_MB_Peru_C1.pdf'
             ),
 
             labelType: ui.Label('Type:', {
@@ -2236,6 +2435,7 @@ var App = {
                     'mapbiomas-chaco',
                     'mapbiomas-indonesia',
                     'mapbiomas-pampa',
+                    'mapbiomas-peru',
                 ],
                 'placeholder': 'None',
                 'style': {
