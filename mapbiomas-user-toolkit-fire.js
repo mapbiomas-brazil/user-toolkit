@@ -12,6 +12,7 @@
  * @version
  *    1.0.0 - First release
  *    1.1.0 - Collection 1.0 fire
+ *    1.1.1 - Add monthly data
  *    1.2.0 - Collection 1.1 fire
  * 
  * @see
