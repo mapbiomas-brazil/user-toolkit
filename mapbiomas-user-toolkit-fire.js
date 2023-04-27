@@ -14,6 +14,7 @@
  *    1.1.0 - Collection 1.0 fire
  *    1.1.1 - Add monthly data
  *    1.2.0 - Collection 1.1 fire
+ *    1.3.0 - Collection 2.0 fire
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -102,7 +103,7 @@ var App = {
 
     options: {
 
-        version: '1.2.0',
+        version: '1.3.0',
 
         logo: {
             uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
@@ -248,27 +249,28 @@ var App = {
                             '2015', '2016', '2017', '2018', '2019', '2020'
                         ],
                         'fire_frequency': [
-                            "1985_1985", "1985_1986", "1985_1987", "1985_1988",
-                            "1985_1989", "1985_1990", "1985_1991", "1985_1992",
-                            "1985_1993", "1985_1994", "1985_1995", "1985_1996",
-                            "1985_1997", "1985_1998", "1985_1999", "1985_2000",
-                            "1985_2001", "1985_2002", "1985_2003", "1985_2004",
-                            "1985_2005", "1985_2006", "1985_2007", "1985_2008",
-                            "1985_2009", "1985_2010", "1985_2011", "1985_2012",
-                            "1985_2013", "1985_2014", "1985_2015", "1985_2016",
-                            "1985_2017", "1985_2018", "1985_2019", "1985_2020",
-                            "2020_2020", "2019_2020", "2018_2020", "2017_2020",
-                            "2016_2020", "2015_2020", "2014_2020", "2013_2020",
-                            "2012_2020", "2011_2020", "2010_2020", "2009_2020",
-                            "2008_2020", "2007_2020", "2006_2020", "2005_2020",
-                            "2004_2020", "2003_2020", "2002_2020", "2001_2020",
-                            "2000_2020", "1999_2020", "1998_2020", "1997_2020",
-                            "1996_2020", "1995_2020", "1994_2020", "1993_2020",
-                            "1992_2020", "1991_2020", "1990_2020", "1989_2020",
-                            "1988_2020", "1987_2020", "1986_2020", "1990_1995",
-                            "1995_2000", "2000_2005", "2005_2010", "2010_2015",
-                            "1995_2005", "2005_2015", "2000_2015",
-                        ]
+                            '1985_1986', '1985_1987', '1985_1988', '1985_1989',
+                            '1985_1990', '1985_1991', '1985_1992', '1985_1993',
+                            '1985_1994', '1985_1995', '1985_1996', '1985_1997',
+                            '1985_1998', '1985_1999', '1985_2000', '1985_2001',
+                            '1985_2002', '1985_2003', '1985_2004', '1985_2005',
+                            '1985_2006', '1985_2007', '1985_2008', '1985_2009',
+                            '1985_2010', '1985_2011', '1985_2012', '1985_2013',
+                            '1985_2014', '1985_2015', '1985_2016', '1985_2017',
+                            '1985_2018', '1985_2019', '1985_2020', '2020_2020',
+                            '2019_2020', '2018_2020', '2017_2020', '2016_2020',
+                            '2015_2020', '2014_2020', '2013_2020', '2012_2020',
+                            '2011_2020', '2010_2020', '2009_2020', '2008_2020',
+                            '2007_2020', '2006_2020', '2005_2020', '2004_2020',
+                            '2003_2020', '2002_2020', '2001_2020', '2000_2020',
+                            '1999_2020', '1998_2020', '1997_2020', '1996_2020',
+                            '1995_2020', '1994_2020', '1993_2020', '1992_2020',
+                            '1991_2020', '1990_2020', '1989_2020', '1988_2020',
+                            '1987_2020', '1986_2020', '1990_1995', '1995_2000',
+                            '2000_2005', '2005_2010', '2010_2015', '1995_2005',
+                            '2005_2015', '2000_2015'
+                        ],
+                        'fire_monitor': null,
                     },
                 },
                 'collection-1.1': {
@@ -326,6 +328,7 @@ var App = {
                         'annual_burned_coverage': 'projects/mapbiomas-workspace/public/collection7_1/mapbiomas-fire-collection2-annual-burned-coverage-1',
                         'monthly_burned_coverage': 'projects/mapbiomas-workspace/public/collection7_1/mapbiomas-fire-collection2-monthly-burned-coverage-1',
                         'fire_frequency': 'projects/mapbiomas-workspace/public/collection7_1/mapbiomas-fire-collection2-fire-frequency-1',
+                        'fire_monitor': 'projects/mapbiomas-workspace/FOGO/MONITORAMENTO/collection-fire-monthly-sentinel2-v2',
                     },
 
                     'periods': {
@@ -336,7 +339,7 @@ var App = {
                             '2003', '2004', '2005', '2006', '2007', '2008',
                             '2009', '2010', '2011', '2012', '2013', '2014',
                             '2015', '2016', '2017', '2018', '2019', '2020',
-                            '2021',
+                            '2021', '2022',
                         ],
                         'monthly_burned_coverage': [
                             '1985', '1986', '1987', '1988', '1989', '1990',
@@ -345,7 +348,7 @@ var App = {
                             '2003', '2004', '2005', '2006', '2007', '2008',
                             '2009', '2010', '2011', '2012', '2013', '2014',
                             '2015', '2016', '2017', '2018', '2019', '2020',
-                            '2021'
+                            '2021', '2022',
                         ],
                         'fire_frequency': [
                             "1985_1985", "1985_1986", "1985_1987", "1985_1988",
@@ -356,19 +359,21 @@ var App = {
                             "1985_2005", "1985_2006", "1985_2007", "1985_2008",
                             "1985_2009", "1985_2010", "1985_2011", "1985_2012",
                             "1985_2013", "1985_2014", "1985_2015", "1985_2016",
-                            "1985_2017", "1985_2018", "1985_2019", "1985_2021",
-                            "2020_2021", "2019_2021", "2018_2021", "2017_2021",
-                            "2016_2021", "2015_2021", "2014_2021", "2013_2021",
-                            "2012_2021", "2011_2021", "2010_2021", "2009_2021",
-                            "2008_2021", "2007_2021", "2006_2021", "2005_2021",
-                            "2004_2021", "2003_2021", "2002_2021", "2001_2021",
-                            "2000_2021", "1999_2021", "1998_2021", "1997_2021",
-                            "1996_2021", "1995_2021", "1994_2021", "1993_2021",
-                            "1992_2021", "1991_2021", "1990_2021", "1989_2021",
-                            "1988_2021", "1987_2021", "1986_2021", "1990_1995",
+                            "1985_2017", "1985_2018", "1985_2019", "1985_2020",
+                            "1985_2021", "1985_2022", "2022_2022", "2021_2022",
+                            "2020_2022", "2019_2022", "2018_2022", "2017_2022",
+                            "2016_2022", "2015_2022", "2014_2022", "2013_2022",
+                            "2012_2022", "2011_2022", "2010_2022", "2009_2022",
+                            "2008_2022", "2007_2022", "2006_2022", "2005_2022",
+                            "2004_2022", "2003_2022", "2002_2022", "2001_2022",
+                            "2000_2022", "1999_2022", "1998_2022", "1997_2022",
+                            "1996_2022", "1995_2022", "1994_2022", "1993_2022",
+                            "1992_2022", "1991_2022", "1990_2022", "1989_2022",
+                            "1988_2022", "1987_2022", "1986_2022", "1990_1995",
                             "1995_2000", "2000_2005", "2005_2010", "2010_2015",
-                            "1995_2005", "2005_2015", "2000_2015",
-                        ]
+                            "2015_2020", "1995_2005", "2005_2015", "2000_2015"
+                        ],
+                        'fire_monitor': null,
                     },
                 },
             },
@@ -378,6 +383,8 @@ var App = {
             'annual_burned_coverage': 'burned_coverage_',
             'monthly_burned_coverage': 'burned_coverage_',
             'fire_frequency': 'fire_frequency_',
+            'fire_monitor': 'burned_coverage_',
+
             // 'burned_cover_cumulated': 'cover_',
         },
 
@@ -387,6 +394,8 @@ var App = {
             'annual_burned_coverage': null,
             'monthly_burned_coverage': null,
             'fire_frequency': null,
+            'fire_monitor': null,
+
             // 'burned_cover_cumulated': null,
         },
 
@@ -394,6 +403,8 @@ var App = {
             'annual_burned_coverage': 256 * 124,
             'monthly_burned_coverage': 256 * 124,
             'fire_frequency': 256 * 124,
+            'fire_monitor': 256 * 124,
+
             // 'burned_cover_cumulated': 256 * 124,
 
         },
@@ -410,6 +421,10 @@ var App = {
             'fire_frequency': {
                 'min': 1,
                 'max': 36
+            },
+            'fire_monitor': {
+                'min': 0,
+                'max': 1
             },
         },
 
@@ -443,6 +458,9 @@ var App = {
                 '#9f360b',
                 '#810004',
                 '#4d0709'
+            ],
+            'fire_monitor': [
+                '#870508'
             ],
         },
 
@@ -623,6 +641,38 @@ var App = {
                             App.options.data.fire_frequency = ee.Image(
                                 App.options.collections[regionName][collectioName].assets.fire_frequency)
                                 .divide(100).byte();
+
+                            // -----------------------------------------------
+                            // monitor de area queimada sentinel
+                            var fireMonitor = ee.ImageCollection(
+                                App.options.collections[regionName][collectioName].assets.fire_monitor)
+                                .toBands();
+
+                            var oldBands = fireMonitor.bandNames();
+                            var year_month = oldBands.iterate(function (current, previous) {
+                                var newBand = ee.String(current)
+                                    .replace('brazil-', '')
+                                    .replace('_FireMonth', '')
+                                    .replace('-', '_');
+
+                                newBand = ee.Algorithms.If({
+                                    condition: newBand.length().eq(6),
+                                    trueCase: newBand.replace('_', '_0'),
+                                    falseCase: newBand
+                                });
+
+                                return ee.List(previous).add(newBand);
+                            }, []);
+
+                            var newBands = ee.List(year_month).map(function (str) { return ee.String('burned_coverage_').cat(str) });
+
+                            App.options.collections['mapbiomas-brazil'][collectioName].periods.fire_monitor = ee.List(year_month).sort().getInfo();
+
+                            App.options.data.fire_monitor = fireMonitor
+                                .select(oldBands, newBands)
+                                .gt(0).byte();
+
+                            //--------------------------------------------
 
                             var year = App.options.collections[regionName][collectioName].periods.annual_burned_coverage.slice(-1)[0];
 
@@ -1184,7 +1234,7 @@ var App = {
 
                 ui.root.add(this.panelMain);
 
-                // App.ui.showDisclaimer();
+                App.ui.showDisclaimer();
 
             },
 
@@ -1365,14 +1415,14 @@ var App = {
 
             labelDisclaimer: [
                 ui.Label('DISCLAIMER'),
-                ui.Label('Esta é a Coleção 2.0 do MapBiomas Fogo com o mapeamento de cicatrizes de fogo no Brasil de 1985 a 2021, com dados Anuais e Mensais para todo o período incluindo: (i) dado no ano e acumulado em um período; (ii) frequência de ocorrência de cicatriz de queimada; (iii) classificação da cobertura e uso do terra objetivo de queimada.\
+                ui.Label('Esta é a Coleção 2.0 do MapBiomas Fogo com o mapeamento de cicatrizes de fogo no Brasil de 1985 a 2022, com dados Anuais e Mensais para todo o período incluindo: (i) dado no ano e acumulado em um período; (ii) frequência de ocorrência de cicatriz de queimada; (iii) classificação da cobertura e uso do terra objetivo de queimada.\
                 O fogo associado a áreas recém desmatadas podem ocorrer tanto em áreas classificadas como vegetação nativa como em áreas de uso antrópico dependendo da época do ano em que os dados de cobertura e uso foram classificados e o momento em que ocorreu o fogo.\
                 A descrição do método de mapeamento das cicatrizes de fogo e sua classificação por classe de vegetação queimada bem como da determinação da frequência podem ser acessados na seção de metodologias do MapBiomas.\
                 Os mapas anuais de cicatrizes de queimadas bem como os principais conjuntos de estatísticas consolidadas estão disponíveis na área de download do MapBiomas.\
                 Caso tenha sugestões, críticas e idéias para aprimorar o trabalho entre em contato pelo e- mail: contato@mapbiomas.org ou acesse o Fórum MapBiomas.\
                 Os dados do MapBiomas são públicos, abertos e gratuitos sob licença Creative Commons CC - CY - SA e mediante a referência da fonte observando o seguinte formato: "Projeto MapBiomas – Mapeamento de cicatrizes de fogo no Brasil Coleção 1, acessado em [DATA] através do link: [LINK]".'),
                 ui.Label(''),
-                ui.Label('This is the Collection 2.0 of MapBiomas Fogo with the mapping of fire scars in Brazil from 1985 to 2021, with Annual and Monthly data for the entire period including: (i) non-year data and accumulated in a period; (ii) frequency of a fire scar; (iii) classification of land cover and land use intended for burning.\
+                ui.Label('This is the Collection 2.0 of MapBiomas Fogo with the mapping of fire scars in Brazil from 1985 to 2022, with Annual and Monthly data for the entire period including: (i) non-year data and accumulated in a period; (ii) frequency of a fire scar; (iii) classification of land cover and land use intended for burning.\
                 Fires associated with recently deforested areas can occur both in areas classified as native vegetation and in areas of anthropogenic use depending on the time of year in which the coverage and use data were classified and the time when the fire occurred.\
                 The description of the method of mapping fire scars and their classification by burnt vegetation class as well as the determination of frequency can be found in the methodology section of MapBiomas.\
                 Annual maps of burn scars as well as the main sets of consolidated statistics are available in the download area of ​​MapBiomas.\
@@ -1448,7 +1498,8 @@ var App = {
                 'items': [
                     'annual_burned_coverage',
                     'monthly_burned_coverage',
-                    'fire_frequency'
+                    'fire_frequency',
+                    'fire_monitor'
                 ],
                 'placeholder': 'annual_burned_coverage',
                 'style': {
@@ -1542,7 +1593,7 @@ var App = {
             buttonDisclaimerShow: ui.Button({
                 "label": "Show disclaimer",
                 "onClick": function () {
-                    // App.ui.showDisclaimer();
+                    App.ui.showDisclaimer();
                 },
                 "disabled": false,
                 "style": {
