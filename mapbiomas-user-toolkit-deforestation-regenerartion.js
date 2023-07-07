@@ -13,6 +13,7 @@
  *    1.0.0 - Data from collection 5.0
  *    1.1.0 - Data from collection 6.0
  *    1.2.0 - Data from collection 7.0
+ *    1.3.0 - Data from collection 7.1
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -20,7 +21,6 @@
  */
 
 var palettes = require('users/mapbiomas/modules:Palettes.js');
-var logos = require('users/mapbiomas/modules:Logos.js');
 var mapp = require('users/joaovsiqueira1/packages:Mapp.js');
 var legend = require('users/joaovsiqueira1/packages:Legend.js');
 
@@ -107,9 +107,12 @@ var App = {
 
     options: {
 
-        version: '1.2.0',
+        version: '1.3.0',
 
-        logo: logos.mapbiomas,
+        logo: {
+            uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
+            base64: null
+        },
 
         statesNames: {
             'None': 'None',
@@ -146,79 +149,79 @@ var App = {
             'mapbiomas-brazil': [
                 {
                     'label': 'atlantic_forest_law',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/atlantic_forest_law',
                 },
                 {
                     'label': 'biome',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/biome',
                 },
                 {
                     'label': 'biosphere_reserve',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/biosphere_reserve',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/biosphere_reserve',
                 },
                 {
                     'label': 'city',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/city',
                 },
                 {
                     'label': 'country',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/country',
                 },
                 {
                     'label': 'federal_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/federal_conservation_units_integral_protection',
                 },
                 {
                     'label': 'federal_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/federal_conservation_units_sustainable_use',
                 },
                 {
                     'label': 'indigenous_land',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/indigenous_land',
                 },
                 {
                     'label': 'legal_amazon',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/legal_amazon',
                 },
                 {
                     'label': 'level_1_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_1_drainage_basin',
                 },
                 {
                     'label': 'level_1_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_1_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_1_drainage_basin_pnrh',
                 },
                 {
                     'label': 'level_2_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_2_drainage_basin',
                 },
                 {
                     'label': 'level_2_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/level_2_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_2_drainage_basin_pnrh',
                 },
                 {
                     'label': 'quilombo',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/quilombo',
                 },
                 {
                     'label': 'semiarid',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/semiarid',
                 },
                 {
                     'label': 'settlement',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/settlement',
                 },
                 {
                     'label': 'state',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state',
                 },
                 {
                     'label': 'state_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state_conservation_units_integral_protection',
                 },
                 {
                     'label': 'state_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/state_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state_conservation_units_sustainable_use',
                 },
             ],
             // 'mapbiomas-amazon': [
@@ -243,6 +246,10 @@ var App = {
 
             // ],
         },
+
+        selectedRegion: null,
+        selectedCollection: null,
+        selectedDataType: null,
 
         collections: {
             'mapbiomas-brazil': {
@@ -367,6 +374,63 @@ var App = {
                         // 'deforestation_sv': '',
                         // 'secondary_vegetation': '',
                         // 'secondary_vegetation_age': '',
+                    },
+
+                    'periods': {
+                        'deforestation_regeneration': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019'
+                        ],
+                        'secondary_vegetation': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019'
+                        ],
+                        'secondary_vegetation_age': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019'
+                        ],
+                        'deforestation_sv': [
+                            '1988', '1989', '1990', '1991',
+                            '1992', '1993', '1994', '1995',
+                            '1996', '1997', '1998', '1999',
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019'
+                        ],
+                        'deforestation_pv': [
+                            'deforestation_pv_year'
+                        ],
+
+
+                    },
+                },
+                'collection-7.1': {
+                    'assets': { //TODO: Inserir os assets públicos
+                        'deforestation_regeneration': 'projects/mapbiomas-workspace/public/collection7_1/mapbiomas_collection71_deforestation_regeneration_v1',
+                        // 'deforestation_pv': ''
+                        // 'deforestation_sv': '',
+                        // 'secondary_vegetation': '',
+                        'secondary_vegetation_age': 'projects/mapbiomas-workspace/public/collection7_1/mapbiomas_collection71_secondary_vegetation_age_v1',
                     },
 
                     'periods': {
@@ -640,7 +704,7 @@ var App = {
 
     init: function () {
 
-        this.ui.init();
+        App.ui.init();
 
     },
 
@@ -707,7 +771,7 @@ var App = {
 
         init: function () {
 
-            this.form.init();
+            App.ui.form.init();
 
         },
 
@@ -753,11 +817,14 @@ var App = {
                             // App.options.data.secondary_vegetation = ee.Image(
                             //     App.options.collections[regionName][collectioName].assets.secondary_vegetation);
 
-                            // App.options.data.secondary_vegetation_age = ee.Image(
-                            //     App.options.collections[regionName][collectioName].assets.secondary_vegetation_age);
-
+                            
                             App.options.data.deforestation_regeneration = ee.Image(
                                 App.options.collections[regionName][collectioName].assets.deforestation_regeneration);
+                                
+                            if (collectioName == 'collection-7.1') {
+                                App.options.data.secondary_vegetation_age = ee.Image(
+                                    App.options.collections[regionName][collectioName].assets.secondary_vegetation_age);
+                            }
 
                             //
                             var bandNames = App.options.data.deforestation_regeneration.bandNames()
@@ -773,6 +840,7 @@ var App = {
                             var year = App.options.collections[regionName][collectioName]
                                 .periods.secondary_vegetation.slice(-1)[0];
 
+                            App.options.selectedCollection = collectioName
                             App.startMap(year);
                         }
                     );
@@ -968,6 +1036,8 @@ var App = {
                                                 App.options.activeFeature,
                                                 App.options.collections[regionName][collectionName]
                                                     .periods[App.options.dataType]);
+
+                                            App.ui.loadDataTypeNames();
                                             App.ui.form.selectDataType.setDisabled(false);
                                         }
                                     );
@@ -1006,13 +1076,51 @@ var App = {
 
         },
 
+        loadDataTypeNames: function () {
+
+            App.ui.form.selectDataType.setPlaceholder('loading product names...');
+
+            App.ui.form.selectDataType = ui.Select({
+                'items': Object.keys(App.options.collections[App.options.selectedRegion][App.options.selectedCollection].assets),
+                'placeholder': 'Select Data Type',
+                'onChange': function (dataType) {
+
+                    var regionName = App.ui.form.selectRegion.getValue();
+                    var collectionName = App.ui.form.selectCollection.getValue();
+
+                    App.ui.setDataType(dataType);
+
+                    App.ui.makeLayersList(
+                        App.options.activeName.split('/').slice(-1)[0],
+                        App.options.activeFeature,
+                        App.options.collections[regionName][collectionName].periods[dataType]);
+
+                    App.options.selectedDataType = dataType;
+
+                },
+                'style': {
+                    'stretch': 'horizontal'
+                }
+            });
+
+            App.ui.form.panelDataType.widgets()
+                .set(1, App.ui.form.selectDataType);
+        },
+
         addImageLayer: function (period, label, region) {
 
 
-            var image = App.options.data[App.options.dataType]
-                .select([App.options.bandsNames[App.options.dataType] + period])
-                .divide(100).byte()
-                .clip(region);
+            if (App.options.selectedDataType == 'deforestation_regeneration'){
+
+                var image = App.options.data[App.options.dataType]
+                    .select([App.options.bandsNames[App.options.dataType] + period])
+                    .divide(100).byte()
+                    .clip(region);
+            } else {
+                var image = App.options.data[App.options.dataType]
+                    .select([App.options.bandsNames[App.options.dataType] + period])
+                    .clip(region);
+            }
 
             var imageLayer = ui.Map.Layer({
                 'eeObject': image.selfMask(),
@@ -1217,54 +1325,64 @@ var App = {
 
             init: function () {
 
-                this.panelMain.add(this.panelLogo);
-                this.panelMain.add(this.labelTitle);
-                this.panelMain.add(this.labelSubtitle);
-                this.panelMain.add(this.labelLink);
+                var blob = ee.Blob(App.options.logo.uri);
 
-                this.panelLogo.add(App.options.logo);
+                blob.string().evaluate(
+                    function (str) {
+                        str = str.replace(/\n/g, '');
+                        App.options.logo.base64 = ui.Label({
+                            imageUrl: str,
+                        });
+                        App.ui.form.panelLogo.add(App.options.logo.base64);
+                    }
+                );
 
-                this.panelRegion.add(this.labelRegion);
-                this.panelRegion.add(this.selectRegion);
+                App.ui.form.panelMain.add(App.ui.form.panelLogo);
+                App.ui.form.panelMain.add(App.ui.form.labelTitle);
+                App.ui.form.panelMain.add(App.ui.form.labelSubtitle);
+                App.ui.form.panelMain.add(App.ui.form.labelLink);
 
-                this.panelCollection.add(this.labelCollection);
-                this.panelCollection.add(this.selectCollection);
+                App.ui.form.panelRegion.add(App.ui.form.labelRegion);
+                App.ui.form.panelRegion.add(App.ui.form.selectRegion);
 
-                this.panelFeatureCollections.add(this.labelTables);
-                this.panelFeatureCollections.add(this.selectFeatureCollections);
+                App.ui.form.panelCollection.add(App.ui.form.labelCollection);
+                App.ui.form.panelCollection.add(App.ui.form.selectCollection);
 
-                this.panelProperties.add(this.labelProperties);
-                this.panelProperties.add(this.selectProperties);
+                App.ui.form.panelFeatureCollections.add(App.ui.form.labelTables);
+                App.ui.form.panelFeatureCollections.add(App.ui.form.selectFeatureCollections);
 
-                this.panelFeature.add(this.labelFeature);
-                this.panelFeature.add(this.selectFeature);
+                App.ui.form.panelProperties.add(App.ui.form.labelProperties);
+                App.ui.form.panelProperties.add(App.ui.form.selectProperties);
 
-                this.panelDataType.add(this.labelDataType);
-                this.panelDataType.add(this.selectDataType);
+                App.ui.form.panelFeature.add(App.ui.form.labelFeature);
+                App.ui.form.panelFeature.add(App.ui.form.selectFeature);
 
-                this.panelBuffer.add(this.labelBuffer);
-                this.panelBuffer.add(this.selectBuffer);
+                App.ui.form.panelDataType.add(App.ui.form.labelDataType);
+                App.ui.form.panelDataType.add(App.ui.form.selectDataType);
 
-                this.panelLegend.add(legend.getLegend(App.options.legend.params));
+                App.ui.form.panelBuffer.add(App.ui.form.labelBuffer);
+                App.ui.form.panelBuffer.add(App.ui.form.selectBuffer);
 
-                // this.panelMain.add(this.panelType);
-                this.panelMain.add(this.panelRegion);
-                this.panelMain.add(this.panelCollection);
-                this.panelMain.add(this.panelFeatureCollections);
-                this.panelMain.add(this.panelStates);
-                this.panelMain.add(this.panelProperties);
-                this.panelMain.add(this.panelFeature);
-                this.panelMain.add(this.panelDataType);
-                this.panelMain.add(this.panelLegend);
-                this.panelMain.add(this.panelBuffer);
+                App.ui.form.panelLegend.add(legend.getLegend(App.options.legend.params));
 
-                this.panelMain.add(this.labelLayers);
-                this.panelMain.add(this.panelLayersList);
+                // App.ui.form.panelMain.add(App.ui.form.panelType);
+                App.ui.form.panelMain.add(App.ui.form.panelRegion);
+                App.ui.form.panelMain.add(App.ui.form.panelCollection);
+                App.ui.form.panelMain.add(App.ui.form.panelFeatureCollections);
+                App.ui.form.panelMain.add(App.ui.form.panelStates);
+                App.ui.form.panelMain.add(App.ui.form.panelProperties);
+                App.ui.form.panelMain.add(App.ui.form.panelFeature);
+                App.ui.form.panelMain.add(App.ui.form.panelDataType);
+                App.ui.form.panelMain.add(App.ui.form.panelLegend);
+                App.ui.form.panelMain.add(App.ui.form.panelBuffer);
 
-                this.panelMain.add(this.buttonExport2Drive);
-                this.panelMain.add(this.labelNotes);
+                App.ui.form.panelMain.add(App.ui.form.labelLayers);
+                App.ui.form.panelMain.add(App.ui.form.panelLayersList);
 
-                ui.root.add(this.panelMain);
+                App.ui.form.panelMain.add(App.ui.form.buttonExport2Drive);
+                App.ui.form.panelMain.add(App.ui.form.labelNotes);
+
+                ui.root.add(App.ui.form.panelMain);
 
             },
 
@@ -1280,7 +1398,8 @@ var App = {
             panelLogo: ui.Panel({
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
-                    'margin': '0px 0px 0px 110px',
+                    'stretch': 'horizontal',
+                    'margin': '10px 0px 5px 15px',
                 },
             }),
 
@@ -1468,6 +1587,7 @@ var App = {
                     ee.Number(1).evaluate(
                         function (a) {
                             App.ui.setMapbiomasRegion(region);
+                            App.options.selectedRegion = region;
                         }
                     );
 
@@ -1504,7 +1624,7 @@ var App = {
                     // 'deforestation_sv',
                     // 'secondary_vegetation',
                     // 'secondary_vegetation_age',
-                    'deforestation_regeneration'
+                    // 'deforestation_regeneration'
                 ],
                 'placeholder': 'Data type',
                 'style': {

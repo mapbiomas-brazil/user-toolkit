@@ -41,6 +41,7 @@
  *    1.14.0 - Loads mapbiomas-pampa collection 2.0
  *    1.15.0 - Loads mapbiomas-peru collection 1.0
  *    1.16.0 - Loads mapbiomas-brazil collection 7.1
+ *    1.17.0 - Loads mapbiomas-chaco collection 4.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -128,7 +129,7 @@ var App = {
 
     options: {
 
-        version: '1.16.0',
+        version: '1.17.0',
 
         logo: {
             uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
@@ -289,40 +290,28 @@ var App = {
             ],
             'mapbiomas-chaco': [
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/biome',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/bioma',
                     'label': 'biome'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/chaco_bolivia',
-                    'label': 'chaco bolivia'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/area-natural-protegida',
+                    'label': 'natural protected area'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/chaco_burkart',
-                    'label': 'chaco burkart'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/nivel-politico-1',
+                    'label': 'political level 1'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/parque_chaqueno',
-                    'label': 'parque chaqueno'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/nivel-politico-2',
+                    'label': 'political level 1'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/provincia_fitogeografica_chaquena',
-                    'label': 'provincia fitogeografica chaquena'
-                },
-                {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/chaco_conservation_units',
-                    'label': 'conservation units'
-                },
-                {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/city',
-                    'label': 'city'
-                },
-                {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/country',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/pais',
                     'label': 'country'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/state',
-                    'label': 'state'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/sitios-ramsar',
+                    'label': 'ramsar site'
                 },
             ],
             'mapbiomas-atlantic-forest': [
@@ -1002,6 +991,41 @@ var App = {
                             "2016_2017", "2017_2018", "2018_2019", "2019_2020",
                             "2020_2021", "2000_2005", "2005_2010", "2010_2015",
                             "2015_2020", "2000_2010", "2010_2020", //"2000_2021",
+                        ]
+                    },
+                },
+                'collection-4.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-chaco/public/collection4/mapbiomas_chaco_collection4_integration_v1',
+                        'transitions': 'projects/mapbiomas-chaco/public/collection4/mapbiomas_chaco_collection4_transitions_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'Transitions': [
+                            '1985_1986', '1986_1987', '1987_1988', '1988_1989',
+                            '1989_1990', '1990_1991', '1991_1992', '1992_1993',
+                            '1993_1994', '1994_1995', '1995_1996', '1996_1997',
+                            '1997_1998', '1998_1999', '1999_2000', '2000_2001',
+                            '2001_2002', '2002_2003', '2003_2004', '2004_2005',
+                            '2005_2006', '2006_2007', '2007_2008', '2008_2009',
+                            '2009_2010', '2010_2011', '2011_2012', '2012_2013',
+                            '2013_2014', '2014_2015', '2015_2016', '2016_2017',
+                            '2017_2018', '2018_2019', '2019_2020', '2020_2021',
+                            '2021_2022', '1985_1990', '1990_1995', '1995_2000',
+                            '2000_2005', '2005_2010', '2010_2015', '2015_2020',
+                            '1990_2000', '2000_2010', '2010_2020', '1985_2022',
+                            '2000_2022',
                         ]
                     },
                 },
