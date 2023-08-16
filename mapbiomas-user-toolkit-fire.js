@@ -405,10 +405,6 @@ var App = {
             'monthly_burned_coverage': 256 * 124,
             'fire_frequency': 256 * 124,
             'fire_monitor': 256 * 124,
-<<<<<<< HEAD
-=======
-
->>>>>>> c3e589959c925cd0a341778f22fe34fa9914af69
             // 'burned_cover_cumulated': 256 * 124,
 
         },
@@ -430,10 +426,6 @@ var App = {
                 'min': 0,
                 'max': 1
             },
-<<<<<<< HEAD
-
-=======
->>>>>>> c3e589959c925cd0a341778f22fe34fa9914af69
         },
 
         vector: null,
