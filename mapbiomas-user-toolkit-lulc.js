@@ -21,7 +21,7 @@
  *    1.1.4 - Update transitions data to collection 4.1
  *    1.2.0 - Loads mapbiomas-brazil collection 3.1
  *          - Loads mapbiomas-brazil collection 4.0
- *          - Laods mapbiomas-chaco collection 1.0
+ *          - Loads mapbiomas-chaco collection 1.0
  *          - Loads mapbiomas-amazon collection 1.0
  *          - Updated mapbiomas-amazon collection 2.0
  *    1.3.0 - Loads mapbiomas-brazil collection 5.0
@@ -35,6 +35,8 @@
  *    1.8.0 - Loads mapbiomas-indonesia collection 1.0
  *    1.9.0 - New tabs and download entire Brazilian maps from storage
  *    1.10.0 - Loads mapbiomas-brazil collection 7.0
+ *    1.11.0 - Loads mapbiomas-chaco collection 3.0
+ *    1.12.0 - Loads mapbiomas-atlantic-forest collection 2.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -122,7 +124,7 @@ var App = {
 
     options: {
 
-        version: '1.9.0',
+        version: '1.12.0',
 
         logo: {
             uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
@@ -283,49 +285,73 @@ var App = {
             ],
             'mapbiomas-chaco': [
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/paises',
-                    'label': 'paises'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/biome',
+                    'label': 'biome'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/limite-chaco',
-                    'label': 'limite-chaco'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/chaco_bolivia',
+                    'label': 'chaco bolivia'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/departamentos',
-                    'label': 'departamentos'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/chaco_burkart',
+                    'label': 'chaco burkart'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/provincias',
-                    'label': 'provincias'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/parque_chaqueno',
+                    'label': 'parque chaqueno'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/biomas',
-                    'label': 'biomas'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/provincia_fitogeografica_chaquena',
+                    'label': 'provincia fitogeografica chaquena'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/chaco_conservation_units',
+                    'label': 'conservation units'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/city',
+                    'label': 'city'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/country',
+                    'label': 'country'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION3/state',
+                    'label': 'state'
                 },
             ],
             'mapbiomas-atlantic-forest': [
                 {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/biome",
-                    'label': 'biome'
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/atlantic_forest_limit",
+                    'label': 'atlantic_forest_limit'
                 },
                 {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/city",
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/city",
                     'label': 'city'
                 },
                 {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/conservation_units",
-                    'label': 'conservation_units'
-                },
-                {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/country",
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/country",
                     'label': 'country'
                 },
                 {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/level_1_drainage_basin",
-                    'label': 'level_1_drainage_basin'
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/indigenous_land",
+                    'label': 'indigenous_land'
                 },
                 {
-                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION1/state",
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/international_protected_areas",
+                    'label': 'international_protected_areas'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/national_protected_areas",
+                    'label': 'national_protected_areas'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/level_2_drainage_basin",
+                    'label': 'level_2_drainage_basin'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/state",
                     'label': 'state'
                 },
             ],
@@ -784,6 +810,31 @@ var App = {
                         ]
                     },
                 },
+                'collection-3.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-chaco/public/collection3/mapbiomas_chaco_collection3_integration_v2',
+                        'transitions': 'projects/mapbiomas-chaco/public/collection3/mapbiomas_chaco_collection3_transitions_v2',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '2000', '2001', '2002', '2003',
+                            '2004', '2005', '2006', '2007',
+                            '2008', '2009', '2010', '2011',
+                            '2012', '2013', '2014', '2015',
+                            '2016', '2017', '2018', '2019',
+                            '2020', '2021'
+                        ],
+                        'Transitions': [
+                            "2000_2001", "2001_2002", "2002_2003", "2003_2004",
+                            "2004_2005", "2005_2006", "2006_2007", "2007_2008",
+                            "2008_2009", "2009_2010", "2010_2011", "2011_2012",
+                            "2012_2013", "2013_2014", "2014_2015", "2015_2016",
+                            "2016_2017", "2017_2018", "2018_2019", "2019_2020",
+                            "2020_2021", "2000_2005", "2005_2010", "2010_2015",
+                            "2015_2020", "2000_2010", "2010_2020", //"2000_2021",
+                        ]
+                    },
+                },
             },
             'mapbiomas-atlantic-forest': {
                 'collection-1.0': {
@@ -816,6 +867,55 @@ var App = {
                             '2008', '2009', '2010', '2011',
                             '2012', '2013', '2014', '2015',
                             '2016', '2017', '2018', '2019',
+                        ]
+                    },
+                },
+                'collection-2.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas_af_trinacional/public/collection2/mapbiomas_atlantic_forest_collection20_integration_v1',
+                        'transitions': 'projects/mapbiomas_af_trinacional/public/collection2/mapbiomas_atlantic_forest_collection20_transitions_v1',
+                        'quality': 'projects/mapbiomas_af_trinacional/public/collection2/mapbiomas_atlantic_forest_collection20_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
+                        ],
+                        'Transitions': [
+                            "1985_1986", "1986_1987", "1987_1988", "1988_1989",
+                            "1989_1990", "1990_1991", "1991_1992", "1992_1993",
+                            "1993_1994", "1994_1995", "1995_1996", "1996_1997",
+                            "1997_1998", "1998_1999", "1999_2000", "2000_2001",
+                            "2001_2002", "2002_2003", "2003_2004", "2004_2005",
+                            "2005_2006", "2006_2007", "2007_2008", "2008_2009",
+                            "2009_2010", "2010_2011", "2011_2012", "2012_2013",
+                            "2013_2014", "2014_2015", "2015_2016", "2016_2017",
+                            "2017_2018", "2018_2019", "2019_2020", "2020_2021",
+                            "1985_1990", "1990_1995", "1995_2000", "2000_2005",
+                            "2005_2010", "2010_2015", "2015_2020", "1990_2000",
+                            "2000_2010", "2010_2020", "1985_2021", "2008_2021",
+                            "2012_2021", "1994_2002", "2002_2010", "2010_2016",
+                            "2016_2021", "1993_2008"
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
                         ]
                     },
                 },
@@ -915,7 +1015,7 @@ var App = {
         ranges: {
             'Coverage': {
                 'min': 0,
-                'max': 49
+                'max': 62
             },
             'Transitions': {
                 'min': -2,
@@ -932,7 +1032,7 @@ var App = {
         activeName: '',
 
         palette: {
-            'Coverage': palettes.get('classification6'),
+            'Coverage': palettes.get('classification7'),
             'Transitions': ['ffa500', 'ff0000', '818181', '06ff00', '4169e1', '8a2be2'],
             'Quality': ['d73027', 'fef9b6', '1d6a37']
         },
@@ -1058,6 +1158,8 @@ var App = {
             48: 'Other Perennial Crops',
             49: 'Wooded Sandbank Vegetation',
             50: 'Herbaceous Sandbank Vegetation',
+            57: 'Cultivo Simples', // Only for Chaco
+            58: 'Cultivo Múltiple', // Only for Chaco
             62: "Cotton",
             0: "Non Observed",
 
@@ -1235,6 +1337,12 @@ var App = {
                             }
                             // TODO: improve this logic
                             if (regionName == 'mapbiomas-atlantic-forest' & collectioName == 'collection-1.0') {
+
+                                App.options.data.Quality = ee.Image(
+                                    App.options.collections[regionName][collectioName].assets.quality);
+
+                            }
+                            if (regionName == 'mapbiomas-atlantic-forest' & collectioName == 'collection-2.0') {
 
                                 App.options.data.Quality = ee.Image(
                                     App.options.collections[regionName][collectioName].assets.quality);
