@@ -12,6 +12,7 @@
  * @version
  *    1.0.0 - First release
  *    1.1.0 - Irrigated Agriculture - Collection 6.0
+ *    1.2.0 - Irrigated Agriculture - Collection 7.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -106,7 +107,7 @@ var App = {
 
     options: {
 
-        version: '1.1.0',
+        version: '1.2.0',
 
         logo: logos.mapbiomas,
 
@@ -145,79 +146,79 @@ var App = {
             'mapbiomas-brazil': [
                 {
                     'label': 'atlantic_forest_law',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/atlantic_forest_law',
                 },
                 {
                     'label': 'biome',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/biome',
                 },
                 {
                     'label': 'biosphere_reserve',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/biosphere_reserve',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/biosphere_reserve',
                 },
                 {
                     'label': 'city',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/city',
                 },
                 {
                     'label': 'country',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/country',
                 },
                 {
                     'label': 'federal_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/federal_conservation_units_integral_protection',
                 },
                 {
                     'label': 'federal_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/federal_conservation_units_sustainable_use',
                 },
                 {
                     'label': 'indigenous_land',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/indigenous_land',
                 },
                 {
                     'label': 'legal_amazon',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/legal_amazon',
                 },
                 {
                     'label': 'level_1_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_1_drainage_basin',
                 },
                 {
                     'label': 'level_1_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_1_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_1_drainage_basin_pnrh',
                 },
                 {
                     'label': 'level_2_drainage_basin',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_2_drainage_basin',
                 },
                 {
                     'label': 'level_2_drainage_basin_pnrh',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/level_2_drainage_basin_pnrh',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/level_2_drainage_basin_pnrh',
                 },
                 {
                     'label': 'quilombo',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/quilombo',
                 },
                 {
                     'label': 'semiarid',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/semiarid',
                 },
                 {
                     'label': 'settlement',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/settlement',
                 },
                 {
                     'label': 'state',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state',
                 },
                 {
                     'label': 'state_conservation_units_integral_protection',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state_conservation_units_integral_protection',
                 },
                 {
                     'label': 'state_conservation_units_sustainable_use',
-                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO6/state_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO7/VERSAO-2/state_conservation_units_sustainable_use',
                 },
             ],
             // 'mapbiomas-amazon': [
@@ -245,34 +246,6 @@ var App = {
 
         collections: {
             'mapbiomas-brazil': {
-                // 'collection-5.0': {
-                //     'assets': {
-                //         'irrigated_agriculture': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_irrigated_agriculture_v1',
-                //         // 'agriculture': '',
-                //     },
-
-                //     'periods': {
-                //         'irrigated_agriculture': [
-                //             '2000', '2001', '2002', '2003',
-                //             '2004', '2005', '2006', '2007',
-                //             '2008', '2009', '2010', '2011',
-                //             '2012', '2013', '2014', '2015',
-                //             '2016', '2017', '2018', '2019'
-                //         ],
-                //         'agriculture': [
-                //             '1985', '1986', '1987', '1988',
-                //             '1989', '1990', '1991', '1992',
-                //             '1993', '1994', '1995', '1996',
-                //             '1997', '1998', '1999', '2000',
-                //             '2001', '2002', '2003', '2004',
-                //             '2005', '2006', '2007', '2008',
-                //             '2009', '2010', '2011', '2012',
-                //             '2013', '2014', '2015', '2016',
-                //             '2017', '2018', '2019'
-                //         ],
-
-                //     },
-                // },
                 'collection-6.0': {
                     'assets': {
                         'irrigated_agriculture': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_collection60_irrigated_agriculture_v1',
@@ -305,29 +278,42 @@ var App = {
 
                     },
                 },
+                'collection-7.0': {
+                    'assets': {
+                        'irrigated_agriculture': 'projects/mapbiomas-workspace/public/collection7/mapbiomas_collection70_irrigated_agriculture_v3',
+                        // 'agriculture': '',
+                    },
+
+                    'periods': {
+                        'irrigated_agriculture': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
+                        ],
+                        'agriculture': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021'
+                        ],
+
+                    },
+                },
             },
 
-            // 'mapbiomas-amazon': {
-
-            // },
-            // 'mapbiomas-chaco': {
-
-            // },
-
-            // 'mapbiomas-indonesia': {
-            //     'collection-1.0': {
-            //     },
-            // },
-
-            // 'mapbiomas-antlantic-forest': {
-            //     'collection-1.0': {
-            //     },
-            // },
-
-            // 'mapbiomas-pampa': {
-            //     'collection-1.0': {
-            //     },
-            // },
         },
 
         bandsNames: { //TODO: ajustar o nome das bandas no asset publico
