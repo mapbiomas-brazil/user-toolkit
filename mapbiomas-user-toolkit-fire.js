@@ -229,6 +229,8 @@ var App = {
                         'annual_burned_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-fire-collection1-annual-burned-coverage-1',
                         'monthly_burned_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-fire-collection1-monthly-burned-coverage-1',
                         'fire_frequency': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-fire-collection1-fire-frequency-1',
+                        'fire_monitor': 'projects/mapbiomas-workspace/FOGO/MONITORAMENTO/collection-fire-monthly-sentinel2-v2',
+                        // 'burned_cover_cumulated': 'projects/mapbiomas-workspace/public/collection5/mapbiomas_collection50_burned_cover_cumulated_v1',
                     },
 
                     'periods': {
@@ -384,7 +386,6 @@ var App = {
             'monthly_burned_coverage': 'burned_coverage_',
             'fire_frequency': 'fire_frequency_',
             'fire_monitor': 'burned_coverage_',
-
             // 'burned_cover_cumulated': 'cover_',
         },
 
@@ -404,7 +405,6 @@ var App = {
             'monthly_burned_coverage': 256 * 124,
             'fire_frequency': 256 * 124,
             'fire_monitor': 256 * 124,
-
             // 'burned_cover_cumulated': 256 * 124,
 
         },
@@ -966,6 +966,8 @@ var App = {
         },
 
         addImageLayer: function (period, label, region) {
+
+            // print('App.options.dataType',App.options.dataType);
 
             var image = App.options.data[App.options.dataType]
                 .select([App.options.bandsNames[App.options.dataType] + period])
