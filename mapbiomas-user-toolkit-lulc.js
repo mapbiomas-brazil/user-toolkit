@@ -290,27 +290,27 @@ var App = {
             ],
             'mapbiomas-chaco': [
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/bioma',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/bioma',
                     'label': 'biome'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/area-natural-protegida',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/area-natural-protegida',
                     'label': 'natural protected area'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/nivel-politico-1',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/nivel-politico-1',
                     'label': 'political level 1'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/nivel-politico-2',
-                    'label': 'political level 1'
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/nivel-politico-2',
+                    'label': 'political level 2'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/pais',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/pais',
                     'label': 'country'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/sitios-ramsar',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/sitios-ramsar',
                     'label': 'ramsar site'
                 },
             ],

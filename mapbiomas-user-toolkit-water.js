@@ -11,7 +11,7 @@
  *
  * @version
  *    1.0.0 - First release
- *    1.1.0 - Collection 1.0 fire
+ *    1.1.0 - Brazil Collection 1.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -100,7 +100,7 @@ var App = {
 
     options: {
 
-        version: '1.1.0',
+        version: '1.2.0',
 
         logo: logos.mapbiomas,
 
@@ -174,6 +174,82 @@ var App = {
 
         collections: {
             'mapbiomas-brazil': {
+                'collection-1.0': {
+                    'assets': {
+                        'annual_water_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-annual-water-coverage-1',
+                        'water_frequency': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-water-frequency-1',
+                        // 'cumulated_water_coverage': '',
+                        // 'monthly_water_coverage': '',
+                    },
+
+                    'periods': {
+                        'annual_water_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020'
+                        ],
+                        'water_frequency': [
+                            '1985_2020'
+                        ]
+                        // 'cumulated_water_coverage': [
+                        //     '2000', '2001', '2002', '2003',
+                        //     '2004', '2005', '2006', '2007',
+                        //     '2008', '2009', '2010', '2011',
+                        //     '2012', '2013', '2014', '2015',
+                        //     '2016', '2017', '2018', '2019'
+                        // ],
+                        // 'monthly_water_coverage': [
+                        //     '1985', '1986', '1987', '1988', '1989', '1990',
+                        //     '1991', '1992', '1993', '1994', '1995', '1996',
+                        //     '1997', '1998', '1999', '2000', '2001', '2002',
+                        //     '2003', '2004', '2005', '2006', '2007', '2008',
+                        //     '2009', '2010', '2011', '2012', '2013', '2014',
+                        //     '2015', '2016', '2017', '2018', '2019', '2020'
+                        // ],
+                    },
+                },
+                'collection-2.0': {
+                    'assets': {
+                        'annual_water_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-annual-water-coverage-1',
+                        'water_frequency': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-water-frequency-1',
+                        // 'cumulated_water_coverage': '',
+                        // 'monthly_water_coverage': '',
+                    },
+
+                    'periods': {
+                        'annual_water_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020'
+                        ],
+                        'water_frequency': [
+                            '1985_2020'
+                        ]
+                        // 'cumulated_water_coverage': [
+                        //     '2000', '2001', '2002', '2003',
+                        //     '2004', '2005', '2006', '2007',
+                        //     '2008', '2009', '2010', '2011',
+                        //     '2012', '2013', '2014', '2015',
+                        //     '2016', '2017', '2018', '2019'
+                        // ],
+                        // 'monthly_water_coverage': [
+                        //     '1985', '1986', '1987', '1988', '1989', '1990',
+                        //     '1991', '1992', '1993', '1994', '1995', '1996',
+                        //     '1997', '1998', '1999', '2000', '2001', '2002',
+                        //     '2003', '2004', '2005', '2006', '2007', '2008',
+                        //     '2009', '2010', '2011', '2012', '2013', '2014',
+                        //     '2015', '2016', '2017', '2018', '2019', '2020'
+                        // ],
+                    },
+                },
+            },
+            'mapbiomas-amazon': {
                 'collection-1.0': {
                     'assets': {
                         'annual_water_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-annual-water-coverage-1',
@@ -1229,7 +1305,7 @@ var App = {
 
             selectRegion: ui.Select({
                 'items': [
-                    // 'mapbiomas-amazon',
+                    'mapbiomas-amazon',
                     // 'mapbiomas-atlantic-forest',
                     'mapbiomas-brazil',
                     // 'mapbiomas-chaco',
