@@ -12,6 +12,8 @@
  * @version
  *    1.0.0 - First release
  *    1.1.0 - Brazil Collection 1.0
+ *    1.2.0 - Brazil Collection 2.0
+ *    1.3.0 - Amazon Collection 1.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -100,9 +102,13 @@ var App = {
 
     options: {
 
-        version: '1.2.0',
+        version: '1.3.0',
 
-        logo: logos.mapbiomas,
+
+        logo: {
+            uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
+            base64: null
+        },
 
         statesNames: {
             'None': 'None',
@@ -137,38 +143,116 @@ var App = {
 
         tables: {
             'mapbiomas-brazil': [
-                'projects/mapbiomas-workspace/AUXILIAR/areas-protegidas',
-                'projects/mapbiomas-workspace/AUXILIAR/biomas-2019',
-                'projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-1',
-                'projects/mapbiomas-workspace/AUXILIAR/bacias-nivel-2',
-                'projects/mapbiomas-workspace/AUXILIAR/estados-2017',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AC',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AL',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AM',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-AP',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-BA',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-CE',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-DF',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-ES',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-GO',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MA',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MG',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MS',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-MT',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PA',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PB',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PE',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PI',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-PR',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RJ',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RN',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RO',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RR',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-RS',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-SC',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-SE',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-SP',
-                'projects/mapbiomas-workspace/AUXILIAR/MUNICIPIOS/municipios-TO',
+                {
+                    'label': 'atlantic_forest_law',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/atlantic_forest_law',
+                },
+                {
+                    'label': 'biome',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/refined_biome',
+                },
+                {
+                    'label': 'biosphere_reserves',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/biosphere_reserves',
+                },
+                {
+                    'label': 'city',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/city',
+                },
+                {
+                    'label': 'country',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/country',
+                },
+                {
+                    'label': 'federal_conservation_units_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/federal_protected_area_integral_protection',
+                },
+                {
+                    'label': 'federal_conservation_units_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/federal_protected_area_sustainable_use',
+                },
+                {
+                    'label': 'indigenous_land',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/indigenous_territories',
+                },
+                {
+                    'label': 'legal_amazon',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/legal_amazon',
+                },
+                {
+                    'label': 'pnrh_level_1_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/pnrh_level_1_basin',
+                },
+                {
+                    'label': 'pnrh_level_2_basin',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/pnrh_level_1_basin',
+                },
+                {
+                    'label': 'quilombo',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/quilombos',
+                },
+                {
+                    'label': 'semiarid',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/semiarid',
+                },
+                {
+                    'label': 'settlement',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/settlements',
+                },
+                {
+                    'label': 'state',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/state',
+                },
+                {
+                    'label': 'state_protected_area_integral_protection',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/state_protected_area_integral_protection',
+                },
+                {
+                    'label': 'state_protected_area_sustainable_use',
+                    'value': 'projects/mapbiomas-workspace/AUXILIAR/ESTATISTICAS/COLECAO8/VERSAO-1/state_protected_area_sustainable_use',
+                },
+            ],
+            'mapbiomas-amazon': [
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/biome',
+                    'label': 'biome',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/city',
+                    'label': 'city',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/country',
+                    'label': 'country',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/country_per_biome',
+                    'label': 'country_per_biome',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/drainage_basin',
+                    'label': 'drainage_basin',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/federal_conservation_units',
+                    'label': 'federal_conservation_units',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/indigenous_land',
+                    'label': 'indigenous_land',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/raisg_limit',
+                    'label': 'raisg_limit',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/state',
+                    'label': 'state',
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/state_conservation_units',
+                    'label': 'state_conservation_units',
+                },
             ],
         },
 
@@ -176,8 +260,8 @@ var App = {
             'mapbiomas-brazil': {
                 'collection-1.0': {
                     'assets': {
-                        'annual_water_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-annual-water-coverage-1',
-                        'water_frequency': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-water-frequency-1',
+                        'annual_water_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_water_collection1_annual_water_coverage_v2',
+                        'water_frequency': 'projects/mapbiomas-workspace/public/collection6/mapbiomas_water_collection1_water_frequency_v1',
                         // 'cumulated_water_coverage': '',
                         // 'monthly_water_coverage': '',
                     },
@@ -213,8 +297,8 @@ var App = {
                 },
                 'collection-2.0': {
                     'assets': {
-                        'annual_water_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-annual-water-coverage-1',
-                        'water_frequency': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-water-frequency-1',
+                        'annual_water_coverage': 'projects/mapbiomas-workspace/public/collection8/mapbiomas_water_collection2_annual_water_coverage_v1',
+                        'water_frequency': 'projects/mapbiomas-workspace/public/collection8/mapbiomas_water_collection1_water_frequency_v1',
                         // 'cumulated_water_coverage': '',
                         // 'monthly_water_coverage': '',
                     },
@@ -226,10 +310,11 @@ var App = {
                             '1997', '1998', '1999', '2000', '2001', '2002',
                             '2003', '2004', '2005', '2006', '2007', '2008',
                             '2009', '2010', '2011', '2012', '2013', '2014',
-                            '2015', '2016', '2017', '2018', '2019', '2020'
+                            '2015', '2016', '2017', '2018', '2019', '2020',
+                            '2021', '2022'
                         ],
                         'water_frequency': [
-                            '1985_2020'
+                            '1985_2022'
                         ]
                         // 'cumulated_water_coverage': [
                         //     '2000', '2001', '2002', '2003',
@@ -252,38 +337,30 @@ var App = {
             'mapbiomas-amazon': {
                 'collection-1.0': {
                     'assets': {
-                        'annual_water_coverage': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-annual-water-coverage-1',
-                        'water_frequency': 'projects/mapbiomas-workspace/public/collection6/mapbiomas-water-collection1-water-frequency-1',
+                        'annual_water_coverage': 'projects/mapbiomas-raisg/public/collection5/mapbiomas_raisg_panamazonia_collection1_annual_water_coverage_v2',
+                        'water_frequency': 'projects/mapbiomas-raisg/public/collection5/mapbiomas_raisg_panamazonia_collection1_water_frequency_v2',
                         // 'cumulated_water_coverage': '',
                         // 'monthly_water_coverage': '',
                     },
 
                     'periods': {
                         'annual_water_coverage': [
-                            '1985', '1986', '1987', '1988', '1989', '1990',
-                            '1991', '1992', '1993', '1994', '1995', '1996',
-                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            // '1985', '1986', '1987', '1988', '1989', '1990',
+                            // '1991', '1992', '1993', '1994', '1995', '1996',
+                            // '1997', '1998', '1999',
+                            '2000', '2001', '2002',
                             '2003', '2004', '2005', '2006', '2007', '2008',
                             '2009', '2010', '2011', '2012', '2013', '2014',
-                            '2015', '2016', '2017', '2018', '2019', '2020'
+                            '2015', '2016', '2017', '2018', '2019', '2020',
+                            '2021', '2022'
                         ],
                         'water_frequency': [
-                            '1985_2020'
+                            // '1985_2022'
+                            '2000_2022'
                         ]
                         // 'cumulated_water_coverage': [
-                        //     '2000', '2001', '2002', '2003',
-                        //     '2004', '2005', '2006', '2007',
-                        //     '2008', '2009', '2010', '2011',
-                        //     '2012', '2013', '2014', '2015',
-                        //     '2016', '2017', '2018', '2019'
                         // ],
                         // 'monthly_water_coverage': [
-                        //     '1985', '1986', '1987', '1988', '1989', '1990',
-                        //     '1991', '1992', '1993', '1994', '1995', '1996',
-                        //     '1997', '1998', '1999', '2000', '2001', '2002',
-                        //     '2003', '2004', '2005', '2006', '2007', '2008',
-                        //     '2009', '2010', '2011', '2012', '2013', '2014',
-                        //     '2015', '2016', '2017', '2018', '2019', '2020'
                         // ],
                     },
                 },
@@ -291,7 +368,7 @@ var App = {
         },
 
         bandsNames: {
-            'annual_water_coverage': 'water_coverage_',
+            'annual_water_coverage': 'annual_water_coverage_',
             'water_frequency': 'water_frequency_',
             // 'cumulated_water_coverage': 'water_coverage_',
             // 'monthly_water_coverage': 'water_coverage_',
@@ -1038,6 +1115,18 @@ var App = {
 
             init: function () {
 
+                var blob = ee.Blob(App.options.logo.uri);
+
+                blob.string().evaluate(
+                    function (str) {
+                        str = str.replace(/\n/g, '');
+                        App.options.logo.base64 = ui.Label({
+                            imageUrl: str,
+                        });
+                        App.ui.form.panelLogo.add(App.options.logo.base64);
+                    }
+                );
+
                 this.panelMain.add(this.panelLogo);
                 this.panelMain.add(this.labelLink);
 
@@ -1077,11 +1166,11 @@ var App = {
 
                 this.panelMain.add(this.buttonExport2Drive);
                 this.panelMain.add(this.labelNotes);
-                this.panelMain.add(this.buttonDisclaimerShow);
+                // this.panelMain.add(this.buttonDisclaimerShow);
 
                 ui.root.add(this.panelMain);
 
-                App.ui.showDisclaimer();
+                // App.ui.showDisclaimer();
 
             },
 
@@ -1095,20 +1184,10 @@ var App = {
             }),
 
             panelLogo: ui.Panel({
-                'widgets': ui.Chart(
-                    [['<p style=font-size:18px;font-family: Helvetica, sans-serif><b>MapBiomas User Toolkit 1.1.0</b></p>']],
-                    'Table',
-                    {
-                        'allowHtml': true,
-                        'pagingSymbols': {
-                            prev: '<img style="background-color:#ffffff" width="325" src="https://raw.githubusercontent.com/mapbiomas-brazil/water/master/assets/mapbiomas-water.png">',
-                            next: ' '
-                        },
-                    }
-                ),
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
-                    'stretch': 'horizontal'
+                    'stretch': 'horizontal',
+                    'margin': '10px 0px 5px 15px',
                 },
             }),
 
