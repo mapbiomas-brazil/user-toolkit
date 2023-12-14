@@ -4,7 +4,7 @@
 # earthengine authenticate
 
 # Caminho da pasta
-folder_path="projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1"
+folder_path="projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1"
 
 # Lista de ativos na pasta
 asset_list=$(earthengine ls $folder_path)

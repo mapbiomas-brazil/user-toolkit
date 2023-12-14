@@ -25,7 +25,7 @@
  *          - Loads mapbiomas-amazon collection 1.0
  *          - Updated mapbiomas-amazon collection 2.0
  *    1.3.0 - Loads mapbiomas-brazil collection 5.0
- *          - Export a csv file with areas per classe and year
+ *          - Export a csv file containing areas per classe and year
  *    1.3.1 - Loads mapbiomas-chaco collection 2.0
  *    1.3.2 - Loads mapbiomas-brazil collection 5.0 quality
  *    1.4.0 - Loads mapbiomas-atlantic-forest collection 1.0
@@ -47,7 +47,12 @@
  *    1.20.0 - Loads mapbiomas-indonesia collection 2.0
  *    1.21.0 - Loads mapbiomas-colombia collection 1.0
  *    1.22.0 - Loads mapbiomas-venezuela collection 1.0
- * 
+ *    1.23.0 - Loads mapbiomas-pampa collection 3.0
+ *           - Loads mapbiomas-atlantic-forest collection 3.0
+ *           - Loads mapbiomas-amazon collection 5.0
+ *           - Loads mapbiomas-uruguay collection 1.0
+ *    1.24.0 - Loads mapbiomas-ecuador collection 1.0
+ *    1.25.0 - Loads mapbiomas-paraguay collection 1.0
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
  *      Code and Tutorial - https://github.com/mapbiomas-brazil/user-toolkit
@@ -134,7 +139,7 @@ var App = {
 
     options: {
 
-        version: '1.22.0',
+        version: '1.23.0',
 
         logo: {
             uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
@@ -245,69 +250,77 @@ var App = {
             ],
             'mapbiomas-amazon': [
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/biome',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/biomes',
                     'label': 'biome',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/city',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/biomes_per_country',
+                    'label': 'biomes_per_country',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/city',
                     'label': 'city',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/country',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/country',
                     'label': 'country',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/country_per_biome',
-                    'label': 'country_per_biome',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/drainage_basin_per_country',
+                    'label': 'drainage_basin_per_country',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/drainage_basin',
-                    'label': 'drainage_basin',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/drainage_basin_per_state',
+                    'label': 'drainage_basin_per_state',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/federal_conservation_units',
-                    'label': 'federal_conservation_units',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/dranaige_basin',
+                    'label': 'dranaige_basin',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/indigenous_land',
-                    'label': 'indigenous_land',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/federal_protected_areas',
+                    'label': 'federal_protected_areas',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/raisg_limit',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/indegenous_territories',
+                    'label': 'indegenous_territories',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/raisg_limit',
                     'label': 'raisg_limit',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/state',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/state',
                     'label': 'state',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/state_conservation_units',
-                    'label': 'state_conservation_units',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/state_protected_areas',
+                    'label': 'state_protected_areas',
                 },
             ],
             'mapbiomas-chaco': [
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/bioma',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/bioma',
                     'label': 'biome'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/area-natural-protegida',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/area-natural-protegida',
                     'label': 'natural protected area'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/nivel-politico-1',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/nivel-politico-1',
                     'label': 'political level 1'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/nivel-politico-2',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/nivel-politico-2',
                     'label': 'political level 2'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/pais',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/pais',
                     'label': 'country'
                 },
                 {
-                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/VERSION-1/sitios-ramsar',
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/sitios-ramsar',
                     'label': 'ramsar site'
                 },
             ],
@@ -347,32 +360,40 @@ var App = {
             ],
             'mapbiomas-pampa': [
                 {
-                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/biome",
-                    'label': 'biome'
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/countries',
+                    'label': 'countries',
                 },
                 {
-                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/city",
-                    'label': 'city'
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/departamento_municipio_enumeration',
+                    'label': 'departamento_municipio_enumeration',
                 },
                 {
-                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/conservation_units",
-                    'label': 'conservation_units'
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/indigenous_territories',
+                    'label': 'indigenous_territories',
                 },
                 {
-                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/country",
-                    'label': 'country'
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/pampa_limit',
+                    'label': 'pampa_limit',
                 },
                 {
-                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/indigenous_land",
-                    'label': 'indigenous_land'
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/phytogeography',
+                    'label': 'phytogeography',
                 },
                 {
-                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/level_1_drainage_basin",
-                    'label': 'level_1_drainage_basin'
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/protected_areas',
+                    'label': 'protected_areas',
                 },
                 {
-                    'value': "projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION1/state",
-                    'label': 'state'
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/quilombola_territories',
+                    'label': 'quilombola_territories',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/state_departamento',
+                    'label': 'state_departamento',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/watersheds',
+                    'label': 'watersheds',
                 },
             ],
             'mapbiomas-indonesia': [
@@ -645,6 +666,141 @@ var App = {
                     'label': 'regiones_fisiograficas'
                 }
 
+            ],
+            'mapbiomas-uruguay': [
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/areas_protegidas',
+                    'label': 'areas_protegidas',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/cuencas_nivel_1',
+                    'label': 'cuencas_nivel_1',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/cuencas_nivel_2',
+                    'label': 'cuencas_nivel_2',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/limite_uruguay',
+                    'label': 'limite_uruguay',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/nivel_politico_1',
+                    'label': 'nivel_politico_1',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/regiones_uruguay',
+                    'label': 'regiones_uruguay',
+                },
+            ],
+            'mapbiomas-ecuador': [{
+                'label': 'area-conservacion-uso-sostenible',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/area-conservacion-uso-sostenible'
+            },
+            {
+                'label': 'bioma-pais',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/bioma-pais'
+            },
+            {
+                'label': 'bosques',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/bosques'
+            },
+            {
+                'label': 'corredores-conservacion',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/corredores-conservacion'
+            },
+            {
+                'label': 'demarcacion-hidrografica',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/demarcacion-hidrografica'
+            },
+            {
+                'label': 'departamentales',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/departamentales'
+            },
+            {
+                'label': 'ecosistemas',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/ecosistemas'
+            },
+            {
+                'label': 'nacionales',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/nacionales'
+            },
+            {
+                'label': 'nivel-politico-1',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/nivel-politico-1'
+            },
+            {
+                'label': 'nivel-politico-2',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/nivel-politico-2'
+            },
+            {
+                'label': 'nivel-politico-3',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/nivel-politico-3'
+            },
+            {
+                'label': 'nivel-politico-4',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/nivel-politico-4'
+            },
+            {
+                'label': 'patrimonio-forestal',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/patrimonio-forestal'
+            },
+            {
+                'label': 'proteccion-hidrica',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/proteccion-hidrica'
+            },
+            {
+                'label': 'ramsar',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/ramsar'
+            },
+            {
+                'label': 'recarga-hidrica',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/recarga-hidrica'
+            },
+            {
+                'label': 'region-geografica',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/region-geografica'
+            },
+            {
+                'label': 'reserva-biosfera',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/reserva-biosfera'
+            },
+            {
+                'label': 'reserva-marina',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/reserva-marina'
+            },
+            {
+                'label': 'socio-bosque',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/socio-bosque'
+            },
+            {
+                'label': 'tis',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/tis'
+            },
+            {
+                'label': 'unidad-biogeografica',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/unidad-biogeografica'
+            },
+            {
+                'label': 'unidad-hidrografica-1',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/unidad-hidrografica-1'
+            },
+            {
+                'label': 'unidad-hidrografica-2',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/unidad-hidrografica-2'
+            },
+            {
+                'label': 'unidad-hidrografica-3',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/unidad-hidrografica-3'
+            },
+            {
+                'label': 'unidad-hidrografica-4',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/unidad-hidrografica-4'
+            },
+            {
+                'label': 'zonas_proteccion_amazonica',
+                'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/zonas_proteccion_amazonica'
+            }
             ]
         },
 
@@ -1135,6 +1291,43 @@ var App = {
                         ]
                     },
                 },
+                'collection-5.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-raisg/public/collection5/mapbiomas_raisg_panamazonia_collection5_integration_v1',
+                        'transitions': 'projects/mapbiomas-raisg/public/collection5/mapbiomas_raisg_panamazonia_collection5_transitions_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'Transitions': [
+                            '1985_1986', '1986_1987', '1987_1988', '1988_1989',
+                            '1989_1990', '1990_1991', '1991_1992', '1992_1993',
+                            '1993_1994', '1994_1995', '1995_1996', '1996_1997',
+                            '1997_1998', '1998_1999', '1999_2000', '2000_2001',
+                            '2001_2002', '2002_2003', '2003_2004', '2004_2005',
+                            '2005_2006', '2006_2007', '2007_2008', '2008_2009',
+                            '2009_2010', '2010_2011', '2011_2012', '2012_2013',
+                            '2013_2014', '2014_2015', '2015_2016', '2016_2017',
+                            '2017_2018', '2018_2019', '2019_2020', '2020_2021',
+                            '2021_2022', '1985_1990', '1990_1995', '1995_2000',
+                            '2000_2005', '2005_2010', '2010_2015', '2015_2020',
+                            '1990_2000', '2000_2010', '2010_2020', '1985_2022',
+                            '2008_2017', '1994_2002', '2002_2010', '2010_2016',
+                            '1986_2015', '1990_2022', '2000_2022', '2008_2022',
+                            '2010_2022', '2012_2022'
+                        ]
+                    },
+                },
             },
             'mapbiomas-chaco': {
                 'collection-1.0': {
@@ -1322,6 +1515,55 @@ var App = {
                         ]
                     },
                 },
+                'collection-3.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas_af_trinacional/public/collection3/mapbiomas_atlantic_forest_collection30_integration_v1',
+                        'transitions': 'projects/mapbiomas_af_trinacional/public/collection3/mapbiomas_atlantic_forest_collection30_transitions_v1',
+                        'quality': 'projects/mapbiomas_af_trinacional/public/collection3/mapbiomas_atlantic_forest_collection30_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'Transitions': [
+                            '1985_1986', '1986_1987', '1987_1988', '1988_1989',
+                            '1989_1990', '1990_1991', '1991_1992', '1992_1993',
+                            '1993_1994', '1994_1995', '1995_1996', '1996_1997',
+                            '1997_1998', '1998_1999', '1999_2000', '2000_2001',
+                            '2001_2002', '2002_2003', '2003_2004', '2004_2005',
+                            '2005_2006', '2006_2007', '2007_2008', '2008_2009',
+                            '2009_2010', '2010_2011', '2011_2012', '2012_2013',
+                            '2013_2014', '2014_2015', '2015_2016', '2016_2017',
+                            '2017_2018', '2018_2019', '2019_2020', '2020_2021',
+                            '2021_2022', '1985_1990', '1990_1995', '1995_2000',
+                            '2000_2005', '2005_2010', '2010_2015', '2015_2020',
+                            '1990_2000', '2000_2010', '2010_2020', '1985_2022',
+                            '2008_2022', '2012_2022', '2002_2010', '2010_2016',
+                            '1993_2008'
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ]
+                    },
+                },
             },
             'mapbiomas-pampa': {
                 'collection-1.0': {
@@ -1404,6 +1646,56 @@ var App = {
                             '2013', '2014', '2015', '2016',
                             '2017', '2018', '2019', '2020',
                             '2021'
+                        ]
+                    },
+                },
+                'collection-3.0': {
+                    'assets': {
+                        'integration': 'projects/MapBiomas_Pampa/public/collection3/mapbiomas_pampa_collection3_integration_v1',
+                        'transitions': 'projects/MapBiomas_Pampa/public/collection3/mapbiomas_pampa_collection3_transitions_v1',
+                        'quality': 'projects/MapBiomas_Pampa/public/collection3/mapbiomas_pampa_collection3_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'Transitions': [
+                            '1985_1986', '1986_1987', '1987_1988', '1988_1989',
+                            '1989_1990', '1990_1991', '1991_1992', '1992_1993',
+                            '1993_1994', '1994_1995', '1995_1996', '1996_1997',
+                            '1997_1998', '1998_1999', '1999_2000', '2000_2001',
+                            '2001_2002', '2002_2003', '2003_2004', '2004_2005',
+                            '2005_2006', '2006_2007', '2007_2008', '2008_2009',
+                            '2009_2010', '2010_2011', '2011_2012', '2012_2013',
+                            '2013_2014', '2014_2015', '2015_2016', '2016_2017',
+                            '2017_2018', '2018_2019', '2019_2020', '2020_2021',
+                            '2021_2022', '1985_1990', '1990_1995', '1995_2000',
+                            '2000_2005', '2005_2010', '2010_2015', '2015_2020',
+                            '1990_2000', '2000_2010', '2010_2020', '1985_2022',
+                            '2008_2017', '1994_2002', '2002_2010', '2010_2016',
+                            '1986_2015', '1990_2022', '2000_2022', '2008_2022',
+                            '2010_2022', '2012_2022'
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021', '2022'
                         ]
                     },
                 },
@@ -1681,8 +1973,125 @@ var App = {
                     },
                 },
             },
+            'mapbiomas-uruguay': {
+                'collection-1.0': {
+                    'assets': {
+                        'integration': 'projects/MapBiomas_Pampa/public/collection3/mapbiomas_uruguay_collection1_integration_v1',
+                        'transitions': 'projects/MapBiomas_Pampa/public/collection3/mapbiomas_uruguay_collection1_transitions_v1',
+                        'quality': 'projects/MapBiomas_Pampa/public/collection3/mapbiomas_uruguay_collection1_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'Transitions': [
+                            '1985_1986', '1986_1987', '1987_1988', '1988_1989',
+                            '1989_1990', '1990_1991', '1991_1992', '1992_1993',
+                            '1993_1994', '1994_1995', '1995_1996', '1996_1997',
+                            '1997_1998', '1998_1999', '1999_2000', '2000_2001',
+                            '2001_2002', '2002_2003', '2003_2004', '2004_2005',
+                            '2005_2006', '2006_2007', '2007_2008', '2008_2009',
+                            '2009_2010', '2010_2011', '2011_2012', '2012_2013',
+                            '2013_2014', '2014_2015', '2015_2016', '2016_2017',
+                            '2017_2018', '2018_2019', '2019_2020', '2020_2021',
+                            '2021_2022', '1985_1990', '1990_1995', '1995_2000',
+                            '2000_2005', '2005_2010', '2010_2015', '2015_2020',
+                            '1990_2000', '2000_2010', '2010_2020', '1985_2022',
+                            '2008_2017', '1994_2002', '2002_2010', '2010_2016',
+                            '1986_2015', '1990_2022', '2000_2022', '2008_2022',
+                            '2010_2022', '2012_2022'
+                        ],
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ]
+                    },
+                },
+            },
+            'mapbiomas-ecuador': {
+                'collection-1.0': {
+                    'assets': {
+                        'integration': 'projects/mapbiomas-public/assets/ecuador/collection1/mapbiomas_ecuador_collection1_integration_v1',
+                        'transitions': 'projects/mapbiomas-public/assets/ecuador/collection1/mapbiomas_ecuador_collection1_transitions_v1',
+                        'quality': 'projects/mapbiomas-public/assets/ecuador/collection1/mapbiomas_ecuador_collection1_quality_v1',
+                    },
+                    'periods': {
+                        'Coverage': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'Transitions': [
+                            '1985_1986', '1986_1987', '1987_1988', '1988_1989',
+                            '1989_1990', '1990_1991', '1991_1992', '1992_1993',
+                            '1993_1994', '1994_1995', '1995_1996', '1996_1997',
+                            '1997_1998', '1998_1999', '1999_2000', '2000_2001',
+                            '2001_2002', '2002_2003', '2003_2004', '2004_2005',
+                            '2005_2006', '2006_2007', '2007_2008', '2008_2009',
+                            '2009_2010', '2010_2011', '2011_2012', '2012_2013',
+                            '2013_2014', '2014_2015', '2015_2016', '2016_2017',
+                            '2017_2018', '2018_2019', '2019_2020', '2020_2021',
+                            '2021_2022', '1985_1990', '1990_1995', '1995_2000',
+                            '2000_2005', '2005_2010', '2010_2015', '2015_2020',
+                            '1990_2000', '2000_2010', '2010_2020', '1985_2022'
+                        ]
+                        ,
+                        'Quality': [
+                            '1985', '1986', '1987', '1988',
+                            '1989', '1990', '1991', '1992',
+                            '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000',
+                            '2001', '2002', '2003', '2004',
+                            '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012',
+                            '2013', '2014', '2015', '2016',
+                            '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ]
+                    },
+                },
+            },
         },
 
+        palettes: {
+            'mapbiomas-amazon': 'atlantic_forest',
+            'mapbiomas-atlantic-forest': 'atlantic_forest',
+            'mapbiomas-brazil': 'atlantic_forest',
+            'mapbiomas-bolivia': 'atlantic_forest',
+            'mapbiomas-chaco': 'atlantic_forest',
+            'mapbiomas-colombia': 'atlantic_forest',
+            'mapbiomas-ecuador': 'atlantic_forest',
+            'mapbiomas-indonesia': 'atlantic_forest',
+            'mapbiomas-pampa': 'atlantic_forest',
+            'mapbiomas-paraguay': 'atlantic_forest',
+            'mapbiomas-peru': 'atlantic_forest',
+            'mapbiomas-uruguay': 'atlantic_forest',
+            'mapbiomas-venezuela': 'atlantic_forest',
+        },
         bandsNames: {
             'Coverage': 'classification_',
             'Transitions': 'transition_',
@@ -1706,7 +2115,7 @@ var App = {
         ranges: {
             'Coverage': {
                 'min': 0,
-                'max': 62
+                'max': 65
             },
             'Transitions': {
                 'min': -2,
@@ -1722,10 +2131,23 @@ var App = {
         activeFeature: null,
         activeName: '',
 
+        mapbiomasRegion: '',
+
         palette: {
             'Coverage': palettes.get('classification8'),
-            'Transitions': ['ffa500', 'ff0000', '818181', '06ff00', '4169e1', '8a2be2'],
-            'Quality': ['d73027', 'fef9b6', '1d6a37']
+            'Transitions': [
+                '#ffa500',
+                '#ff0000',
+                '#818181',
+                '#06ff00',
+                '#4169e1',
+                '#8a2be2'
+            ],
+            'Quality': [
+                '#d73027',
+                '#fef9b6',
+                '#1d6a37'
+            ]
         },
 
         taskid: 1,
@@ -1918,6 +2340,8 @@ var App = {
             .replace(/&/g, '')
             .replace(/@/g, '')
             .replace(/ /g, '')
+            .replace(/\[/g, '') // Nova substituição para o caractere '['
+            .replace(/\]/g, '') // Nova substituição para o caractere ']'
             .replace(/["'()\/]/g, '');
 
         return formated;
@@ -1970,6 +2394,14 @@ var App = {
         return image.remap(oldValues, newValues).rename(image.bandNames());
     },
 
+    setPalette: function (region) {
+
+        App.options.palette.Coverage = palettes.get(App.options.palettes[region]);
+        App.options.ranges.max = App.options.palette.Coverage.length - 1;
+
+        print(region, App.options.ranges.max, App.options.palette.Coverage);
+    },
+
     ui: {
 
         init: function () {
@@ -1979,6 +2411,10 @@ var App = {
         },
 
         setMapbiomasRegion: function (regionName) {
+
+            App.options.mapbiomasRegion = regionName;
+
+            App.setPalette(regionName);
 
             App.ui.loadCollectionList(regionName);
             App.ui.loadTablesNames(regionName);
@@ -2577,14 +3013,16 @@ var App = {
 
                 App.ui.form.panelLink1.add(App.ui.form.labelLink1);
                 App.ui.form.panelLink1.add(App.ui.form.labelLink2);
-                App.ui.form.panelLink1.add(App.ui.form.labelLink8);
                 App.ui.form.panelLink1.add(App.ui.form.labelLink3);
-                App.ui.form.panelLink1.add(App.ui.form.labelLink9);
                 App.ui.form.panelLink1.add(App.ui.form.labelLink4);
-                App.ui.form.panelLink2.add(App.ui.form.labelLink5);
-                App.ui.form.panelLink2.add(App.ui.form.labelLink6);
-                App.ui.form.panelLink2.add(App.ui.form.labelLink7);
+                App.ui.form.panelLink1.add(App.ui.form.labelLink5);
+                App.ui.form.panelLink1.add(App.ui.form.labelLink6);
+                App.ui.form.panelLink2.add(App.ui.form.labelLink7); // ecuador
+                App.ui.form.panelLink2.add(App.ui.form.labelLink8);
+                App.ui.form.panelLink2.add(App.ui.form.labelLink9);
                 App.ui.form.panelLink2.add(App.ui.form.labelLink10);
+                App.ui.form.panelLink2.add(App.ui.form.labelLink11);
+                App.ui.form.panelLink2.add(App.ui.form.labelLink12);
 
                 App.ui.form.panelRegion.add(App.ui.form.labelRegion);
                 App.ui.form.panelRegion.add(App.ui.form.selectRegion);
@@ -2763,53 +3201,64 @@ var App = {
                 'http://bosqueatlantico.mapbiomas.org/codigos-de-la-leyenda'
             ),
 
-            labelLink3: ui.Label('Brazil', {
-                'fontSize': '10px'
+            labelLink3: ui.Label('Bolivia', {
+                'fontSize': '10px',
             },
-                'https://brasil.mapbiomas.org/wp-content/uploads/sites/4/2023/08/Legenda-Colecao-8-LEGEND-CODE.pdf'
+                'https://bolivia.mapbiomas.org/codigos-de-la-leyenda/'
             ),
 
-            labelLink4: ui.Label('Chaco', {
+            labelLink4: ui.Label('Brazil', {
+                'fontSize': '10px'
+            },
+                'https://brasil.mapbiomas.org/codigos-de-legenda/'
+            ),
+
+            labelLink5: ui.Label('Chaco', {
                 'fontSize': '10px'
             },
                 'http://chaco.mapbiomas.org/codigos-de-la-leyenda-1'
             ),
 
-            labelLink5: ui.Label('Indonesia', {
+            labelLink6: ui.Label('Colombia', {
                 'fontSize': '10px',
             },
-                'https://mapbiomas.nusantara.earth/assets/files/Kode%20Legenda%20-%20Legend%20Code.pdf'
+                'https://colombia.mapbiomas.org/codigos-de-la-leyenda/'
             ),
 
-            labelLink6: ui.Label('Pampa', {
+            labelLink7: ui.Label('Ecuador', {
+                'fontSize': '10px',
+            },
+                'https://ecuador.mapbiomas.org/codigos-de-la-leyenda/'
+            ),
+
+            labelLink8: ui.Label('Indonesia', {
+                'fontSize': '10px',
+            },
+                'https://mapbiomas.nusantara.earth/legendcode'
+            ),
+
+            labelLink9: ui.Label('Pampa', {
                 'fontSize': '10px'
             },
-                'http://pampa.mapbiomas.org/codigos-de-la-leyenda-1'
+                'https://pampa.mapbiomas.org/codigos-de-la-leyenda/'
             ),
 
-
-            labelLink7: ui.Label('Peru', {
+            labelLink10: ui.Label('Peru', {
                 'fontSize': '10px',
             },
-                'https://mapbiomas-peru.s3.amazonaws.com/DESCARGAS/LEYENDA/C%C3%B3digo_de_la_Leyenda_-_MB_Peru_C1.pdf'
+                'https://peru.mapbiomas.org/codigos-de-la-leyenda/'
             ),
 
-            labelLink8: ui.Label('Bolivia', {
+            labelLink11: ui.Label('Venezuela', {
                 'fontSize': '10px',
             },
-                'https://drive.google.com/file/d/1XS7uUqkEAXlRpidyd-RlXLJLYHi7WxMa/view'
+                'https://venezuela.mapbiomas.org/codigos-de-la-leyenda/'
             ),
 
-            labelLink9: ui.Label('Colombia', {
+            labelLink12: ui.Label('Uruguay', {
                 'fontSize': '10px',
             },
-                'https://colombia.mapbiomas.org/wp-content/uploads/sites/3/2023/10/Colombia-Legend-Code_Col-1.0.pdf'
-            ),
-
-            labelLink10: ui.Label('Venezuela', {
-                'fontSize': '10px',
-            },
-                'https://venezuela.mapbiomas.org/wp-content/uploads/sites/5/2023/11/Legend-Code_Venezuela-Col-1.pdf'
+                'https://uruguay.mapbiomas.org/codigos-de-la-leyenda/'
             ),
 
             labelType: ui.Label('Type:', {
@@ -2847,7 +3296,7 @@ var App = {
                 'fontSize': '16px'
             }),
 
-            labelNotes: ui.Label('Go to TASK tab in the up-rght corner and click RUN', {
+            labelNotes: ui.Label('Click the RUN button in the TASK tab at the upper-right corner.', {
                 // 'padding': '1px',
                 'fontSize': '16px'
             }),
@@ -2881,9 +3330,11 @@ var App = {
                     'mapbiomas-bolivia',
                     'mapbiomas-chaco',
                     'mapbiomas-colombia',
+                    'mapbiomas-ecuador',
                     'mapbiomas-indonesia',
                     'mapbiomas-pampa',
                     'mapbiomas-peru',
+                    'mapbiomas-uruguay',
                     'mapbiomas-venezuela',
                 ],
                 'placeholder': 'None',
@@ -3048,8 +3499,18 @@ var App = {
                         App.ui.form.tab2.style().set('border', '1px solid #808080');
 
                         App.ui.form.panelMain.remove(App.ui.form.panel1);
-                        App.ui.form.panelMain.add(App.ui.form.panel2);
-                        App.ui.form.panelMain.add(App.ui.form.panel3);
+                        App.ui.form.panelMain.add(App.ui.form.panel2); // brazil
+                        App.ui.form.panelMain.add(App.ui.form.panel4);
+                        App.ui.form.panelMain.add(App.ui.form.panel5);
+                        App.ui.form.panelMain.add(App.ui.form.panel13); // bolivia
+                        App.ui.form.panelMain.add(App.ui.form.panel6);
+                        App.ui.form.panelMain.add(App.ui.form.panel7);
+                        App.ui.form.panelMain.add(App.ui.form.panel12); // ecuador
+                        App.ui.form.panelMain.add(App.ui.form.panel8);
+                        App.ui.form.panelMain.add(App.ui.form.panel3); // pampa
+                        App.ui.form.panelMain.add(App.ui.form.panel9);
+                        App.ui.form.panelMain.add(App.ui.form.panel10);
+                        App.ui.form.panelMain.add(App.ui.form.panel11);
                     }
 
                 }
@@ -3141,43 +3602,605 @@ var App = {
                     ui.Label('Pampa'),
                     ui.Panel({
                         widgets: [
-                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1985.tif' }),
-                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1986.tif' }),
-                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1987.tif' }),
-                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1988.tif' }),
-                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1989.tif' }),
-                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1990.tif' }),
-                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1991.tif' }),
-                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1992.tif' }),
-                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1993.tif' }),
-                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1994.tif' }),
-                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1995.tif' }),
-                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1996.tif' }),
-                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1997.tif' }),
-                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1998.tif' }),
-                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_1999.tif' }),
-                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2000.tif' }),
-                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2001.tif' }),
-                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2002.tif' }),
-                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2003.tif' }),
-                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2004.tif' }),
-                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2005.tif' }),
-                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2006.tif' }),
-                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2007.tif' }),
-                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2008.tif' }),
-                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2009.tif' }),
-                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2010.tif' }),
-                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2011.tif' }),
-                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2012.tif' }),
-                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2013.tif' }),
-                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2014.tif' }),
-                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2015.tif' }),
-                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2016.tif' }),
-                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2017.tif' }),
-                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2018.tif' }),
-                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2019.tif' }),
-                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2020.tif' }),
-                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/images_tiff/coverage/pampa_coverage_2021.tif' }),
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2021.tif' }),
+                            ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/pampa/collection_3/coverage/pampa_coverage_2022.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel4: ui.Panel({
+                widgets: [
+                    ui.Label('Atlantic Forest'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2021.tif' }),
+                            ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bosque_atlantico/collection_3/coverage/bosque_coverage_2022.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel5: ui.Panel({
+                widgets: [
+                    ui.Label('Amazon'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2021.tif' }),
+                            ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/amazonia/collection_5/coverage/amazonia_coverage_2022.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel6: ui.Panel({
+                widgets: [
+                    ui.Label('Chaco'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2021.tif' }),
+                            ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/chaco/collection_4/lulc/coverage/chaco_coverage_2022.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel7: ui.Panel({
+                widgets: [
+                    ui.Label('Colombia'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2021.tif' }),
+                            ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/colombia/collection_1/coverage/colombia_coverage_2022.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel8: ui.Panel({
+                widgets: [
+                    ui.Label('Indonesia'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2021.tif' }),
+                            ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/indonesia/collection_2/coverage/indonesia_coverage_2022.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel9: ui.Panel({
+                widgets: [
+                    ui.Label('Peru'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2021.tif' }),
+                            ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/peru/collection_1/lulc/coverage/peru_coverage_2022.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel10: ui.Panel({
+                widgets: [
+                    ui.Label('Uruguay'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2021.tif' }),
+                            ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/uruguay/collection_1/coverage/uruguay_coverage_2022.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel11: ui.Panel({
+                widgets: [
+                    ui.Label('Venezuela'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2021.tif' }),
+                            ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/venezuela/collection_1/coverage/venezuela_coverage_2022.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel12: ui.Panel({
+                widgets: [
+                    ui.Label('Ecuador'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: 'Coming soon' }),
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2021.tif' }),
+                            ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/ecuador/collection_1/coverage/ecuador_coverage_2022.tif' }),
+                        ],
+                        'layout': ui.Panel.Layout.flow('horizontal', true),
+                        style: {
+                            'border': '1px grey solid',
+                            'margin': '0px 6px 0px 6px'
+                        }
+                    }),
+                ],
+                style: {
+                    'stretch': 'both'
+                }
+            }),
+
+            panel13: ui.Panel({
+                widgets: [
+                    ui.Label('Bolivia'),
+                    ui.Panel({
+                        widgets: [
+                            ui.Label({ value: '1985', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1985.tif' }),
+                            ui.Label({ value: '1986', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1986.tif' }),
+                            ui.Label({ value: '1987', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1987.tif' }),
+                            ui.Label({ value: '1988', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1988.tif' }),
+                            ui.Label({ value: '1989', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1989.tif' }),
+                            ui.Label({ value: '1990', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1990.tif' }),
+                            ui.Label({ value: '1991', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1991.tif' }),
+                            ui.Label({ value: '1992', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1992.tif' }),
+                            ui.Label({ value: '1993', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1993.tif' }),
+                            ui.Label({ value: '1994', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1994.tif' }),
+                            ui.Label({ value: '1995', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1995.tif' }),
+                            ui.Label({ value: '1996', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1996.tif' }),
+                            ui.Label({ value: '1997', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1997.tif' }),
+                            ui.Label({ value: '1998', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1998.tif' }),
+                            ui.Label({ value: '1999', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_1999.tif' }),
+                            ui.Label({ value: '2000', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2000.tif' }),
+                            ui.Label({ value: '2001', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2001.tif' }),
+                            ui.Label({ value: '2002', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2002.tif' }),
+                            ui.Label({ value: '2003', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2003.tif' }),
+                            ui.Label({ value: '2004', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2004.tif' }),
+                            ui.Label({ value: '2005', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2005.tif' }),
+                            ui.Label({ value: '2006', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2006.tif' }),
+                            ui.Label({ value: '2007', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2007.tif' }),
+                            ui.Label({ value: '2008', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2008.tif' }),
+                            ui.Label({ value: '2009', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2009.tif' }),
+                            ui.Label({ value: '2010', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2010.tif' }),
+                            ui.Label({ value: '2011', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2011.tif' }),
+                            ui.Label({ value: '2012', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2012.tif' }),
+                            ui.Label({ value: '2013', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2013.tif' }),
+                            ui.Label({ value: '2014', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2014.tif' }),
+                            ui.Label({ value: '2015', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2015.tif' }),
+                            ui.Label({ value: '2016', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2016.tif' }),
+                            ui.Label({ value: '2017', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2017.tif' }),
+                            ui.Label({ value: '2018', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2018.tif' }),
+                            ui.Label({ value: '2019', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2019.tif' }),
+                            ui.Label({ value: '2020', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2020.tif' }),
+                            ui.Label({ value: '2021', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/lulc/coverage/bolivia_coverage_2021.tif' }),
+                            // ui.Label({ value: '2022', targetUrl: 'https://storage.googleapis.com/mapbiomas-public/initiatives/bolivia/collection_1/coverage/bolivia_coverage_2022.tif' }),
                         ],
                         'layout': ui.Panel.Layout.flow('horizontal', true),
                         style: {
