@@ -14,6 +14,11 @@
  *    1.1.0 - Brazil Collection 1.0
  *    1.2.0 - Brazil Collection 2.0
  *    1.3.0 - Amazon Collection 1.0
+ *    1.4.0 - Bolvia Collection 1.0
+ *          - Colombia Collection 1.0
+ *          - Ecuador Collection 1.0
+ *          - Peru Collection 1.0
+ *          - Venezuela Collection 1.0
  * 
  * @see
  *      Get the MapBiomas exported data in your "Google Drive/MAPBIOMAS-EXPORT" folder
@@ -102,11 +107,12 @@ var App = {
 
     options: {
 
-        version: '1.3.0',
+        version: '1.4.0',
 
 
         logo: {
-            uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
+            // uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-logo-horizontal.b64',
+            uri: 'gs://mapbiomas-public/mapbiomas-logos/mapbiomas-agua-logo.b64',
             base64: null
         },
 
@@ -214,45 +220,594 @@ var App = {
             ],
             'mapbiomas-amazon': [
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/biome',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/biomes',
                     'label': 'biome',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/city',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/biomes_per_country',
+                    'label': 'biomes_per_country',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/city',
                     'label': 'city',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/country',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/country',
                     'label': 'country',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/country_per_biome',
-                    'label': 'country_per_biome',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/drainage_basin_per_country',
+                    'label': 'drainage_basin_per_country',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/drainage_basin',
-                    'label': 'drainage_basin',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/drainage_basin_per_state',
+                    'label': 'drainage_basin_per_state',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/federal_conservation_units',
-                    'label': 'federal_conservation_units',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/dranaige_basin',
+                    'label': 'dranaige_basin',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/indigenous_land',
-                    'label': 'indigenous_land',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/federal_protected_areas',
+                    'label': 'federal_protected_areas',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/raisg_limit',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/indegenous_territories',
+                    'label': 'indegenous_territories',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/raisg_limit',
                     'label': 'raisg_limit',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/state',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/state',
                     'label': 'state',
                 },
                 {
-                    'value': 'projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/state_conservation_units',
-                    'label': 'state_conservation_units',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/DATOS_AUXILIARES/ESTADISTICAS/COLECCION5/V1/state_protected_areas',
+                    'label': 'state_protected_areas',
                 },
+            ],
+            'mapbiomas-chaco': [
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/bioma',
+                    'label': 'biome'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/area-natural-protegida',
+                    'label': 'natural protected area'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/nivel-politico-1',
+                    'label': 'political level 1'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/nivel-politico-2',
+                    'label': 'political level 2'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/pais',
+                    'label': 'country'
+                },
+                {
+                    'value': 'projects/mapbiomas-chaco/DATOS_AUXILIARES/ESTADISTICAS/COLECCION4/sitios-ramsar',
+                    'label': 'ramsar site'
+                },
+            ],
+            'mapbiomas-atlantic-forest': [
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/atlantic_forest_limit",
+                    'label': 'atlantic_forest_limit'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/city",
+                    'label': 'city'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/country",
+                    'label': 'country'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/indigenous_land",
+                    'label': 'indigenous_land'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/international_protected_areas",
+                    'label': 'international_protected_areas'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/national_protected_areas",
+                    'label': 'national_protected_areas'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/level_2_drainage_basin",
+                    'label': 'level_2_drainage_basin'
+                },
+                {
+                    'value': "projects/mapbiomas_af_trinacional/ANCILLARY_DATA/STATISTICS/COLLECTION2/state",
+                    'label': 'state'
+                },
+            ],
+            'mapbiomas-pampa': [
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/countries',
+                    'label': 'countries',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/departamento_municipio_enumeration',
+                    'label': 'departamento_municipio_enumeration',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/indigenous_territories',
+                    'label': 'indigenous_territories',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/pampa_limit',
+                    'label': 'pampa_limit',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/phytogeography',
+                    'label': 'phytogeography',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/protected_areas',
+                    'label': 'protected_areas',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/quilombola_territories',
+                    'label': 'quilombola_territories',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/state_departamento',
+                    'label': 'state_departamento',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/COLLECTION3/watersheds',
+                    'label': 'watersheds',
+                },
+            ],
+            'mapbiomas-indonesia': [
+                {
+                    'label': 'coastal_line',
+                    'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION2/VERSION-2/coastal_line'
+                },
+                {
+                    'label': 'island_group',
+                    'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION2/VERSION-2/island_group'
+                },
+                {
+                    'label': 'district',
+                    'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION2/VERSION-2/district'
+                },
+                {
+                    'label': 'province',
+                    'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION2/VERSION-2/province'
+                },
+                {
+                    'label': 'sub_district',
+                    'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION2/VERSION-2/sub_district'
+                },
+                {
+                    'label': 'village',
+                    'value': 'projects/mapbiomas-indonesia/ANCILLARY_DATA/STATISTICS/COLLECTION2/VERSION-2/village'
+                },
+            ],
+            'mapbiomas-peru': [
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-1",
+                    "label": "nivel-politico-1"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-2",
+                    "label": "nivel-politico-2"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-3",
+                    "label": "nivel-politico-3"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-4",
+                    "label": "nivel-politico-4"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/bioma-pais",
+                    "label": "bioma-pais"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/area-conservacion-privada",
+                    "label": "area-conservacion-privada"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/area-conservacion-regional",
+                    "label": "area-conservacion-regional"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/area-natural-protegida",
+                    "label": "area-natural-protegida"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/comunidad-campesina-reconocida",
+                    "label": "comunidad-campesina-reconocida"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/comunidad-campesina-titulada",
+                    "label": "comunidad-campesina-titulada"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/comunidad-nativa-solicitud",
+                    "label": "comunidad-nativa-solicitud"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/comunidad-nativa-titulada",
+                    "label": "comunidad-nativa-titulada"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/ecozona",
+                    "label": "ecozona"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/region-geografica",
+                    "label": "region-geografica"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/reserva-indigena",
+                    "label": "reserva-indigena"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/reserva-territorial",
+                    "label": "reserva-territorial"
+                },
+                {
+                    "value": "projects/mapbiomas-raisg/PERU/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/unidad-hidrografica",
+                    "label": "unidad-hidrografica"
+                }
+
+            ],
+            'mapbiomas-bolivia': [
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/area-protegida-nacional',
+                    'label': 'area-protegida-nacional'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/area-protegida-subnacional',
+                    'label': 'area-protegida-subnacional'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/bioma-pais',
+                    'label': 'bioma-pais'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/cuenca-hidrografica-nivel1',
+                    'label': 'cuenca-hidrografica-nivel1'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/cuenca-hidrografica-nivel2',
+                    'label': 'cuenca-hidrografica-nivel2'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/departamento',
+                    'label': 'departamento'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/ecorregion',
+                    'label': 'ecorregion'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/municipio',
+                    'label': 'municipio'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/pais',
+                    'label': 'pais'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/sitios-ramsar',
+                    'label': 'sitios-ramsar'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/BOLIVIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/territorio-indigena-titulado',
+                    'label': 'territorio-indigena-titulado'
+                }
+            ],
+            'mapbiomas-colombia': [
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-1',
+                    'label': 'nivel-politico-1'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-2',
+                    'label': 'nivel-politico-2'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/nivel-politico-3',
+                    'label': 'nivel-politico-3'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/bioma-pais',
+                    'label': 'bioma-pais'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/unidad-hidrografica',
+                    'label': 'unidad-hidrografica'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/regiones-biogeograficas',
+                    'label': 'regiones-biogeograficas'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/resguardo-indigena',
+                    'label': 'resguardo-indigena'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/area-natural-protegida-nacional',
+                    'label': 'area-natural-protegida-nacional'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/area-natural-protegida-departamental',
+                    'label': 'area-natural-protegida-departamental'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/consejos-comunitarios',
+                    'label': 'consejos-comunitarios'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/ramsar',
+                    'label': 'ramsar'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/COLOMBIA/DATOS_AUXILIARES/ESTADISTICAS/COLECCION1/reservas-forestales-ley-segunda',
+                    'label': 'reservas-forestales-ley-segunda'
+                },
+            ],
+            'mapbiomas-venezuela': [
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/pais',
+                    'label': 'pais'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/nivel_politico_1',
+                    'label': 'nivel_politico_1'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/nivel_politico_2',
+                    'label': 'nivel_politico_2'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/bioma',
+                    'label': 'bioma'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/cuencas',
+                    'label': 'cuencas'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/parque_nacional',
+                    'label': 'parque_nacional'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/monumento_natural',
+                    'label': 'monumento_natural'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/reserva_fauna_silvestre',
+                    'label': 'reserva_fauna_silvestre'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/refugio_fauna_silvestre',
+                    'label': 'refugio_fauna_silvestre'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/santuario_fauna_silvestre',
+                    'label': 'santuario_fauna_silvestre'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/reserva_biosfera',
+                    'label': 'reserva_biosfera'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/reserva_forestal',
+                    'label': 'reserva_forestal'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/ti_reconocido',
+                    'label': 'ti_reconocido'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/ti_en_proceso',
+                    'label': 'ti_en_proceso'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/ramsar',
+                    'label': 'ramsar'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/ecoregion',
+                    'label': 'ecoregion'
+                },
+                {
+                    'value': 'projects/mapbiomas-raisg/MAPBIOMAS-VENEZUELA/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/regiones_fisiograficas',
+                    'label': 'regiones_fisiograficas'
+                }
+
+            ],
+            'mapbiomas-uruguay': [
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/areas_protegidas',
+                    'label': 'areas_protegidas',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/cuencas_nivel_1',
+                    'label': 'cuencas_nivel_1',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/cuencas_nivel_2',
+                    'label': 'cuencas_nivel_2',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/limite_uruguay',
+                    'label': 'limite_uruguay',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/nivel_politico_1',
+                    'label': 'nivel_politico_1',
+                },
+                {
+                    'value': 'projects/earthengine-legacy/assets/projects/MapBiomas_Pampa/ANCILLARY_DATA/STATISTICS/URUGUAY/COLLECTION1/regiones_uruguay',
+                    'label': 'regiones_uruguay',
+                },
+            ],
+            'mapbiomas-ecuador': [
+                {
+                    'label': 'area-conservacion-uso-sostenible',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/area-conservacion-uso-sostenible'
+                },
+                {
+                    'label': 'bioma-pais',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/bioma-pais'
+                },
+                {
+                    'label': 'bosques',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/bosques'
+                },
+                {
+                    'label': 'corredores-conservacion',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/corredores-conservacion'
+                },
+                {
+                    'label': 'demarcacion-hidrografica',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/demarcacion-hidrografica'
+                },
+                {
+                    'label': 'departamentales',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/departamentales'
+                },
+                {
+                    'label': 'ecosistemas',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/ecosistemas'
+                },
+                {
+                    'label': 'nacionales',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/nacionales'
+                },
+                {
+                    'label': 'nivel-politico-1',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/nivel-politico-1'
+                },
+                {
+                    'label': 'nivel-politico-2',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/nivel-politico-2'
+                },
+                {
+                    'label': 'nivel-politico-3',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/nivel-politico-3'
+                },
+                {
+                    'label': 'nivel-politico-4',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/nivel-politico-4'
+                },
+                {
+                    'label': 'patrimonio-forestal',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/patrimonio-forestal'
+                },
+                {
+                    'label': 'proteccion-hidrica',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/proteccion-hidrica'
+                },
+                {
+                    'label': 'ramsar',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/ramsar'
+                },
+                {
+                    'label': 'recarga-hidrica',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/recarga-hidrica'
+                },
+                {
+                    'label': 'region-geografica',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/region-geografica'
+                },
+                {
+                    'label': 'reserva-biosfera',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/reserva-biosfera'
+                },
+                {
+                    'label': 'reserva-marina',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/reserva-marina'
+                },
+                {
+                    'label': 'socio-bosque',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/socio-bosque'
+                },
+                {
+                    'label': 'tis',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/tis'
+                },
+                {
+                    'label': 'unidad-biogeografica',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/unidad-biogeografica'
+                },
+                {
+                    'label': 'unidad-hidrografica-1',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/unidad-hidrografica-1'
+                },
+                {
+                    'label': 'unidad-hidrografica-2',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/unidad-hidrografica-2'
+                },
+                {
+                    'label': 'unidad-hidrografica-3',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/unidad-hidrografica-3'
+                },
+                {
+                    'label': 'unidad-hidrografica-4',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/unidad-hidrografica-4'
+                },
+                {
+                    'label': 'zonas_proteccion_amazonica',
+                    'value': 'projects/earthengine-legacy/assets/projects/mapbiomas-raisg/MAPBIOMAS-ECUADOR/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-2/zonas_proteccion_amazonica'
+                }
+            ],
+            'mapbiomas-paraguay': [
+                {
+                    "value": "projects/mapbiomas-chaco/MAPBIOMAS-PARAGUAY/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-1/nivel_politico_1",
+                    "label": "Nível Político 1"
+                },
+                {
+                    "value": "projects/mapbiomas-chaco/MAPBIOMAS-PARAGUAY/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-1/nivel_politico_2",
+                    "label": "Nível Político 2"
+                },
+                {
+                    "value": "projects/mapbiomas-chaco/MAPBIOMAS-PARAGUAY/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-1/nivel_politico_3",
+                    "label": "Nível Político 3"
+                },
+                {
+                    "value": "projects/mapbiomas-chaco/MAPBIOMAS-PARAGUAY/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-1/regiones",
+                    "label": "Regiões"
+                },
+                {
+                    "value": "projects/mapbiomas-chaco/MAPBIOMAS-PARAGUAY/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-1/ecorregiones_dinerstein",
+                    "label": "Ecorregiões Dinerstein"
+                },
+                {
+                    "value": "projects/mapbiomas-chaco/MAPBIOMAS-PARAGUAY/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-1/ecorregiones_seam",
+                    "label": "Ecorregiões SEAM"
+                },
+                {
+                    "value": "projects/mapbiomas-chaco/MAPBIOMAS-PARAGUAY/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-1/areas_silvestres_protegidas",
+                    "label": "Áreas Silvestres Protegidas"
+                },
+                {
+                    "value": "projects/mapbiomas-chaco/MAPBIOMAS-PARAGUAY/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-1/reserva_de_la_biosfera",
+                    "label": "Reserva da Biosfera"
+                },
+                {
+                    "value": "projects/mapbiomas-chaco/MAPBIOMAS-PARAGUAY/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-1/sitios_ramsar",
+                    "label": "Sitios Ramsar"
+                },
+                {
+                    "value": "projects/mapbiomas-chaco/MAPBIOMAS-PARAGUAY/DATOS-AUXILIARES/ESTADISTICAS/COLECCION1/VERSION-1/comunidades_indigenas",
+                    "label": "Comunidades Indígenas"
+                }
+
             ],
         },
 
@@ -349,6 +904,156 @@ var App = {
                             // '1991', '1992', '1993', '1994', '1995', '1996',
                             // '1997', '1998', '1999',
                             '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'water_frequency': [
+                            // '1985_2022'
+                            '2000_2022'
+                        ]
+                        // 'cumulated_water_coverage': [
+                        // ],
+                        // 'monthly_water_coverage': [
+                        // ],
+                    },
+                },
+            },
+            'mapbiomas-venezuela': {
+                'collection-1.0': {
+                    'assets': {
+                        'annual_water_coverage': 'projects/mapbiomas-public/assets/venezuela/collection1/mapbiomas_venezuela_collection1_water_v1',
+                        'water_frequency': 'projects/mapbiomas-public/assets/venezuela/collection1/mapbiomas_venezuela_collection1_water_frequency_v1',
+                        // 'cumulated_water_coverage': '',
+                        // 'monthly_water_coverage': '',
+                    },
+
+                    'periods': {
+                        'annual_water_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'water_frequency': [
+                            '1985_2022'
+                            // '2000_2022'
+                        ]
+                        // 'cumulated_water_coverage': [
+                        // ],
+                        // 'monthly_water_coverage': [
+                        // ],
+                    },
+                },
+            },
+            'mapbiomas-bolivia': {
+                'collection-1.0': {
+                    'assets': {
+                        'annual_water_coverage': 'projects/mapbiomas-public/assets/bolivia/collection1/mapbiomas_bolivia_collection1_water_v1',
+                        'water_frequency': 'projects/mapbiomas-public/assets/bolivia/collection1/mapbiomas_bolivia_collection1_water_frequency_v1',
+                        // 'cumulated_water_coverage': '',
+                        // 'monthly_water_coverage': '',
+                    },
+
+                    'periods': {
+                        'annual_water_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'water_frequency': [
+                            '1985_2022'
+                            // '2000_2022'
+                        ]
+                        // 'cumulated_water_coverage': [
+                        // ],
+                        // 'monthly_water_coverage': [
+                        // ],
+                    },
+                },
+            },
+            'mapbiomas-peru': {
+                'collection-1.0': {
+                    'assets': {
+                        'annual_water_coverage': 'projects/mapbiomas-public/assets/peru/collection1/mapbiomas_peru_collection1_water_v1',
+                        'water_frequency': 'projects/mapbiomas-public/assets/peru/collection1/mapbiomas_peru_collection1_water_frequency_v1',
+                        // 'cumulated_water_coverage': '',
+                        // 'monthly_water_coverage': '',
+                    },
+
+                    'periods': {
+                        'annual_water_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'water_frequency': [
+                            '1985_2022'
+                            // '2000_2022'
+                        ]
+                        // 'cumulated_water_coverage': [
+                        // ],
+                        // 'monthly_water_coverage': [
+                        // ],
+                    },
+                },
+            },
+            'mapbiomas-colombia': {
+                'collection-1.0': {
+                    'assets': {
+                        'annual_water_coverage': 'projects/mapbiomas-public/assets/colombia/collection1/mapbiomas_colombia_collection1_water_v1',
+                        'water_frequency': 'projects/mapbiomas-public/assets/colombia/collection1/mapbiomas_colombia_collection1_water_frequency_v1',
+                        // 'cumulated_water_coverage': '',
+                        // 'monthly_water_coverage': '',
+                    },
+
+                    'periods': {
+                        'annual_water_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
+                            '2003', '2004', '2005', '2006', '2007', '2008',
+                            '2009', '2010', '2011', '2012', '2013', '2014',
+                            '2015', '2016', '2017', '2018', '2019', '2020',
+                            '2021', '2022'
+                        ],
+                        'water_frequency': [
+                            '1985_2022'
+                            // '2000_2022'
+                        ]
+                        // 'cumulated_water_coverage': [
+                        // ],
+                        // 'monthly_water_coverage': [
+                        // ],
+                    },
+                },
+            },
+            'mapbiomas-ecuador': {
+                'collection-1.0': {
+                    'assets': {
+                        'annual_water_coverage': 'projects/mapbiomas-public/assets/ecuador/collection1/mapbiomas_ecuador_collection1_water_v1',
+                        'water_frequency': 'projects/mapbiomas-public/assets/ecuador/collection1/mapbiomas_ecuador_collection1_water_frequency_v1',
+                        // 'cumulated_water_coverage': '',
+                        // 'monthly_water_coverage': '',
+                    },
+
+                    'periods': {
+                        'annual_water_coverage': [
+                            '1985', '1986', '1987', '1988', '1989', '1990',
+                            '1991', '1992', '1993', '1994', '1995', '1996',
+                            '1997', '1998', '1999', '2000', '2001', '2002',
                             '2003', '2004', '2005', '2006', '2007', '2008',
                             '2009', '2010', '2011', '2012', '2013', '2014',
                             '2015', '2016', '2017', '2018', '2019', '2020',
@@ -1122,6 +1827,10 @@ var App = {
                         str = str.replace(/\n/g, '');
                         App.options.logo.base64 = ui.Label({
                             imageUrl: str,
+                            style: {
+                                // width: '300px'
+                                stretch: 'both'
+                            }
                         });
                         App.ui.form.panelLogo.add(App.options.logo.base64);
                     }
@@ -1187,7 +1896,7 @@ var App = {
                 'layout': ui.Panel.Layout.flow('vertical'),
                 'style': {
                     'stretch': 'horizontal',
-                    'margin': '10px 0px 5px 15px',
+                    'margin': '0px 0px 5px 0px',
                 },
             }),
 
@@ -1387,9 +2096,16 @@ var App = {
                     'mapbiomas-amazon',
                     // 'mapbiomas-atlantic-forest',
                     'mapbiomas-brazil',
+                    'mapbiomas-bolivia',
                     // 'mapbiomas-chaco',
+                    'mapbiomas-colombia',
+                    'mapbiomas-ecuador',
                     // 'mapbiomas-indonesia',
                     // 'mapbiomas-pampa',
+                    // 'mapbiomas-paraguay',
+                    'mapbiomas-peru',
+                    // 'mapbiomas-uruguay',
+                    'mapbiomas-venezuela',
                 ],
                 'placeholder': 'None',
                 'style': {
