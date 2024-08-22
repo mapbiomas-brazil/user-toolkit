@@ -1,5 +1,5 @@
 # Defina a pasta de destino
-folder="projects/mapbiomas-chile/assets/ANCILLARY_DATA/STATISTICS/COLLECTION1/VERSION-1"
+folder="projects/mapbiomas-territories/assets/TERRITORIES/LULC/BRAZIL/COLLECTION9/WORKSPACE"
 
 # Liste todos os assets na pasta
 assets=$(earthengine ls $folder)
